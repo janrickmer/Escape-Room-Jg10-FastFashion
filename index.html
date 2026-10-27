@@ -35,9 +35,10 @@
   --f-text:'Work Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
   --step-small:0.875rem; --step-body:1.125rem; --step-lead:1.375rem;
   --step-head:clamp(2.25rem, 1.4rem + 3.6vw, 4rem); --step-mega:clamp(3.25rem, 1.6rem + 7vw, 6rem);
-  --gutter:clamp(16px, 4vw, 32px); --measure:46rem; --wide:72rem;
+  --step-lede:clamp(1.1875rem, 1.05rem + 0.6vw, 1.375rem);
+  --gutter:clamp(16px, 4vw, 32px); --measure:46rem; --read:40rem; --wide:72rem;
   --ease-out:cubic-bezier(0.23,1,0.32,1); --ease-in-out:cubic-bezier(0.77,0,0.175,1);
-  --band:var(--surface-2); --topbar-h:64px; --field:var(--surface-2);
+  --band:var(--surface-2); --topbar-h:64px; --field:var(--surface-2); --fink:var(--ink);
   color-scheme:light;
 }
 
@@ -50,7 +51,7 @@ body{background:var(--paper);color:var(--ink);font:400 var(--step-body)/1.6 var(
 :focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 h1[tabindex="-1"]:focus{outline:none}
 a{color:var(--ink);text-underline-offset:3px;text-decoration-thickness:2px}
-p,li{hyphens:auto;-webkit-hyphens:auto}
+p,li{hyphens:auto;-webkit-hyphens:auto;hyphenate-limit-chars:7 3 3;text-wrap:pretty}
 button,input,select,textarea{font:inherit;color:inherit}
 svg{flex:none}
 strong{font-weight:700}
@@ -63,27 +64,31 @@ strong{font-weight:700}
 .h-sec{font-size:clamp(1.9rem, 1.5rem + 1.6vw, 2.75rem);margin:0 0 18px}
 .h-card{font:700 1.375rem/1.3 var(--f-text);text-transform:none;letter-spacing:0;margin:0 0 10px}
 .hello{overflow-wrap:anywhere}
-.lede{font-size:var(--step-lead);line-height:1.45}
-.kaya{font-size:var(--step-lead);line-height:1.45}
+.lede{font-size:var(--step-lede);line-height:1.45}
+.kaya{font-size:var(--step-lede);line-height:1.45}
 .small{font-size:var(--step-small);line-height:1.5;color:var(--ink-soft)}
 .btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 
 /* ============ Rahmen ============ */
-.app{min-height:100vh;display:flex;flex-direction:column}
+.app{min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
 #main{flex:1 0 auto}
 .wrap{max-width:calc(var(--measure) + 2 * var(--gutter));margin:0 auto;padding:0 var(--gutter)}
 .wide{max-width:calc(var(--wide) + 2 * var(--gutter));margin:0 auto;padding:0 var(--gutter)}
 .screen{padding:48px 0 72px}
 
-.topbar{position:sticky;top:0;z-index:50;background:var(--paper);box-shadow:inset 0 -6px 0 var(--band);transition:box-shadow 300ms ease}
-.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;padding:10px var(--gutter) 16px;max-width:calc(var(--wide) + 2 * var(--gutter));margin:0 auto}
+.topbar{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:6px solid var(--band);transition:border-color 300ms ease}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:58px;padding:10px var(--gutter);max-width:calc(var(--wide) + 2 * var(--gutter));margin:0 auto}
 .brand{font-family:var(--f-display);font-size:1.5rem;line-height:1;text-transform:uppercase;letter-spacing:.01em;white-space:nowrap}
+.ribbon{display:none;position:absolute;left:0;right:0;bottom:-6px;height:6px}
+.ribbon i{flex:1;background:var(--c)}
+.topbar.ribbon-on .ribbon{display:flex}
 .pass-strip{display:flex;gap:4px;align-items:center}
 .pass-strip[hidden]{display:none}
 .slot{width:30px;height:36px;display:grid;place-items:center;font-family:var(--f-display);font-size:1.05rem;line-height:1;color:var(--ink-soft);background:var(--surface);font-variant-numeric:tabular-nums}
-.slot.now{background:var(--paper);box-shadow:inset 0 0 0 3px var(--ink);color:var(--ink)}
-.slot.done{background:var(--slot-field);color:var(--ink);transform:rotate(-6deg)}
-.slot.done:nth-child(even){transform:rotate(5deg)}
+.slot.now{background:var(--paper);outline:3px solid var(--ink);outline-offset:-3px;color:var(--ink)}
+.slot.done{background:var(--slot-field);color:var(--ink);transform:rotate(var(--rot,-6deg))}
+@keyframes slotIn{from{opacity:0;transform:scale(1.8) rotate(calc(var(--rot,-6deg) - 12deg))}60%{opacity:1}to{opacity:1;transform:rotate(var(--rot,-6deg))}}
+.slot.land{animation:slotIn 360ms var(--ease-out) 120ms both}
 @media (max-width:380px){.slot{width:26px;height:32px}.brand{font-size:1.375rem}}
 
 .site-footer{background:var(--surface);color:var(--ink-soft);font-size:.8125rem;line-height:1.5;text-align:center;padding:22px var(--gutter) 26px}
@@ -113,24 +118,36 @@ strong{font-weight:700}
 .form-error:empty{display:none}
 
 /* ============ Etikett, Hinweise ============ */
-.tag{display:inline-flex;align-items:center;padding:8px 18px 8px 34px;background:var(--field);color:var(--ink);font:700 var(--step-small)/1.25 var(--f-text);position:relative;clip-path:polygon(14px 0,100% 0,100% 100%,14px 100%,0 50%)}
-.tag::before{content:'';position:absolute;left:14px;top:50%;width:9px;height:9px;margin-top:-4.5px;border-radius:50%;background:var(--paper)}
+.tag{display:inline-flex;align-items:center;padding:8px 18px 8px 34px;background:var(--tag-bg,var(--field));color:var(--ink);font:700 var(--step-small)/1.25 var(--f-text);position:relative;clip-path:polygon(14px 0,100% 0,100% 100%,14px 100%,0 50%)}
+.tag::before{content:'';position:absolute;left:14px;top:50%;width:9px;height:9px;margin-top:-4.5px;border-radius:50%;background:var(--tag-hole,var(--paper))}
 .notice{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;padding:16px 18px;background:var(--surface);color:var(--ink);font-size:1rem;line-height:1.5}
 .notice svg{width:24px;height:24px;margin-top:1px}
 .notice.warn{background:var(--help-bg)}
 .st-head{display:grid;gap:16px;margin-bottom:28px}
 .st-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
-.room-kind{font-size:var(--step-lead);font-weight:600;line-height:1.3;color:var(--ink-soft)}
+.room-kind{font-size:var(--step-lede);font-weight:600;line-height:1.3;color:var(--ink-soft)}
+/* Stationsband: Ankunft in einem neuen Kontinent – ganze Fläche in der Kontinentfarbe, Papier-Etikett, Stempel-Rohling */
+.screen.has-band{padding-top:0}
+.st-band{position:relative;overflow:hidden;background:var(--field);color:var(--ink);padding:40px 0 34px}
+.st-band .st-head{margin-bottom:0}
+.st-band .tag{--tag-bg:var(--paper);--tag-hole:var(--field)}
+.st-band .room-kind{color:var(--ink)}
+.band-stamp{display:none}
+@media (min-width:1200px){
+  .band-stamp{display:block;position:absolute;left:calc(50% + 23rem + 3.5rem);top:50%;width:150px;margin-top:-75px;color:var(--fink);transform:rotate(var(--r,-6deg))}
+  .band-stamp svg{display:block;width:100%;height:auto}
+}
+.has-band .band-body{margin-top:40px}
 
 /* ============ Start ============ */
 .start{display:grid;gap:32px;grid-template-areas:"head" "globe" "form"}
 .start-head{grid-area:head;display:grid;gap:18px}
-.start-globe{grid-area:globe;width:100%;max-width:240px;justify-self:center}
+.start-globe{grid-area:globe;width:100%;max-width:220px;justify-self:center}
 .start-form{grid-area:form;max-width:40rem}
 .start-form > form > p{margin-top:4px;line-height:1.55}
 @media (min-width:900px){
   .start{grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-areas:"head globe" "form globe";column-gap:56px;row-gap:36px;align-items:start}
-  .start-globe{max-width:none}
+  .start-globe{max-width:440px;justify-self:end;width:100%}
 }
 .globe{display:block;width:100%;height:auto}
 .save-load-field{display:flex;align-items:center;gap:12px;width:100%;min-height:56px;margin-top:32px;padding:14px 18px;border:0;border-radius:0;background:var(--surface);color:var(--ink);font:600 1rem/1.35 var(--f-text);text-align:left;cursor:pointer;transition:transform 160ms var(--ease-out),background-color 150ms ease}
@@ -160,7 +177,7 @@ strong{font-weight:700}
 .video-fallback{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:12px;font-size:1rem}
 .intro-head{display:grid;gap:18px;margin-top:40px}
 .block{margin-top:56px}
-.routemap{display:block;width:100%;height:auto;margin:0 0 18px}
+.routemap{display:block;width:100%;height:auto;margin:0 0 20px;background:var(--surface)}
 .steps{padding-left:1.4em;display:grid;gap:12px}
 .steps li{padding-left:.3em}
 .steps li::marker{font-weight:700}
@@ -169,7 +186,7 @@ strong{font-weight:700}
 
 /* ============ Globus-Bildschirm und Route ============ */
 .globe-screen{display:grid;gap:24px}
-.globe-box .globe{max-width:min(420px,78vw);margin:0 auto}
+.globe-box .globe{max-width:min(400px,72vw);margin:0 auto}
 .caption{margin-top:10px;font-size:var(--step-small);line-height:1.45;color:var(--ink-soft);text-align:center}
 .globe-info{display:grid;gap:18px;align-content:start}
 .globe-info .tag{justify-self:start}
@@ -180,17 +197,19 @@ strong{font-weight:700}
 .tile .tx{min-width:0}
 .tile .tp{display:block;font-size:var(--step-small);line-height:1.35;color:var(--ink-soft)}
 .tile .tt{display:block;font-weight:700;font-size:1rem;line-height:1.35}
-.tile .ts{width:40px;height:40px;display:grid;place-items:center;background:var(--paper);color:var(--ti);box-shadow:inset 0 0 0 2px var(--ti);font-family:var(--f-display);font-size:1.3rem;line-height:1;transform:rotate(-7deg)}
-.tile.now{background:var(--tf);box-shadow:inset 0 0 0 3px var(--ink)}
+.tile .ts{display:block;width:52px;height:52px;margin:-6px -4px -6px 0;transform:rotate(var(--r,-7deg))}
+.tile .ts svg{display:block;width:100%;height:auto}
+.tile.now{background:var(--tf);outline:3px solid var(--ink);outline-offset:-3px}
 .tile.now .tp{color:var(--ink)}
 
 /* ============ Bibliotheksraum ============ */
 .lib-text{margin-top:8px}
-.lib-text .ph{font:700 1.125rem/1.35 var(--f-text);margin:34px 0 6px}
-.lib-text p{position:relative}
-.lib-text ul{margin:10px 0 0 1.2em;display:grid;gap:6px}
+.lib-text .ph{font:700 1.1875rem/1.35 var(--f-text);margin:40px 0 8px;max-width:var(--read);text-wrap:balance}
+.lib-text p{position:relative;max-width:var(--read);text-wrap:pretty}
+.lib-text ul{max-width:var(--read);margin:10px 0 0 1.2em;display:grid;gap:6px}
 .pn{display:inline-block;margin-right:.5em;font-size:var(--step-small);font-weight:700;color:var(--ink-soft);font-variant-numeric:tabular-nums}
 @media (min-width:760px){.pn{position:absolute;left:-2.2em;top:.25em;width:1.6em;margin:0;text-align:right}}
+.lib .notice{max-width:var(--read)}
 .lib .notice.warn{margin-top:40px}
 
 /* ============ Rätselraum ============ */
@@ -223,8 +242,8 @@ fieldset.mc legend{font-weight:600;line-height:1.45;margin-bottom:12px}
 .opts{display:grid;gap:8px}
 .opt{display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;align-items:start;min-height:48px;padding:12px 14px;background:var(--paper);cursor:pointer;line-height:1.45}
 .opt input{appearance:none;-webkit-appearance:none;width:22px;height:22px;margin:1px 0 0;border:3px solid var(--ink);border-radius:50%;background:var(--paper);cursor:pointer}
-.opt input:checked{background:var(--ink);box-shadow:inset 0 0 0 4px var(--paper)}
-.opt:has(input:checked){box-shadow:inset 0 0 0 3px var(--ink)}
+.opt input:checked{background:var(--ink);box-shadow:inset 0 0 0 4px var(--paper)} /* taste-skill-ignore: gezeichneter Radiopunkt, kein Schatten */
+.opt:has(input:checked){outline:3px solid var(--ink);outline-offset:-3px}
 .opt .ot{overflow-wrap:anywhere}
 .opt .mark{margin-top:6px}
 .opt.is-ok .mark,.opt.is-bad .mark{display:flex}
@@ -284,30 +303,38 @@ dialog::backdrop{background:rgba(18,20,23,.6)}
 dialog[open]{animation:dlgIn 220ms var(--ease-out)}
 dialog[open]::backdrop{animation:fadeIn 220ms var(--ease-out)}
 @media (max-width:380px){dialog{padding:16px}}
-#stampDialog{text-align:center;box-shadow:0 24px 60px rgba(18,20,23,.28)}
+#stampDialog{text-align:center;box-shadow:0 24px 60px rgba(18,20,23,.28)} /* taste-skill-ignore: Dialog schwebt wirklich */
 #stampDialog .h-card{margin:10px 0 2px}
 .stamp-place{font-size:1rem;color:var(--ink-soft)}
 .stamp-big{display:inline-block;width:min(170px,45vw);transform:rotate(var(--rot,-6deg));animation:stampIn 320ms var(--ease-out) 120ms both}
 .stamp-big svg{display:block;width:100%;height:auto}
 @keyframes stampIn{from{opacity:0;transform:scale(1.35) rotate(-14deg)}to{opacity:1;transform:scale(1) rotate(var(--rot,-6deg))}}
-.passport-page{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0;padding:16px;background:var(--pass-paper)}
+.passport-page{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0;padding:14px;background:var(--pass-paper);border:6px solid var(--pass)}
 .ps{aspect-ratio:1;display:grid;place-items:center;background:var(--pass-slot)}
-.ps-st{display:block;width:92%}
+.ps-st{display:block;width:92%;transform:rotate(var(--r,0deg))}
 .ps-st svg{display:block;width:100%;height:auto}
+@keyframes psIn{from{opacity:0;transform:scale(1.6) rotate(calc(var(--r,0deg) - 12deg))}55%{opacity:1}to{opacity:1;transform:rotate(var(--r,0deg))}}
+.ps.new .ps-st{animation:psIn 300ms var(--ease-out) 460ms both}
 .dlg-actions{display:grid;gap:10px;margin-top:22px}
 #tunnelDialog p{line-height:1.55}
 
 /* ============ Finale ============ */
 .final.screen{padding-bottom:0}
-.final-head{display:grid;gap:22px;justify-items:start}
-.final-head .lede{max-width:46rem}
-.pass-cover{max-width:100%}
-.pass-deck{padding:8px 16px;background:var(--pass);color:var(--pass-gold);font-family:var(--f-display);font-size:1.5rem;line-height:1.1;text-transform:uppercase;letter-spacing:.06em}
-.pass-row{display:grid;grid-template-columns:repeat(6,minmax(0,96px));gap:10px;padding:16px;background:var(--pass-paper)}
-@media (max-width:700px){.pass-row{grid-template-columns:repeat(3,minmax(0,96px))}}
+.final-head{display:grid;gap:22px;justify-items:start;grid-template-areas:"h" "pass" "code" "lede"}
+.final-head > h1{grid-area:h}
+.final-head .pass-cover{grid-area:pass}
+.final-head .codeword{grid-area:code}
+.final-head .lede{grid-area:lede;max-width:40rem}
+@media (min-width:900px){
+  .final-head{grid-template-columns:minmax(0,1fr) minmax(0,26rem);grid-template-areas:"h pass" "code pass" "lede pass";grid-template-rows:auto auto 1fr;column-gap:56px;row-gap:20px;align-items:start}
+  .final-head .pass-cover{justify-self:stretch;align-self:start}
+}
+.pass-cover{width:100%;max-width:26rem}
+.pass-deck{padding:10px 16px;background:var(--pass);color:var(--pass-gold);font-family:var(--f-display);font-size:1.5rem;line-height:1.1;text-transform:uppercase;letter-spacing:.06em}
+.pass-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:14px;background:var(--pass-paper);border:6px solid var(--pass);border-top:0}
 .pass-row .ps{width:100%}
-.codeword{font-family:var(--f-display);font-size:var(--step-head);line-height:1;letter-spacing:.06em}
-.arena{margin-top:64px;padding:56px 0 64px;background:var(--ink);color:#ffffff}
+.codeword{font-family:var(--f-display);font-size:var(--step-mega);line-height:.95;letter-spacing:.08em}
+.arena{margin-top:72px;padding:64px 0 72px;background:var(--ink);color:#ffffff}
 .arena-in{max-width:calc(52rem + 2 * var(--gutter));margin:0 auto;padding:0 var(--gutter)}
 .arena :focus-visible{outline-color:#ffffff}
 .arena h2{font-size:var(--step-head);color:#ffffff}
@@ -326,19 +353,24 @@ dialog[open]::backdrop{animation:fadeIn 220ms var(--ease-out)}
 .gate-locked{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;margin-top:40px;padding:14px 16px;background:var(--help-bg);color:var(--ink);font-weight:600;line-height:1.45}
 .gate-locked svg{width:22px;height:22px;margin-top:1px}
 .gate-locked:focus{outline:3px solid #ffffff;outline-offset:3px}
-.gate{position:relative;display:block;width:100%;max-width:760px;margin:28px auto 0;padding:0;border:0;border-radius:0;background:transparent;color:var(--ink);cursor:pointer;transition:transform 160ms var(--ease-out)}
+.gate{position:relative;display:block;width:100%;max-width:820px;margin:32px auto 0;padding:0;border:0;border-radius:0;background:transparent;color:var(--ink);cursor:pointer;transition:transform 160ms var(--ease-out)}
 .gate:active{transform:scale(.99)}
 .gate:focus-visible{outline:3px solid #ffffff;outline-offset:4px}
 .gate > svg{display:block;width:100%;height:auto}
 .gate .glow{opacity:0;transition:opacity 200ms ease}
 .gate:not([aria-disabled="true"]):focus-visible .glow{opacity:1}
 @media (hover:hover) and (pointer:fine){.gate:not([aria-disabled="true"]):hover .glow{opacity:1}}
-.gate .enter{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:10px;padding:14px 22px;background:var(--eu-field);color:var(--ink);font:700 1rem/1.25 var(--f-text);white-space:nowrap}
+.gate .enter{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border:3px solid #0b0c0e;background:var(--eu-field);color:var(--ink);font:700 1rem/1.25 var(--f-text);white-space:nowrap}
+/* Tunnel: Bahnen leuchten einmal nacheinander auf, wenn das Tor ins Bild kommt (nur offen, nur mit Bewegung) */
+@keyframes laneIn{from{opacity:.12}to{opacity:1}}
+.gate.prelit .lane,.gate.prelit .door-light{opacity:.12}
+.gate.lit .lane{animation:laneIn 420ms var(--ease-out) both;animation-delay:calc(var(--i) * 70ms)}
+.gate.lit .door-light{animation:laneIn 520ms var(--ease-out) 420ms both}
 .gate .enter svg{width:20px;height:20px}
 .gate[aria-disabled="true"]{cursor:not-allowed}
 .gate[aria-disabled="true"]:active{transform:none}
 .gate[aria-disabled="true"] .enter{background:var(--surface-2);color:var(--ink)}
-@media (max-width:600px){.gate .enter{position:static;transform:none;display:flex;justify-content:center;white-space:normal;text-align:center}}
+@media (max-width:600px){.gate .enter{position:static;transform:none;display:flex;justify-content:center;white-space:normal;text-align:center;border:0}}
 .gate-hint{max-width:40rem;margin:14px auto 0;font-size:var(--step-small);line-height:1.5;color:var(--surface-2);text-align:center}
 .pause{margin-top:56px;padding:24px;background:var(--surface)}
 .pause p{line-height:1.55;max-width:46rem}
@@ -364,7 +396,8 @@ dialog[open]::backdrop{animation:fadeIn 220ms var(--ease-out)}
 @keyframes pinIn{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
 .pin-in{animation:pinIn 200ms var(--ease-out) both}
 @media (prefers-reduced-motion:reduce){
-  .rise,.pop,.pin-in,.stamp-big,dialog[open],dialog[open]::backdrop{animation:none}
+  .rise,.pop,.pin-in,.stamp-big,dialog[open],dialog[open]::backdrop,.slot.land,.ps.new .ps-st,.gate.lit .lane,.gate.lit .door-light{animation:none}
+  .gate.prelit .lane,.gate.prelit .door-light{opacity:1}
   .topbar,.btn,.seg button,.save-load-field,.save-toast,.gate,.gate .glow{transition:none}
   .btn:active,.seg button:active,.save-load-field:active,.gate:active{transform:none}
 }
@@ -409,6 +442,7 @@ dialog[open]::backdrop{animation:fadeIn 220ms var(--ease-out)}
       <span class="brand">FastFashion</span>
       <div class="pass-strip" id="passStrip" role="img" aria-label="Reisepass" hidden></div>
     </div>
+    <span class="ribbon" aria-hidden="true"><i style="--c:var(--eu-field)"></i><i style="--c:var(--sa-field)"></i><i style="--c:var(--as-field)"></i><i style="--c:var(--as-field)"></i><i style="--c:var(--af-field)"></i><i style="--c:var(--eu-field)"></i></span>
   </header>
   <main id="main"><div id="screenContainer"></div></main>
   <footer class="site-footer">Copyright Jan-Rickmer Feindt · <a href="impressum.html" target="_blank" rel="noopener">Impressum &amp; Datenschutz<span class="sr-only"> (öffnet in neuem Tab)</span></a></footer>
@@ -1421,18 +1455,31 @@ function highlightSet(idx){
   LAND.forEach((p,i)=>{ if(pins.some(q=>gdist(p,q)<14*D2R)) set[i]=1; });
   return (HL_CACHE[idx]=set);
 }
+// Kayas Schreibtisch-Globus: Meridianring und Fuß (flach, fest), darin die Kugel (viewBox 0 0 400 456)
+function globeStand(mk){
+  const st=mk('g',{'aria-hidden':'true'});
+  mk('path',{d:'M200 7A193 193 0 0 1 200 393',fill:'none',stroke:GLOBE_COL.l2,'stroke-width':7},st);
+  mk('rect',{x:193,y:1,width:14,height:12,fill:GLOBE_COL.l3},st);
+  mk('rect',{x:193,y:387,width:14,height:12,fill:GLOBE_COL.l3},st);
+  mk('rect',{x:195,y:398,width:10,height:24,fill:GLOBE_COL.sea},st);
+  mk('path',{d:'M184 420h32l14 22h-60z',fill:GLOBE_COL.sea},st);
+  mk('rect',{x:128,y:440,width:144,height:14,rx:7,fill:GLOBE_COL.sea},st);
+}
 function globeParts(svg){
   if(svg._g && svg._g.sea.parentNode===svg) return svg._g;
   svg.textContent='';
   const mk=(t,a,parent)=>{ const e=document.createElementNS(SVGNS,t); for(const k in a) e.setAttribute(k,a[k]); (parent||svg).appendChild(e); return e; };
   const line={ fill:'none','stroke-linecap':'round' };
+  globeStand(mk);
   const g={
     sea: mk('circle',{cx:200,cy:200,r:180,fill:GLOBE_COL.sea}),
     b3: mk('path',Object.assign({stroke:GLOBE_COL.l3,'stroke-width':3.3},line)),
     b2: mk('path',Object.assign({stroke:GLOBE_COL.l2,'stroke-width':3.96},line)),
     b1: mk('path',Object.assign({stroke:GLOBE_COL.l1,'stroke-width':4.4},line)),
     hl: mk('path',Object.assign({'stroke-width':4.4},line)),
-    arc: mk('path',Object.assign({stroke:'#ffffff','stroke-width':3.2,'stroke-dasharray':'2 7'},line)),
+    arc: mk('path',Object.assign({stroke:'#ffffff','stroke-width':3.6,'stroke-dasharray':'2 7'},line)),
+    from: mk('circle',{r:6,'stroke-width':3,stroke:GLOBE_COL.sea,fill:'none',visibility:'hidden'}),
+    head: mk('circle',{r:5.5,fill:'#ffffff',stroke:GLOBE_COL.sea,'stroke-width':2.5,visibility:'hidden'}),
     pins: mk('g',{}),
   };
   g.mk=mk;
@@ -1454,9 +1501,11 @@ function drawGlobe(svg,center,opt){
   g.b1.setAttribute('d',bands[0].join('')); g.b2.setAttribute('d',bands[1].join('')); g.b3.setAttribute('d',bands[2].join(''));
   g.hl.setAttribute('d',hls.join(''));
   if(opt.idx!=null) g.hl.setAttribute('stroke',CONT[STATIONS[opt.idx].cont].field);
-  // Flugbogen (Großkreis, leicht angehoben), wächst bis zum Anteil t
-  let d='';
+  // Flugbogen (Großkreis, leicht angehoben), wächst bis zum Anteil t; Startpunkt = Pin der vorigen Station, Spitze = Flugzeug
+  let d='', headAt=null, fromAt=null;
   if(opt.arc){
+    const f=gproj(opt.arc.a[0],opt.arc.a[1],center);
+    if(f.v>0) fromAt=f;
     const a=opt.arc.a, b=opt.arc.b, tt=opt.arc.t==null?1:opt.arc.t, dist=gdist(a,b);
     if(dist>1e-6 && tt>0){
       let pen=false;
@@ -1468,13 +1517,18 @@ function drawGlobe(svg,center,opt){
         const z=A*Math.sin(a[0])+B*Math.sin(b[0]);
         const lat=Math.atan2(z,Math.hypot(x,y)), lon=Math.atan2(y,x);
         const ground=gproj(lat,lon,center), q=gproj(lat,lon,center,1+0.16*Math.sin(Math.PI*t));
-        if(ground.v<=0){ pen=false; }
-        else { d+=(pen?'L':'M')+q.x.toFixed(1)+' '+q.y.toFixed(1); pen=true; }
+        if(ground.v<=0){ pen=false; headAt=null; }
+        else { d+=(pen?'L':'M')+q.x.toFixed(1)+' '+q.y.toFixed(1); pen=true; headAt=q; }
         if(t>=tt) break;
       }
+      if(tt>=1) headAt=null;
     }
   }
   g.arc.setAttribute('d',d);
+  if(fromAt && opt.arc.col){ g.from.setAttribute('cx',fromAt.x.toFixed(1)); g.from.setAttribute('cy',fromAt.y.toFixed(1)); g.from.setAttribute('fill',opt.arc.col); g.from.setAttribute('visibility','visible'); }
+  else g.from.setAttribute('visibility','hidden');
+  if(headAt){ g.head.setAttribute('cx',headAt.x.toFixed(1)); g.head.setAttribute('cy',headAt.y.toFixed(1)); g.head.setAttribute('visibility','visible'); }
+  else g.head.setAttribute('visibility','hidden');
   // Pins mit Beschriftung
   g.pins.textContent='';
   if(opt.pins && opt.idx!=null){
@@ -1508,8 +1562,8 @@ function spinGlobe(svg,a,b,ms,frame,done){
 const viewOf=st=>[st.view.lat*D2R, st.view.lon*D2R];
 
 // Stempel (SVG 120 × 120), uid deterministisch
-function stampSvg(idx,uid){
-  const st=STATIONS[idx], shape=st.stamp.shape, ink=CONT[st.cont].ink, top=escapeHtml(st.stamp.top), bottom=escapeHtml(st.stamp.bottom), letter=st.letter;
+function stampSvg(idx,uid,blank){
+  const st=STATIONS[idx], shape=st.stamp.shape, ink=blank?'currentColor':CONT[st.cont].ink, top=escapeHtml(st.stamp.top), bottom=escapeHtml(st.stamp.bottom), letter=blank?'':st.letter;
   const f=`font-family="Anton, 'Arial Narrow', sans-serif" fill="${ink}"`;
   let frame='',txt='';
   if(shape==='circle'||shape==='oval'){
@@ -1524,11 +1578,11 @@ function stampSvg(idx,uid){
       : `<rect x="6" y="14" width="108" height="92" rx="10" fill="none" stroke="${ink}" stroke-width="4"/><rect x="13" y="21" width="94" height="78" rx="6" fill="none" stroke="${ink}" stroke-width="2"/>`;
     txt=`<text x="60" y="${shape==='oct'?32:36}" text-anchor="middle" font-size="10" letter-spacing="1.2" ${f}>${top}</text><text x="60" y="${shape==='oct'?96:93}" text-anchor="middle" font-size="9" letter-spacing="1" ${f}>${bottom}</text>`;
   }
-  return `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">${frame}${txt}<text x="60" y="77" text-anchor="middle" font-size="44" ${f}>${letter}</text></svg>`;
+  return `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">${frame}${txt}${letter?`<text x="60" y="77" text-anchor="middle" font-size="44" ${f}>${letter}</text>`:''}</svg>`;
 }
-function passSlots(uidPrefix){
+function passSlots(uidPrefix,fresh){
   return STATIONS.map((st,i)=>state.solved[i]
-    ? `<div class="ps"><span class="ps-st" style="transform:rotate(${st.stamp.rot}deg)">${stampSvg(i,uidPrefix+i)}</span></div>`
+    ? `<div class="ps${i===fresh?' new':''}"><span class="ps-st" style="--r:${st.stamp.rot}deg">${stampSvg(i,uidPrefix+i)}</span></div>`
     : '<div class="ps"></div>').join('');
 }
 
@@ -1542,43 +1596,68 @@ function eqEarth(lat,lon){
   return [500+X*s, 250-Y*s];
 }
 let FLAT_LAND_D='';
+const MAP_VIEW=[268,14,664,390];   // Ausschnitt der Routenkarte: Südamerika bis Ostasien
 function flatLandPath(){
   if(FLAT_LAND_D) return FLAT_LAND_D;
-  const parts=[];
-  for(const p of LAND){ if(p[0]<-56*D2R) continue; const q=eqEarth(p[0],p[1]); parts.push('M'+q[0].toFixed(1)+' '+q[1].toFixed(1)+'h0'); }
+  const parts=[], [vx,vy,vw,vh]=MAP_VIEW;
+  for(const p of LAND){ if(p[0]<-56*D2R) continue; const q=eqEarth(p[0],p[1]);
+    if(q[0]<vx+2||q[0]>vx+vw-2||q[1]<vy+2||q[1]>vy+vh-2) continue;
+    parts.push('M'+q[0].toFixed(1)+' '+q[1].toFixed(1)+'h0'); }
   return (FLAT_LAND_D=parts.join(''));
 }
+// Ausschnitt mit allen sechs Stationen (Südamerika bis Ostasien); Nummern als Kontinent-Scheiben, zu nahe Stationen
+// (Deutschland und Brüssel/Paris) bekommen versetzte Scheiben mit kurzer Linie zum Ort.
 function routeMapSvg(done){
   const pts=STATIONS.map(st=>eqEarth(st.pins[0].lat*D2R, st.pins[0].lon*D2R));
+  const R=17, off=pts.map(()=>[0,0]);
+  for(let i=0;i<pts.length;i++) for(let j=i+1;j<pts.length;j++){
+    if(Math.hypot(pts[i][0]-pts[j][0],pts[i][1]-pts[j][1])<2*R+8){ off[i]=[30,-22]; off[j]=[-32,22]; }
+  }
   let arcs='';
   for(let i=1;i<pts.length;i++){
     const [x1,y1]=pts[i-1], [x2,y2]=pts[i], dist=Math.hypot(x2-x1,y2-y1);
     const cx=(x1+x2)/2, cy=(y1+y2)/2-0.25*dist;
-    arcs+=`<path d="M${x1.toFixed(1)} ${y1.toFixed(1)} Q${cx.toFixed(1)} ${cy.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}" fill="none" stroke="#121417" stroke-width="${done?2.5:2}"${done?'':' stroke-dasharray="6 6"'} stroke-linecap="round"/>`;
+    arcs+=`<path d="M${x1.toFixed(1)} ${y1.toFixed(1)} Q${cx.toFixed(1)} ${cy.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}" fill="none" stroke="#121417" stroke-width="3"${done?'':' stroke-dasharray="7 7"'} stroke-linecap="round"/>`;
   }
-  const pins=STATIONS.map((st,i)=>{ const [x,y]=pts[i];
-    return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="7" fill="${CONT[st.cont].field}" stroke="#121417" stroke-width="2"/>`
-      +`<text x="${(x+st.map.dx).toFixed(1)}" y="${(y+st.map.dy).toFixed(1)}" font-family="'Work Sans', sans-serif" font-weight="700" font-size="15" fill="#121417">${i+1}</text>`; }).join('');
-  return `<svg class="routemap" viewBox="0 0 1000 470" role="img" aria-label="Deine Route: Station 1 Deutschland, 2 Brasilien, 3 Bangladesch, 4 China, 5 Ruanda und Ghana, 6 Brüssel und Paris">`
-    +`<path d="${flatLandPath()}" fill="none" stroke="#e4e6e3" stroke-width="4" stroke-linecap="round"/>${arcs}${pins}</svg>`;
+  const pins=STATIONS.map((st,i)=>{ const [x,y]=pts[i], [dx,dy]=off[i], px=x+dx, py=y+dy;
+    return (dx||dy?`<path d="M${x.toFixed(1)} ${y.toFixed(1)}L${px.toFixed(1)} ${py.toFixed(1)}" stroke="#121417" stroke-width="2.5"/>`:'')
+      +`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="5" fill="#121417"/>`
+      +`<circle cx="${px.toFixed(1)}" cy="${py.toFixed(1)}" r="${R}" fill="${CONT[st.cont].field}" stroke="#121417" stroke-width="3"/>`
+      +`<text x="${px.toFixed(1)}" y="${(py+8).toFixed(1)}" text-anchor="middle" font-family="Anton, 'Arial Narrow', sans-serif" font-size="23" fill="#121417">${i+1}</text>`; }).join('');
+  return `<svg class="routemap" viewBox="${MAP_VIEW.join(' ')}" role="img" aria-label="Deine Route: Station 1 Deutschland, 2 Brasilien, 3 Bangladesch, 4 China, 5 Ruanda und Ghana, 6 Brüssel und Paris">`
+    +`<path d="${flatLandPath()}" fill="none" stroke="#c9ced6" stroke-width="4.4" stroke-linecap="round"/>${arcs}${pins}</svg>`;
 }
 
-// Arena-Tunnel (flache Flächen, Fluchtpunkt-Rechteck 300/140/200/200)
+// Arena-Tunnel: Spielertunnel in Fluchtpunkt-Perspektive (Tor 300/140/200/200). Rippen aus flachen Rahmenflächen,
+// sechs Bahnen in den Kontinentfarben führen zum Tor, darüber das Codewort als Schild. Gesperrt: Bahnen dunkel, Tor zu.
 function tunnelSvg(open){
-  const xs=[318,345,372,399,426,453], ws=[27,27,27,27,27,29];
-  const stripes=STATIONS.map((st,i)=>`<rect x="${xs[i]}" y="160" width="${ws[i]}" height="110" fill="${open?CONT[st.cont].field:GLOBE_COL.l3}"/>`).join('');
-  const lock=open?'':'<g><path d="M378 214v-16a22 22 0 0 1 44 0v16" fill="none" stroke="#121417" stroke-width="10" stroke-linecap="round"/><rect x="364" y="212" width="72" height="56" fill="#ffffff" stroke="#121417" stroke-width="6"/><rect x="396" y="230" width="8" height="18" fill="#121417"/></g>';
-  return `<svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-    <rect width="800" height="460" fill="#0b0c0e"/>
-    <rect x="300" y="140" width="200" height="200" fill="#ffffff"/>
-    <rect x="300" y="300" width="200" height="40" fill="#f1f2f0"/>
-    <g>${stripes}</g>${lock}
-    <polygon points="0,0 300,140 300,340 0,460" fill="#1b1e22"/>
-    <polygon points="800,0 500,140 500,340 800,460" fill="#1b1e22"/>
-    <polygon points="0,0 800,0 500,140 300,140" fill="#121417"/>
-    <polygon points="0,460 800,460 500,340 300,340" fill="#26292e"/>
-    <g fill="#33373d"><polygon points="70,33 300,140 300,150 70,52"/><polygon points="730,33 500,140 500,150 730,52"/><polygon points="70,427 300,330 300,340 70,446"/><polygon points="730,427 500,330 500,340 730,446"/></g>
-    <g class="glow"><polygon points="300,340 500,340 650,430 150,430" fill="#ffffff" opacity=".16"/><rect x="291" y="131" width="218" height="218" fill="none" stroke="#ffffff" stroke-width="6"/></g>
+  const W=800, H=460, D={x:300,y:140,w:200,h:200}, L=(a,b,t)=>a+(b-a)*t;
+  const fr=t=>[L(0,D.x,t),L(0,D.y,t),L(W,D.x+D.w,t),L(H,D.y+D.h,t)];
+  const ribs=[0,.2,.38,.53,.65,.75,.83,.9,1];
+  let walls='';
+  for(let k=0;k<ribs.length-1;k++){
+    const [a,b,c,d]=fr(ribs[k]), [e,f,g,h]=fr(ribs[k+1]);
+    walls+=`<path fill-rule="evenodd" fill="${k%2?'#16181c':'#1e2126'}" d="M${a} ${b}H${c}V${d}H${a}Z M${e.toFixed(1)} ${f.toFixed(1)}H${g.toFixed(1)}V${h.toFixed(1)}H${e.toFixed(1)}Z"/>`;
+  }
+  let lanes='';
+  STATIONS.forEach((st,i)=>{
+    const x0=W*i/6, x1=W*(i+1)/6, u0=D.x+D.w*i/6, u1=D.x+D.w*(i+1)/6;
+    lanes+=`<polygon class="lane" style="--i:${i}" points="${x0.toFixed(1)},${H} ${x1.toFixed(1)},${H} ${u1.toFixed(1)},${D.y+D.h} ${u0.toFixed(1)},${D.y+D.h}" fill="${open?CONT[st.cont].field:(i%2?'#23262b':'#2a2e34')}"/>`;
+  });
+  // Fugen quer über die Bahnen (gleiche Tiefen wie die Rippen)
+  let seams='';
+  ribs.slice(1,-1).forEach(t=>{ const [a,,c,d]=fr(t); seams+=`<rect x="${a.toFixed(1)}" y="${(d-1.5).toFixed(1)}" width="${(c-a).toFixed(1)}" height="3" fill="#0b0c0e" opacity="${open?.22:.5}"/>`; });
+  const tw=26, gap=6, total=6*tw+5*gap, x0=W/2-total/2;
+  const sign=STATIONS.map((st,i)=>`<rect x="${x0+i*(tw+gap)}" y="98" width="${tw}" height="30" fill="${CONT[st.cont].field}"/><text x="${x0+i*(tw+gap)+tw/2}" y="122" text-anchor="middle" font-family="Anton, 'Arial Narrow', sans-serif" font-size="21" fill="#121417">${st.letter}</text>`).join('');
+  const door=open
+    ? `<rect class="door-light" x="${D.x}" y="${D.y}" width="${D.w}" height="${D.h}" fill="#ffffff"/>`
+    : `<rect x="${D.x}" y="${D.y}" width="${D.w}" height="${D.h}" fill="#2a2e34"/><rect x="${D.x+D.w/2-2}" y="${D.y}" width="4" height="${D.h}" fill="#0b0c0e"/>`
+      +`<g transform="translate(400 238)"><path d="M-20 -6v-14a20 20 0 0 1 40 0v14" fill="none" stroke="#e4e6e3" stroke-width="9" stroke-linecap="round"/><rect x="-32" y="-8" width="64" height="50" fill="#e4e6e3"/><rect x="-4" y="6" width="8" height="18" fill="#2a2e34"/></g>`;
+  return `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <rect width="${W}" height="${H}" fill="#0b0c0e"/>${walls}
+    <rect x="${D.x-10}" y="${D.y-10}" width="${D.w+20}" height="${D.h+10}" fill="#33373d"/>${door}
+    <g>${lanes}</g>${seams}${sign}
+    <g class="glow"><polygon points="${D.x},${D.y+D.h} ${D.x+D.w},${D.y+D.h} 640,${H} 160,${H}" fill="#ffffff" opacity=".18"/><rect x="${D.x-13}" y="${D.y-13}" width="${D.w+26}" height="${D.h+13}" fill="none" stroke="#ffffff" stroke-width="6"/></g>
   </svg>`;
 }
 
@@ -1604,13 +1683,15 @@ function currentStation(){
   if(state.screen==='final') return 0;
   return Math.min(solvedCount()+1,6);
 }
+let landSlot=null;   // gerade verliehener Stempel: landet beim nächsten Bildschirm in der Reisepass-Leiste
 function renderPassStrip(){
   const el=document.getElementById('passStrip');
   if(state.screen==='start'||state.screen==='resume'){ el.hidden=true; el.textContent=''; return; }
   el.hidden=false;
-  const cur=currentStation(), got=[]; let h='';
+  const cur=currentStation(), got=[], land=landSlot; let h='';
+  landSlot=null;
   STATIONS.forEach((st,i)=>{
-    if(state.solved[i]){ got.push(st.letter); h+=`<span class="slot done" style="--slot-field:var(--${st.cont}-field)">${st.letter}</span>`; }
+    if(state.solved[i]){ got.push(st.letter); h+=`<span class="slot done${i===land?' land':''}" style="--slot-field:var(--${st.cont}-field);--rot:${i%2?5:-6}deg">${st.letter}</span>`; }
     else if(cur===i+1) h+=`<span class="slot now">${i+1}</span>`;
     else h+=`<span class="slot">${i+1}</span>`;
   });
@@ -1626,7 +1707,7 @@ function bandColor(){
   if(s==='globe') return `var(--${STATIONS[Math.min(solvedCount(),5)].cont}-field)`;
   return 'var(--surface-2)';
 }
-function updateChrome(){ renderPassStrip(); topbar.style.setProperty('--band',bandColor()); }
+function updateChrome(){ renderPassStrip(); topbar.style.setProperty('--band',bandColor()); topbar.classList.toggle('ribbon-on',/^(start|resume|intro)$/.test(state.screen)); }
 function show(screen,html){
   state.screen=screen;
   root.innerHTML=html;
@@ -1636,8 +1717,8 @@ function show(screen,html){
   const h1=root.querySelector('h1');
   if(h1){ h1.setAttribute('tabindex','-1'); h1.focus({preventScroll:true}); }
   if(!reducedMotion()){
-    const host=root.querySelector('[data-enter]');
-    if(host) [...host.children].slice(0,4).forEach((el,i)=>{ el.classList.add('rise'); el.style.setProperty('--d',(i*50)+'ms'); });
+    let k=0;
+    root.querySelectorAll('[data-enter]').forEach(host=>[...host.children].slice(0,4).forEach(el=>{ el.classList.add('rise'); el.style.setProperty('--d',(k++*40)+'ms'); }));
   }
 }
 const on=(id,ev,fn)=>{ const el=document.getElementById(id); if(el) el.addEventListener(ev,fn); return el; };
@@ -1652,13 +1733,19 @@ function tileHtml(i,status){
   return `<li class="tile ${status}" style="--tf:var(--${st.cont}-field);--ti:var(--${st.cont}-ink)">`
     +`<span class="tn" aria-hidden="true">${i+1}</span>`
     +`<span class="tx"><span class="tp">${escapeHtml(st.where)}</span><span class="tt">${escapeHtml(st.title)}</span></span>`
-    +(status==='done'?`<span class="ts" aria-hidden="true">${st.letter}</span>`:'<span></span>')
+    +(status==='done'?`<span class="ts" aria-hidden="true" style="--r:${st.stamp.rot}deg">${stampSvg(i,'tile'+i)}</span>`:'<span></span>')
     +`<span class="sr-only">${sr}</span></li>`;
 }
 function stationHead(idx,kind){
   const st=STATIONS[idx];
-  return `<header class="st-head"><h1 class="title-head">${escapeHtml(st.title)}</h1>`
+  return `<header class="st-head" data-enter><h1 class="title-head">${escapeHtml(st.title)}</h1>`
     +`<div class="st-meta"><span class="tag">Station ${st.n} · ${escapeHtml(st.where)}</span><p class="room-kind">${kind}</p></div></header>`;
+}
+// Kopf jeder Station als Band in der Kontinentfarbe, rechts (breite Bildschirme) der Stempel-Rohling dieser Station
+function stationBand(idx,kind){
+  const st=STATIONS[idx];
+  return `<div class="st-band"><div class="wrap">${stationHead(idx,kind)}</div>`
+    +`<span class="band-stamp" aria-hidden="true" style="--r:${st.stamp.rot}deg">${stampSvg(idx,'band'+idx,true)}</span></div>`;
 }
 
 /* ============================================================
@@ -1672,7 +1759,7 @@ function renderStart(){
       <h1 class="title-mega">FastFashion</h1>
       <p class="lede">Ein Escape-Room für Politik und Wirtschaft, Jahrgangsstufe 10: Was steckt hinter einem T-Shirt für ein paar Euro – von Anfang bis Ende?</p>
     </div>
-    <div class="start-globe"><svg class="globe" id="startGlobe" viewBox="0 0 400 400" aria-hidden="true" focusable="false"></svg></div>
+    <div class="start-globe"><svg class="globe" id="startGlobe" viewBox="0 0 400 456" aria-hidden="true" focusable="false"></svg></div>
     <div class="start-form">
       <form id="startForm" novalidate>
         <h2 class="h-card">Deine Anmeldung</h2>
@@ -1774,7 +1861,7 @@ function renderGlobe(opts){
   show('globe',`
   <div class="screen" style="--field:var(--${st.cont}-field)"><div class="wide"><div class="globe-screen" data-enter>
     <div class="globe-box">
-      <svg class="globe" id="globeSvg" viewBox="0 0 400 400" role="img" aria-label="${escapeHtml(st.globeCaption)}"></svg>
+      <svg class="globe" id="globeSvg" viewBox="0 0 400 456" role="img" aria-label="${escapeHtml(st.globeCaption)}"></svg>
       <p class="caption">${escapeHtml(st.globeCaption)}</p>
     </div>
     <div class="globe-info">
@@ -1787,9 +1874,9 @@ function renderGlobe(opts){
   </div></div></div>`);
   on('enterStation','click',()=>renderLibrary(idx));
   const svg=document.getElementById('globeSvg'), to=viewOf(st);
-  const arc=idx>0 ? { a:ll(STATIONS[idx-1].pins[0]), b:ll(st.pins[0]) } : null;
+  const arc=idx>0 ? { a:ll(STATIONS[idx-1].pins[0]), b:ll(st.pins[0]), col:CONT[STATIONS[idx-1].cont].field } : null;
   if(from==='stamp' && idx>0){
-    spinGlobe(svg,viewOf(STATIONS[idx-1]),to,1100,(c,e)=>drawGlobe(svg,c,{idx,arc:{a:arc.a,b:arc.b,t:e},pins:false}),
+    spinGlobe(svg,viewOf(STATIONS[idx-1]),to,1100,(c,e)=>drawGlobe(svg,c,{idx,arc:{a:arc.a,b:arc.b,col:arc.col,t:e},pins:false}),
       ()=>drawGlobe(svg,to,{idx,arc,pins:true,pinAnim:!reducedMotion()}));
   } else if(from==='intro'){
     spinGlobe(svg,[20*D2R,-60*D2R],to,1100,c=>drawGlobe(svg,c,{idx,arc,pins:false}),
@@ -1811,8 +1898,9 @@ function renderLibrary(idx){
       +(list?'<ul>'+list.map(li=>`<li>${escapeHtml(li)}</li>`).join('')+'</ul>':'');
   }).join('');
   show('lib'+(idx+1),`
-  <div class="screen lib" style="--field:var(--${st.cont}-field)"><div class="wrap" data-enter>
-    ${stationHead(idx,'Bibliotheksraum')}
+  <div class="screen lib has-band" style="--field:var(--${st.cont}-field);--fink:var(--${st.cont}-ink)">
+    ${stationBand(idx,'Bibliotheksraum')}
+    <div class="wrap band-body" data-enter>
     <div class="notice">${I.notes}<p>Hier steht das Wissen für das nächste Rätsel. <strong>Sobald du den Rätselraum betrittst, kommst du nicht mehr hierher zurück. Mach dir Notizen – im Finale brauchst du sie.</strong></p></div>
     <div class="lib-text">${paras}</div>
     <div class="notice warn">${I.warn}<p>Hast du dir alles notiert? <strong>Ab dem Rätselraum gibt es keinen Weg zurück.</strong></p></div>
@@ -1876,8 +1964,9 @@ function renderRoom(idx){
   const st=STATIONS[idx];
   rs={ idx, submitted:false, order:{}, choice:{} };
   show('room'+(idx+1),`
-  <div class="screen room-screen" style="--field:var(--${st.cont}-field)"><div class="wrap" data-enter>
-    ${stationHead(idx,'Rätselraum')}
+  <div class="screen room-screen has-band" style="--field:var(--${st.cont}-field);--fink:var(--${st.cont}-ink)">
+    ${stationBand(idx,'Rätselraum')}
+    <div class="wrap band-body" data-enter>
     <p class="lede">${richText(st.roomIntro)}</p>
     ${st.parts.map(partHtml).join('')}
     <div id="statusBox" class="status" role="status"></div>
@@ -2042,7 +2131,7 @@ function triggerReveal(roomIdx){
     <div class="stamp-big" style="--rot:${st.stamp.rot}deg">${stampSvg(roomIdx,'big'+roomIdx)}</div>
     <h2 id="stampTitle" class="h-card">Stempel ${roomIdx+1} von 6: ${st.letter}</h2>
     <p class="stamp-place">${escapeHtml(st.contName+' · '+st.short)}</p>
-    <div class="passport-page" role="img" aria-label="Dein Reisepass: ${got.join(', ')}">${passSlots('d'+roomIdx+'-')}</div>
+    <div class="passport-page" role="img" aria-label="Dein Reisepass: ${got.join(', ')}">${passSlots('d'+roomIdx+'-',roomIdx)}</div>
     <button type="button" class="btn" id="stampGo" autofocus>${last?'Weiter zum Finale':'Weiter zum Globus'}${I.arrow}</button>`;
   stampPending=roomIdx;
   document.getElementById('stampGo').addEventListener('click',stampContinue);
@@ -2050,7 +2139,7 @@ function triggerReveal(roomIdx){
 }
 function stampContinue(){
   if(stampPending===null) return;
-  const idx=stampPending; stampPending=null;
+  const idx=stampPending; stampPending=null; landSlot=idx;
   const dlg=document.getElementById('stampDialog'); if(dlg.open) dlg.close();
   if(idx===5) renderFinal(); else renderGlobe({from:'stamp'});
 }
@@ -2140,6 +2229,13 @@ function renderFinal(){
   on('pdfBtn','click',()=>pdfAction('pdfMsg'));
   on('pdfBtn2','click',()=>pdfAction('pdfMsg2'));
   on('gate','click',()=>enterTunnel(false));
+  // Höhepunkt: Die Bahnen zum offenen Tor leuchten einmal nacheinander auf, sobald der Tunnel ins Bild kommt.
+  const gate=document.getElementById('gate');
+  if(!locked && !reducedMotion() && 'IntersectionObserver' in window){
+    gate.classList.add('prelit');
+    const io=new IntersectionObserver(es=>{ if(es.some(e=>e.isIntersecting)){ io.disconnect(); gate.classList.remove('prelit'); gate.classList.add('lit'); } },{threshold:.4});
+    io.observe(gate);
+  }
 }
 // Rückfrage vor dem Tunnel (nur ohne heruntergeladene Überblick-PDF)
 let tunnelNext=null;

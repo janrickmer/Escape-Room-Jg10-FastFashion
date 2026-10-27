@@ -65,6 +65,13 @@ Tab und übergibt den Datensatz im Link. Der Bestätigungscode steht nur in der 
 - „Copyright Jan-Rickmer Feindt“ auf jedem Bildschirm (Footer) und auf jeder PDF-Seite (Fußzeile).
 - Gestaltung: Anton + Work Sans, flache Kontinentfarben (Europa Mint, Südamerika Orange, Asien Himmelblau, Afrika Gelb),
   Globus aus Landpunkten (Natural Earth 1:110m, gemeinfrei, über world-atlas 2.0.2; Fibonacci-Kugel mit 12 000 Punkten,
-  Antarktis ausgelassen), keine Verläufe, kein Glas, keine Eyebrows; `prefers-reduced-motion` schaltet alle Bewegung ab.
+  Antarktis ausgelassen), keine Verläufe, kein Glas, keine Eyebrows, keine Schatten außer am Stempel-Dialog;
+  `prefers-reduced-motion` schaltet alle Bewegung ab. Bildsprache: Kayas Schreibtisch-Globus mit Meridianring und Fuß
+  (`globeStand`, viewBox 0 0 400 456), Flugbogen vom Pin der vorigen Station mit Spitze während der Drehung; Stationskopf
+  als Band in der Kontinentfarbe (`stationBand`: Papier-Etikett, ab 1200 px der Stempel-Rohling `stampSvg(i, uid, true)`);
+  erledigte Kacheln und Reisepass mit Mini-Stempeln, ein neuer Stempel landet im Pass-Dialog und in der Topbar (`landSlot`);
+  Routenkarte als Ausschnitt `MAP_VIEW` mit Nummern-Scheiben; Arena-Tunnel mit Rippen, sechs Bahnen in den
+  Kontinentfarben und dem Codewort über dem Tor (offen: Bahnen leuchten einmal auf, `prelit`/`lit`). Lesespalte `--read`
+  (40rem ≈ 66 Zeichen), Silbentrennung mit `hyphenate-limit-chars`.
 - Automatische Tests (Playwright) liegen nicht im Repository. Live für Schüler:innen ist Branch `main`: vor jedem Push den
   ganzen Durchlauf testen und eine echte Überblick-PDF im Feibeitsblatt hochladen.
