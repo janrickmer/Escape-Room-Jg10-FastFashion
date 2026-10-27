@@ -46,7 +46,10 @@ Tab und übergibt den Datensatz im Link. Der Bestätigungscode steht nur in der 
 
 - `FEIBEITSBLATT_URL = 'https://feibeitsblatt.janrickmer.de/'`, `ESCAPE_ROOM = {id:'powi-jg10-fastfashion', name, url}`.
 - **`FEIBEITSBLATT_CODE`** – Code des Escape-Blattes im Feibeitsblatt (6 Zeichen ohne Bindestrich). **Eintragen, sobald die
-  Lehrkraft das Blatt angelegt hat.** Solange er leer ist, ist der Tunnel gesperrt und die Überblick-PDF trägt `code: ""`.
+  Lehrkraft das Blatt angelegt hat – und vor dem ersten Einsatz.** Solange er leer ist, ist der Tunnel gesperrt und die
+  Überblick-PDF trägt `code: ""`; das Feibeitsblatt nimmt eine solche PDF nie an. Deshalb raten Sperrhinweis, Pause-Karte, der
+  Satz über der Speicherleiste und der Hinweis in der PDF im gesperrten Zustand zur Zwischenstand-Datei des Raums (Knopf direkt
+  unter dem Sperrhinweis), nicht zur Überblick-PDF.
 - Testhaken nur für automatische Tests: Ist vor dem Laden `window.__FF_TEST__ = {feibeitsblattUrl, code}` gesetzt (Playwright
   `addInitScript`), gelten diese Werte. Produktiv nie setzen.
 - Labels „Station n · Titel“ (`ROOM_LABELS`, `SOLUTION_NOTES`) nie ändern – die Aufträge an die KI im Feibeitsblatt verweisen
@@ -59,9 +62,22 @@ Tab und übergibt den Datensatz im Link. Der Bestätigungscode steht nur in der 
   `numberMatches` (Toleranz, Einheiten, Dezimalkomma). Hilfen in drei Stufen (Absatz → Anfang → Lösung), ein Eintrag je
   falschem Element in der angezeigten (gemischten) Reihenfolge. Jeder Versuch zählt; die Fehler des ersten Versuchs stehen
   in Textform (`item`, `wrong`, `right`, in derselben Reihenfolge) in Überblick-PDF und Datensatz.
+- Prüfen zählt jeden bewussten Versuch, aber nicht den zweiten Klick eines Doppelklicks (`detail > 1`), keine gehaltene
+  Enter-Taste (`repeat`) und keinen Doppeltipp mit unverändertem Stand (700 ms). Enter in einer Lücke prüft; sind noch Felder
+  leer, gilt das als „Noch unvollständig“ (kein Versuch) und der Fokus springt ins nächste leere Feld. Ein Doppelklick auf
+  einen Weiter-Knopf wirkt im neuen Bildschirm nicht nach (`shownAt`).
+- Eine geladene Zwischenstand-Datei wird vor dem Übernehmen geprüft (`saveCheckData`: Startregeln, genau 6 Stationen,
+  Fortschritt passend zum Bildschirm, Bestätigungscode neu berechnet). Die Prüfsummen von Zwischenstand und Datensatz stehen
+  im öffentlichen Code – sie schützen vor Beschädigung, beweisen aber nicht, dass der Raum gespielt wurde.
+- Bekannte Grenze (ohne Speicherung im Browser nicht zu verhindern): Wer vor einem Rätselraum speichert, den Raum mit Fehlern
+  versucht und dann die Datei lädt, startet den Raum neu – die Fehler dieses Versuchs fehlen in PDF und Datensatz; sichtbar
+  bleibt nur der Vermerk „Weitergespielt ab …“.
 - Personendaten und Eingaben nur per `textContent` oder `escapeHtml` ins DOM. Kein `alert`, Meldungen stehen im Dokument.
+  Namen und Klasse nur mit Zeichen, die die Überblick-PDF (WinAnsi) darstellen kann (`pdfPrintable`).
 - Kein Server, keine Cookies, kein localStorage, kein `fetch`. YouTube erst nach Klick (Lader im `<head>`, youtube-nocookie).
-  Überblick-PDF und Zwischenstand nur als Download (`application/octet-stream`), nie in einem neuen Tab.
+  Überblick-PDF und Zwischenstand nur als Download (`application/octet-stream`), nie in einem neuen Tab. Nach dem Start
+  fragt `beforeunload` vor dem Neuladen/Schließen nach (nicht beim Gang durch den Tunnel, `leaving`). Der Link durch den
+  Tunnel bleibt im Browser-Verlauf – das sagen `#gateHint` und `impressum.html`.
 - „Copyright Jan-Rickmer Feindt“ auf jedem Bildschirm (Footer) und auf jeder PDF-Seite (Fußzeile).
 - Gestaltung: Anton + Work Sans, flache Kontinentfarben (Europa Mint, Südamerika Orange, Asien Himmelblau, Afrika Gelb),
   Globus aus Landpunkten (Natural Earth 1:110m, gemeinfrei, über world-atlas 2.0.2; Fibonacci-Kugel mit 12 000 Punkten,
