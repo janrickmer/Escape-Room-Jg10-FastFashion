@@ -1,0 +1,2424 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'none'; frame-src https://www.youtube-nocookie.com; object-src 'none'; base-uri 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>FastFashion · Escape-Room</title>
+<meta name="description" content="Escape-Room für Politik und Wirtschaft, Jahrgangsstufe 10: Fast Fashion und Globalisierung.">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<style>
+/* Schriften liegen auf diesem Server (fonts/), damit beim Öffnen keine Verbindung zu Google Fonts entsteht. Lizenz: SIL Open Font License 1.1, Copyright und Lizenztexte in fonts/LIZENZEN.txt. */
+@font-face{font-family:'Anton';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/anton-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Anton';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/anton-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Work Sans';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/work-sans-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Work Sans';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/work-sans-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Work Sans';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/work-sans-latin-ext-600-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Work Sans';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/work-sans-latin-600-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Work Sans';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/work-sans-latin-ext-700-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;}
+@font-face{font-family:'Work Sans';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/work-sans-latin-700-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+</style>
+<style>
+/* ============ Tokens ============ */
+:root{
+  --paper:#ffffff; --surface:#f1f2f0; --surface-2:#e4e6e3; --ink:#121417; --ink-soft:#4a4f57;
+  --eu-field:#a7ff9c; --eu-ink:#11632b;    /* Europa: Mint */
+  --sa-field:#ff6831; --sa-ink:#a8380c;    /* Südamerika: Orange */
+  --as-field:#8ccfff; --as-ink:#0c5c94;    /* Asien: Himmelblau */
+  --af-field:#ffd43b; --af-ink:#6d4f00;    /* Afrika: Sonnengelb */
+  --pass:#7a1f33; --pass-gold:#f3d9a4; --pass-paper:#f4eef0; --pass-slot:#ebe1e5;
+  --ok:#11632b; --ok-bg:#e6f6ea; --bad:#b42318; --bad-bg:#fdecea; --help-bg:#fff4cc;
+  --globe-sea:#121417; --globe-land-1:#c9ced6; --globe-land-2:#8d949e; --globe-land-3:#5b616b;
+  --f-display:'Anton','Arial Narrow',Arial,sans-serif;
+  --f-text:'Work Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --step-small:0.875rem; --step-body:1.125rem; --step-lead:1.375rem;
+  --step-head:clamp(2.25rem, 1.4rem + 3.6vw, 4rem); --step-mega:clamp(3.25rem, 1.6rem + 7vw, 6rem);
+  --gutter:clamp(16px, 4vw, 32px); --measure:46rem; --wide:72rem;
+  --ease-out:cubic-bezier(0.23,1,0.32,1); --ease-in-out:cubic-bezier(0.77,0,0.175,1);
+  --band:var(--surface-2); --topbar-h:64px; --field:var(--surface-2);
+  color-scheme:light;
+}
+
+/* ============ Grundlagen ============ */
+*,*::before,*::after{box-sizing:border-box}
+html,body,h1,h2,h3,p,ol,ul,li,figure,fieldset,legend,dialog{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:calc(var(--topbar-h) + 12px);scrollbar-color:var(--ink-soft) var(--surface)}
+body{background:var(--paper);color:var(--ink);font:400 var(--step-body)/1.6 var(--f-text);caret-color:var(--ink);accent-color:var(--ink)}
+::selection{background:var(--as-field);color:var(--ink)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+h1[tabindex="-1"]:focus{outline:none}
+a{color:var(--ink);text-underline-offset:3px;text-decoration-thickness:2px}
+p,li{hyphens:auto;-webkit-hyphens:auto}
+button,input,select,textarea{font:inherit;color:inherit}
+svg{flex:none}
+strong{font-weight:700}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.tnum{font-variant-numeric:tabular-nums}
+
+.title-mega,.title-head,.h-sec,.part h2,.arena h2{font-family:var(--f-display);font-weight:400;text-transform:uppercase;line-height:.95;letter-spacing:.005em;text-wrap:balance}
+.title-mega{font-size:var(--step-mega)}
+.title-head{font-size:var(--step-head)}
+.h-sec{font-size:clamp(1.9rem, 1.5rem + 1.6vw, 2.75rem);margin:0 0 18px}
+.h-card{font:700 1.375rem/1.3 var(--f-text);text-transform:none;letter-spacing:0;margin:0 0 10px}
+.hello{overflow-wrap:anywhere}
+.lede{font-size:var(--step-lead);line-height:1.45}
+.kaya{font-size:var(--step-lead);line-height:1.45}
+.small{font-size:var(--step-small);line-height:1.5;color:var(--ink-soft)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+
+/* ============ Rahmen ============ */
+.app{min-height:100vh;display:flex;flex-direction:column}
+#main{flex:1 0 auto}
+.wrap{max-width:calc(var(--measure) + 2 * var(--gutter));margin:0 auto;padding:0 var(--gutter)}
+.wide{max-width:calc(var(--wide) + 2 * var(--gutter));margin:0 auto;padding:0 var(--gutter)}
+.screen{padding:48px 0 72px}
+
+.topbar{position:sticky;top:0;z-index:50;background:var(--paper);box-shadow:inset 0 -6px 0 var(--band);transition:box-shadow 300ms ease}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;padding:10px var(--gutter) 16px;max-width:calc(var(--wide) + 2 * var(--gutter));margin:0 auto}
+.brand{font-family:var(--f-display);font-size:1.5rem;line-height:1;text-transform:uppercase;letter-spacing:.01em;white-space:nowrap}
+.pass-strip{display:flex;gap:4px;align-items:center}
+.pass-strip[hidden]{display:none}
+.slot{width:30px;height:36px;display:grid;place-items:center;font-family:var(--f-display);font-size:1.05rem;line-height:1;color:var(--ink-soft);background:var(--surface);font-variant-numeric:tabular-nums}
+.slot.now{background:var(--paper);box-shadow:inset 0 0 0 3px var(--ink);color:var(--ink)}
+.slot.done{background:var(--slot-field);color:var(--ink);transform:rotate(-6deg)}
+.slot.done:nth-child(even){transform:rotate(5deg)}
+@media (max-width:380px){.slot{width:26px;height:32px}.brand{font-size:1.375rem}}
+
+.site-footer{background:var(--surface);color:var(--ink-soft);font-size:.8125rem;line-height:1.5;text-align:center;padding:22px var(--gutter) 26px}
+.site-footer a{color:inherit}
+
+/* ============ Knöpfe und Felder ============ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:11px 22px;border:3px solid var(--ink);border-radius:0;background:var(--ink);color:#ffffff;font:700 1rem/1.25 var(--f-text);text-align:center;text-decoration:none;cursor:pointer;transition:transform 160ms var(--ease-out),background-color 150ms ease}
+.btn svg{width:20px;height:20px}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:var(--paper);color:var(--ink)}
+.btn.go{background:var(--eu-field);color:var(--ink)}
+@media (hover:hover) and (pointer:fine){
+  .btn:hover{background:#2b2f35}
+  .btn.ghost:hover{background:var(--surface)}
+  .btn.go:hover{background:#8ef182}
+}
+.btn:disabled,.btn[aria-disabled="true"],.btn:disabled:hover{background:var(--surface-2);color:var(--ink-soft);border-color:var(--ink-soft);cursor:not-allowed;transform:none}
+
+.field{display:grid;gap:6px;align-content:start}
+.field label{font-weight:600;font-size:1rem;line-height:1.35}
+.input{width:100%;min-height:48px;padding:9px 12px;border:3px solid var(--ink);border-radius:0;background:var(--paper);color:var(--ink);font:600 1rem/1.3 var(--f-text)}
+.input::placeholder{color:var(--ink-soft);font-weight:400;opacity:1}
+.input[aria-invalid="true"]{border-color:var(--bad);background:var(--bad-bg)}
+.frow{display:grid;gap:16px;margin-top:16px}
+@media (min-width:600px){.frow{grid-template-columns:1fr 1fr}}
+.form-error{margin-top:18px;padding:12px 16px;background:var(--bad-bg);color:var(--ink);font-weight:600;line-height:1.45}
+.form-error:empty{display:none}
+
+/* ============ Etikett, Hinweise ============ */
+.tag{display:inline-flex;align-items:center;padding:8px 18px 8px 34px;background:var(--field);color:var(--ink);font:700 var(--step-small)/1.25 var(--f-text);position:relative;clip-path:polygon(14px 0,100% 0,100% 100%,14px 100%,0 50%)}
+.tag::before{content:'';position:absolute;left:14px;top:50%;width:9px;height:9px;margin-top:-4.5px;border-radius:50%;background:var(--paper)}
+.notice{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start;padding:16px 18px;background:var(--surface);color:var(--ink);font-size:1rem;line-height:1.5}
+.notice svg{width:24px;height:24px;margin-top:1px}
+.notice.warn{background:var(--help-bg)}
+.st-head{display:grid;gap:16px;margin-bottom:28px}
+.st-meta{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+.room-kind{font-size:var(--step-lead);font-weight:600;line-height:1.3;color:var(--ink-soft)}
+
+/* ============ Start ============ */
+.start{display:grid;gap:32px;grid-template-areas:"head" "globe" "form"}
+.start-head{grid-area:head;display:grid;gap:18px}
+.start-globe{grid-area:globe;width:100%;max-width:240px;justify-self:center}
+.start-form{grid-area:form;max-width:40rem}
+.start-form > form > p{margin-top:4px;line-height:1.55}
+@media (min-width:900px){
+  .start{grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-areas:"head globe" "form globe";column-gap:56px;row-gap:36px;align-items:start}
+  .start-globe{max-width:none}
+}
+.globe{display:block;width:100%;height:auto}
+.save-load-field{display:flex;align-items:center;gap:12px;width:100%;min-height:56px;margin-top:32px;padding:14px 18px;border:0;border-radius:0;background:var(--surface);color:var(--ink);font:600 1rem/1.35 var(--f-text);text-align:left;cursor:pointer;transition:transform 160ms var(--ease-out),background-color 150ms ease}
+.save-load-field svg{width:24px;height:24px}
+.save-load-field:active{transform:scale(.99)}
+@media (hover:hover) and (pointer:fine){.save-load-field:hover{background:var(--surface-2)}}
+
+/* ============ Zwischenstand ============ */
+.resume-box{max-width:40rem;margin-top:24px}
+.resume-box > p{line-height:1.55}
+.save-drop{position:relative;display:flex;align-items:center;gap:16px;margin-top:22px;padding:22px;background:var(--surface);border:3px solid var(--ink);cursor:pointer;line-height:1.45}
+.save-drop svg{width:32px;height:32px}
+.save-drop input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+.save-drop:focus-within{outline:3px solid var(--ink);outline-offset:3px}
+.save-drop.drag{background:var(--as-field)}
+.input-error{display:none;margin-top:14px;padding:12px 16px;background:var(--bad-bg);color:var(--ink);font-weight:600;line-height:1.45}
+.save-bar{margin-top:48px;padding:20px var(--gutter);background:var(--surface);display:flex;justify-content:center}
+.room-screen + .save-bar{margin-top:0;padding-top:0}
+[data-save-slot] .save-bar{margin-top:0;padding:20px 24px;justify-content:flex-start}
+.save-btn svg{width:20px;height:20px}
+.save-toast{position:fixed;left:50%;bottom:24px;z-index:100;max-width:min(560px,calc(100vw - 32px));padding:14px 18px;background:var(--ink);color:#ffffff;font-weight:600;font-size:1rem;line-height:1.45;opacity:0;transform:translate(-50%,12px);pointer-events:none;transition:opacity 200ms var(--ease-out),transform 200ms var(--ease-out)}
+.save-toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* ============ Ablauf-Seite ============ */
+.video{aspect-ratio:16/9;background:var(--ink)}
+.video iframe{display:block;width:100%;height:100%;border:0}
+.video-fallback{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:12px;font-size:1rem}
+.intro-head{display:grid;gap:18px;margin-top:40px}
+.block{margin-top:56px}
+.routemap{display:block;width:100%;height:auto;margin:0 0 18px}
+.steps{padding-left:1.4em;display:grid;gap:12px}
+.steps li{padding-left:.3em}
+.steps li::marker{font-weight:700}
+.notes-card{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;padding:22px 24px;background:var(--af-field);color:var(--ink)}
+.notes-card > svg{width:28px;height:28px;margin-top:2px}
+
+/* ============ Globus-Bildschirm und Route ============ */
+.globe-screen{display:grid;gap:24px}
+.globe-box .globe{max-width:min(420px,78vw);margin:0 auto}
+.caption{margin-top:10px;font-size:var(--step-small);line-height:1.45;color:var(--ink-soft);text-align:center}
+.globe-info{display:grid;gap:18px;align-content:start}
+.globe-info .tag{justify-self:start}
+@media (min-width:760px){.globe-screen{grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:48px;align-items:start}}
+.route{list-style:none;display:grid;gap:6px;padding:0}
+.tile{position:relative;display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:2px 14px;align-items:center;padding:12px 14px;background:var(--surface)}
+.tile .tn{width:44px;height:44px;display:grid;place-items:center;background:var(--tf);color:var(--ink);font-family:var(--f-display);font-size:1.6rem;line-height:1}
+.tile .tx{min-width:0}
+.tile .tp{display:block;font-size:var(--step-small);line-height:1.35;color:var(--ink-soft)}
+.tile .tt{display:block;font-weight:700;font-size:1rem;line-height:1.35}
+.tile .ts{width:40px;height:40px;display:grid;place-items:center;background:var(--paper);color:var(--ti);box-shadow:inset 0 0 0 2px var(--ti);font-family:var(--f-display);font-size:1.3rem;line-height:1;transform:rotate(-7deg)}
+.tile.now{background:var(--tf);box-shadow:inset 0 0 0 3px var(--ink)}
+.tile.now .tp{color:var(--ink)}
+
+/* ============ Bibliotheksraum ============ */
+.lib-text{margin-top:8px}
+.lib-text .ph{font:700 1.125rem/1.35 var(--f-text);margin:34px 0 6px}
+.lib-text p{position:relative}
+.lib-text ul{margin:10px 0 0 1.2em;display:grid;gap:6px}
+.pn{display:inline-block;margin-right:.5em;font-size:var(--step-small);font-weight:700;color:var(--ink-soft);font-variant-numeric:tabular-nums}
+@media (min-width:760px){.pn{position:absolute;left:-2.2em;top:.25em;width:1.6em;margin:0;text-align:right}}
+.lib .notice.warn{margin-top:40px}
+
+/* ============ Rätselraum ============ */
+.room-screen{background:var(--surface)}
+.room-screen .lede{margin-top:4px}
+.part{margin-top:48px}
+.part h2{font-size:1.9rem;margin-bottom:8px}
+.prompt{font-weight:700;line-height:1.45;margin-bottom:16px}
+.mark{display:none;align-items:center;gap:6px;font-size:var(--step-small);font-weight:700;line-height:1.3}
+.mark svg{width:18px;height:18px}
+.is-ok .mark{display:inline-flex;color:var(--ok)}
+.is-bad .mark{display:inline-flex;color:var(--bad)}
+/* Körbe */
+.cards{display:grid;gap:10px}
+@media (min-width:900px){.cards{grid-template-columns:1fr 1fr;align-items:start}}
+.bcard{display:grid;gap:10px;padding:14px 16px;background:var(--paper);align-content:start}
+.bt{font-weight:600;line-height:1.45;overflow-wrap:anywhere}
+.seg{display:grid;gap:8px}
+@media (min-width:420px){.seg{grid-template-columns:1fr 1fr}}
+.seg button{min-height:48px;padding:8px 12px;border:3px solid var(--ink);border-radius:0;background:var(--paper);color:var(--ink);font:600 .95rem/1.25 var(--f-text);white-space:normal;overflow-wrap:anywhere;cursor:pointer;transition:transform 160ms var(--ease-out),background-color 150ms ease}
+.seg button:active{transform:scale(.97)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#ffffff}
+@media (hover:hover) and (pointer:fine){.seg button[aria-pressed="false"]:hover{background:var(--surface)}}
+.seg button:disabled{cursor:default}
+.bcard.is-ok,.row.is-ok,.opt.is-ok{background:var(--ok-bg)}
+.bcard.is-bad,.row.is-bad,.opt.is-bad{background:var(--bad-bg)}
+/* Auswahl */
+fieldset.mc{border:0;min-width:0}
+fieldset.mc legend{font-weight:600;line-height:1.45;margin-bottom:12px}
+.opts{display:grid;gap:8px}
+.opt{display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;align-items:start;min-height:48px;padding:12px 14px;background:var(--paper);cursor:pointer;line-height:1.45}
+.opt input{appearance:none;-webkit-appearance:none;width:22px;height:22px;margin:1px 0 0;border:3px solid var(--ink);border-radius:50%;background:var(--paper);cursor:pointer}
+.opt input:checked{background:var(--ink);box-shadow:inset 0 0 0 4px var(--paper)}
+.opt:has(input:checked){box-shadow:inset 0 0 0 3px var(--ink)}
+.opt .ot{overflow-wrap:anywhere}
+.opt .mark{margin-top:6px}
+.opt.is-ok .mark,.opt.is-bad .mark{display:flex}
+/* Zuordnung */
+.rows{display:grid;gap:10px}
+.row{display:grid;gap:8px;padding:14px 16px;background:var(--paper)}
+.row label{font-weight:600;line-height:1.45;overflow-wrap:anywhere}
+.sel{width:100%;max-width:100%;min-height:48px;padding:10px 12px;border:3px solid var(--ink);border-radius:0;background-color:var(--paper);color:var(--ink);font:400 1rem/1.3 var(--f-text);cursor:pointer}
+.echo{font-size:var(--step-small);line-height:1.45;color:var(--ink-soft)}
+.echo:empty{display:none}
+/* Lücken und Zahlen */
+.cloze{padding:14px 16px;background:var(--paper);line-height:2.6}
+.gap{display:inline-block;width:14ch;max-width:100%;height:44px;margin:0 2px;padding:2px 8px;border:0;border-bottom:3px solid var(--ink);border-radius:0;background:var(--surface);color:var(--ink);font:600 1rem/1.4 var(--f-text);text-align:center;vertical-align:middle}
+.gap.num{width:6ch}
+.gap.is-ok{border-bottom-color:var(--ok);background:var(--ok-bg)}
+.gap.is-bad{border-bottom-color:var(--bad);background:var(--bad-bg)}
+.gmark{display:inline-flex;vertical-align:middle}
+.gmark svg{width:20px;height:20px}
+.gmark.ok{color:var(--ok)} .gmark.bad{color:var(--bad)}
+.info{margin-top:10px;padding:12px 16px;background:var(--help-bg);color:var(--ink);font-weight:600;line-height:1.45}
+.info:empty{display:none}
+.numq{display:grid;gap:12px;padding:14px 16px;background:var(--paper)}
+.numq label{font-weight:600;line-height:1.45}
+.numrow{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.gap.numin{width:10ch;text-align:left}
+.unit{font-weight:600}
+/* Schlussstein */
+.keystone{padding:20px;background:var(--pass);color:var(--pass-gold)}
+.keystone label{display:block;font-weight:700;line-height:1.45;margin-bottom:14px}
+.keystone :focus-visible{outline-color:var(--pass-gold)}
+.krow{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.kin{width:8ch;max-width:100%;min-height:58px;padding:6px 12px;border:3px solid var(--pass-gold);border-radius:0;background:var(--paper);color:var(--ink);font:400 2rem/1 var(--f-display);text-transform:uppercase;letter-spacing:.04em}
+.kmark{display:none;align-items:center;gap:6px;padding:6px 10px;font-weight:700;font-size:var(--step-small);line-height:1.3}
+.kmark svg{width:18px;height:18px}
+.kmark.ok{display:inline-flex;background:var(--ok-bg);color:var(--ok)}
+.kmark.bad{display:inline-flex;background:var(--bad-bg);color:var(--bad)}
+/* Status und Hilfe */
+.status{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;margin-top:32px;padding:14px 16px;font-weight:600;line-height:1.45}
+.status:empty{display:none}
+.status svg{width:22px;height:22px;margin-top:1px}
+.status.is-warn{background:var(--bad-bg)}
+.status.is-ok{background:var(--ok-bg)}
+.help{margin-top:12px;padding:16px 18px;background:var(--help-bg);color:var(--ink);line-height:1.5}
+.help-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.help-head svg{width:22px;height:22px}
+.help h3{font:700 1rem/1.4 var(--f-text)}
+.help ul{margin-left:1.1em;display:grid;gap:6px}
+.help p{margin-top:10px;font-weight:600}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.pop{animation:pop 200ms var(--ease-out)}
+
+/* ============ Stempel und Reisepass ============ */
+dialog{width:min(420px,calc(100vw - 32px));max-width:none;max-height:calc(100dvh - 32px);margin:auto;padding:24px;overflow:auto;border:0;border-radius:0;background:var(--paper);color:var(--ink)}
+dialog::backdrop{background:rgba(18,20,23,.6)}
+@keyframes dlgIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+dialog[open]{animation:dlgIn 220ms var(--ease-out)}
+dialog[open]::backdrop{animation:fadeIn 220ms var(--ease-out)}
+@media (max-width:380px){dialog{padding:16px}}
+#stampDialog{text-align:center;box-shadow:0 24px 60px rgba(18,20,23,.28)}
+#stampDialog .h-card{margin:10px 0 2px}
+.stamp-place{font-size:1rem;color:var(--ink-soft)}
+.stamp-big{display:inline-block;width:min(170px,45vw);transform:rotate(var(--rot,-6deg));animation:stampIn 320ms var(--ease-out) 120ms both}
+.stamp-big svg{display:block;width:100%;height:auto}
+@keyframes stampIn{from{opacity:0;transform:scale(1.35) rotate(-14deg)}to{opacity:1;transform:scale(1) rotate(var(--rot,-6deg))}}
+.passport-page{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0;padding:16px;background:var(--pass-paper)}
+.ps{aspect-ratio:1;display:grid;place-items:center;background:var(--pass-slot)}
+.ps-st{display:block;width:92%}
+.ps-st svg{display:block;width:100%;height:auto}
+.dlg-actions{display:grid;gap:10px;margin-top:22px}
+#tunnelDialog p{line-height:1.55}
+
+/* ============ Finale ============ */
+.final.screen{padding-bottom:0}
+.final-head{display:grid;gap:22px;justify-items:start}
+.final-head .lede{max-width:46rem}
+.pass-cover{max-width:100%}
+.pass-deck{padding:8px 16px;background:var(--pass);color:var(--pass-gold);font-family:var(--f-display);font-size:1.5rem;line-height:1.1;text-transform:uppercase;letter-spacing:.06em}
+.pass-row{display:grid;grid-template-columns:repeat(6,minmax(0,96px));gap:10px;padding:16px;background:var(--pass-paper)}
+@media (max-width:700px){.pass-row{grid-template-columns:repeat(3,minmax(0,96px))}}
+.pass-row .ps{width:100%}
+.codeword{font-family:var(--f-display);font-size:var(--step-head);line-height:1;letter-spacing:.06em}
+.arena{margin-top:64px;padding:56px 0 64px;background:var(--ink);color:#ffffff}
+.arena-in{max-width:calc(52rem + 2 * var(--gutter));margin:0 auto;padding:0 var(--gutter)}
+.arena :focus-visible{outline-color:#ffffff}
+.arena h2{font-size:var(--step-head);color:#ffffff}
+.arena .kaya{margin:18px 0 28px}
+.arena .btn.ghost{background:var(--ink);color:#ffffff;border-color:#ffffff}
+@media (hover:hover) and (pointer:fine){.arena .btn.ghost:hover{background:#2b2f35}}
+.arena .video-fallback{color:#ffffff}
+.prep{margin-top:40px;padding:24px;background:var(--paper);color:var(--ink)}
+.prep :focus-visible{outline-color:var(--ink)}
+.prep ol{padding-left:1.3em;display:grid;gap:18px;margin-top:6px}
+.prep li::marker{font-weight:700}
+.prep .btn-row{margin-top:14px}
+.msg{margin-top:10px;font-size:1rem;font-weight:600;line-height:1.45}
+.msg:empty{display:none}
+.msg.is-err{padding:10px 14px;background:var(--bad-bg);color:var(--ink)}
+.gate-locked{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:start;margin-top:40px;padding:14px 16px;background:var(--help-bg);color:var(--ink);font-weight:600;line-height:1.45}
+.gate-locked svg{width:22px;height:22px;margin-top:1px}
+.gate-locked:focus{outline:3px solid #ffffff;outline-offset:3px}
+.gate{position:relative;display:block;width:100%;max-width:760px;margin:28px auto 0;padding:0;border:0;border-radius:0;background:transparent;color:var(--ink);cursor:pointer;transition:transform 160ms var(--ease-out)}
+.gate:active{transform:scale(.99)}
+.gate:focus-visible{outline:3px solid #ffffff;outline-offset:4px}
+.gate > svg{display:block;width:100%;height:auto}
+.gate .glow{opacity:0;transition:opacity 200ms ease}
+.gate:not([aria-disabled="true"]):focus-visible .glow{opacity:1}
+@media (hover:hover) and (pointer:fine){.gate:not([aria-disabled="true"]):hover .glow{opacity:1}}
+.gate .enter{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:10px;padding:14px 22px;background:var(--eu-field);color:var(--ink);font:700 1rem/1.25 var(--f-text);white-space:nowrap}
+.gate .enter svg{width:20px;height:20px}
+.gate[aria-disabled="true"]{cursor:not-allowed}
+.gate[aria-disabled="true"]:active{transform:none}
+.gate[aria-disabled="true"] .enter{background:var(--surface-2);color:var(--ink)}
+@media (max-width:600px){.gate .enter{position:static;transform:none;display:flex;justify-content:center;white-space:normal;text-align:center}}
+.gate-hint{max-width:40rem;margin:14px auto 0;font-size:var(--step-small);line-height:1.5;color:var(--surface-2);text-align:center}
+.pause{margin-top:56px;padding:24px;background:var(--surface)}
+.pause p{line-height:1.55;max-width:46rem}
+.pause .btn-row{margin-top:16px}
+[data-save-slot]{margin-top:16px}
+.recap{margin-top:72px}
+.recap p{line-height:1.6;max-width:46rem}
+.recap ul{max-width:46rem;margin:0 0 0 1.2em;display:grid;gap:12px}
+.closing{margin-top:72px;padding-bottom:72px;font-size:clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem);line-height:1.25;font-weight:600;max-width:30ch}
+
+/* Ergänzungen */
+.opt .mark{grid-column:2}
+.block-s{margin-top:32px}
+.resume-pdf{margin-top:18px}
+.pin{transform-box:fill-box;transform-origin:center}
+.recap .h-sec{margin-top:56px}
+.recap .h-sec:first-child{margin-top:0}
+.recap .routemap{margin-bottom:0}
+
+/* ============ Bewegung ============ */
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.rise{animation:rise 260ms var(--ease-out) both;animation-delay:var(--d,0ms)}
+@keyframes pinIn{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+.pin-in{animation:pinIn 200ms var(--ease-out) both}
+@media (prefers-reduced-motion:reduce){
+  .rise,.pop,.pin-in,.stamp-big,dialog[open],dialog[open]::backdrop{animation:none}
+  .topbar,.btn,.seg button,.save-load-field,.save-toast,.gate,.gate .glow{transition:none}
+  .btn:active,.seg button:active,.save-load-field:active,.gate:active{transform:none}
+}
+</style>
+<script>
+/* Videos erst nach Klick laden: YouTube-Rahmen tragen ihre Adresse in data-yt-src und zeigen bis zum Klick einen
+   Hinweis (srcdoc). Erst „Video laden“ stellt eine Verbindung zu YouTube her (siehe Impressum & Datenschutz). */
+(function(){
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  function prep(f){
+    var u=f.getAttribute('data-yt-src');
+    if(!u||f.hasAttribute('srcdoc')) return;
+    var go=u+(u.indexOf('?')<0?'?':'&')+'autoplay=1';
+    var t=f.getAttribute('title')||'';
+    if(/^YouTube video player$/i.test(t)) t='';
+    f.setAttribute('srcdoc','<!doctype html><html lang="de"><head><meta charset="utf-8"><style>'
+      +'html,body{margin:0;height:100%}body{display:flex;align-items:center;justify-content:center;background:#1d1d1f;color:#f2f2f2;'
+      +'font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-align:center}'
+      +'.b{max-width:30em;padding:12px 16px}.t{font-weight:600;margin:0 0 10px}'
+      +'a{display:inline-block;padding:10px 20px;border-radius:999px;background:#fff;color:#111;font-weight:700;text-decoration:none}'
+      +'a:hover,a:focus{background:#ffd75e}p.n{margin:10px 0 0;font-size:12.5px;opacity:.8}'
+      +'@media (max-height:210px){body{font-size:12px}.t{display:none}.b{padding:6px 10px}a{padding:7px 14px}p.n{margin-top:6px;font-size:11px;line-height:1.3}}</style></head><body><div class="b">'
+      +(t?'<p class="t">'+esc(t)+'</p>':'')
+      +'<a href="'+esc(go)+'">&#9654; Video von YouTube laden</a>'
+      +'<p class="n">Erst nach diesem Klick wird das Video von YouTube (Google) geladen. Dabei erhält Google unter anderem deine IP-Adresse und kann Cookies setzen; Daten können in die USA gelangen.</p>'
+      +'</div></body></html>');
+  }
+  function scan(n){
+    if(n.nodeType!==1) return;
+    if(n.tagName==='IFRAME') prep(n);
+    else if(n.querySelectorAll){ var l=n.querySelectorAll('iframe[data-yt-src]'); for(var i=0;i<l.length;i++) prep(l[i]); }
+  }
+  new MutationObserver(function(ms){ ms.forEach(function(m){ m.addedNodes.forEach(scan); }); })
+    .observe(document.documentElement,{childList:true,subtree:true});
+})();
+</script>
+</head>
+<body>
+<div class="app">
+  <header class="topbar" id="topbar">
+    <div class="topbar-in">
+      <span class="brand">FastFashion</span>
+      <div class="pass-strip" id="passStrip" role="img" aria-label="Reisepass" hidden></div>
+    </div>
+  </header>
+  <main id="main"><div id="screenContainer"></div></main>
+  <footer class="site-footer">Copyright Jan-Rickmer Feindt · <a href="impressum.html" target="_blank" rel="noopener">Impressum &amp; Datenschutz<span class="sr-only"> (öffnet in neuem Tab)</span></a></footer>
+</div>
+
+<dialog id="stampDialog" aria-labelledby="stampTitle"></dialog>
+
+<dialog id="tunnelDialog" aria-labelledby="tunnelTitle">
+  <h2 id="tunnelTitle" class="h-card">Ohne Überblick-PDF weiter?</h2>
+  <p>Du hast deine Überblick-PDF noch nicht heruntergeladen. Mit ihr kannst du das Finale später fortsetzen, und im Finale verweist die KI auf ihre Lösungserläuterungen.</p>
+  <div class="dlg-actions">
+    <button type="button" class="btn" id="tunnelPdf">Erst die PDF herunterladen</button>
+    <button type="button" class="btn ghost" id="tunnelGo">Trotzdem durch den Tunnel</button>
+  </div>
+</dialog>
+
+<script>
+"use strict";
+
+/* ============================================================
+   KONFIGURATION
+   ============================================================ */
+const CODE_WORD = 'GLOBUS';
+const MAGIC = 10;
+const FEIBEITSBLATT_URL = 'https://feibeitsblatt.janrickmer.de/';
+const FEIBEITSBLATT_CODE = '';                       // Code des Escape-Blattes, 6 Zeichen ohne Bindestrich (kommt später)
+const ESCAPE_ROOM = { id: 'powi-jg10-fastfashion', name: 'FastFashion', url: 'https://escape-room-jg10-fastfashion.janrickmer.de/' };
+const SUBTITLE = 'Politik und Wirtschaft · Jahrgangsstufe 10 · Escape-Room „FastFashion“';
+// Testhaken: nur wenn vor dem Laden window.__FF_TEST__ gesetzt ist (automatische Tests, nie produktiv)
+const FF_TEST = (window.__FF_TEST__ && typeof window.__FF_TEST__ === 'object') ? window.__FF_TEST__ : null;
+const FB_URL  = (FF_TEST && typeof FF_TEST.feibeitsblattUrl === 'string') ? FF_TEST.feibeitsblattUrl : FEIBEITSBLATT_URL;
+const FB_CODE = (c => { c = String(c || '').toUpperCase().replace(/[^A-Z0-9]/g, ''); return c.length === 6 ? c : ''; })(
+  (FF_TEST && typeof FF_TEST.code === 'string') ? FF_TEST.code : FEIBEITSBLATT_CODE);
+
+/* ============================================================
+   STATIONEN (Texte wörtlich; Labels „Station n · Titel“ nie ändern)
+   ============================================================ */
+const STATIONS = [
+  {
+    n:1,
+    letter:"G",
+    cont:"eu",
+    contName:"Europa",
+    where:"Europa · Kayas Studio (Deutschland)",
+    short:"Deutschland",
+    title:"Was steckt im Preis?",
+    label:"Station 1 · Was steckt im Preis?",
+    globeTitle:"Kayas Studio",
+    kaya:"Kaya legt das Shirt von Flitzr auf den Tisch: „Bevor ich unterschreibe, will ich wissen, was dahintersteckt. Fangen wir beim Preis an.“",
+    globeCaption:"Der Globus auf Kayas Schreibtisch zeigt Europa. Hier beginnt die Reise.",
+    view:{lat:32, lon:8},
+    pins:[
+      {name:"Kayas Studio", lat:51, lon:10.4, side:"right"}
+    ],
+    map:{dx:10, dy:-12},
+    stamp:{shape:"circle", top:"EUROPA", bottom:"DEUTSCHLAND", rot:-7},
+    topics:["Ein T-Shirt, viele Länder", "Der Preis eines T-Shirts", "Externe Kosten", "Billige Mode: zwei Sichten"],
+    paras:[
+      "Auf Kayas Tisch liegt ein T-Shirt von Flitzr: genäht in Bangladesch, verkauft in Europa. Das ist Globalisierung: Länder handeln immer mehr miteinander, ihre Wirtschaft ist eng verflochten. Das bringt vielen Ländern Arbeit und Einkommen, macht sie aber auch voneinander abhängig.",
+      "Was steckt im Preis? Die Fair Wear Foundation, eine Organisation für bessere Arbeitsbedingungen in der Modebranche, hat das in einer älteren Schätzung für ein T-Shirt zu 29 Euro aufgeschlüsselt: Knapp 60 Prozent blieben beim Handel – für Ladenmiete, Personal, Gewinn und Mehrwertsteuer. Der Rest ging an die Marke und an Zwischenhändler, für Material und Transport und an die Fabrik. Die Näherinnen und Näher bekamen weniger als 1 Prozent.",
+      "Manche Kosten zahlt niemand an der Kasse: verschmutzte Flüsse, knappes Wasser, Gesundheitsschäden, Zwangsarbeit. Sie heißen externe Kosten und entstehen meist weit weg: Rund 85 Prozent des Grund- und Oberflächenwassers für Textilien, die in der EU gekauft werden, werden außerhalb Europas verbraucht. Fachleute versuchen, externe Kosten in Euro auszurechnen. Je nach Rechenweg und Herstellungsort kommen sie auf unterschiedliche Beträge.",
+      "Seit Jahrzehnten ist Kleidung in der EU kaum teurer geworden, das Leben insgesamt aber deutlich. Modefirmen erklären das auch damit, dass sie effizienter produzieren. Ein Argument für billige Mode lautet: So können sich auch Menschen mit wenig Geld neue Kleidung leisten. Andere halten dagegen: Dafür zahlen Menschen und Umwelt in anderen Ländern."
+    ],
+    roomIntro:"Kaya hält ihr Flitzr-Shirt hoch: „Was steckt eigentlich in so einem Preis?“ Prüfe mit der Schätzung aus der Bibliothek, wohin das Geld eines 29-Euro-T-Shirts geht – und was gar nicht im Preis steckt.",
+    parts:[
+      {
+        type:"baskets",
+        id:"1a",
+        prompt:"Teil A: Was steckt im Ladenpreis – und was sind externe Kosten? Ordne jede Karte einem Korb zu.",
+        baskets:[
+          {id:"preis", label:"Steckt im Ladenpreis", start:"S…"},
+          {id:"extern", label:"Externe Kosten – zahlt niemand an der Kasse", start:"E…"}
+        ],
+        cards:[
+          {id:"miete", text:"Ladenmiete und Personal", b:"preis", p:2, q:"Wofür bleibt der größte Teil der 29 Euro beim Handel?"},
+          {id:"lohn", text:"Lohn der Näherin", b:"preis", p:2, q:"Bekamen die Näherinnen und Näher einen Teil der 29 Euro?"},
+          {id:"trans", text:"Transport im Container", b:"preis", p:2, q:"Wofür ging der Rest des Preises – neben Marke, Zwischenhändlern und Material?"},
+          {id:"mwst", text:"Mehrwertsteuer", b:"preis", p:2, q:"Was steckt alles im Anteil, der beim Handel bleibt?"},
+          {id:"fluss", text:"Verschmutzter Fluss durch Abwasser einer Färberei", b:"extern", p:3, q:"Zahlt jemand an der Kasse für einen verschmutzten Fluss?"},
+          {id:"wasser", text:"Knappes Wasser durch die Bewässerung von Baumwolle", b:"extern", p:3, q:"Wird knappes Wasser im Ladenpreis bezahlt?"},
+          {id:"gesund", text:"Gesundheitsschäden bei Arbeiter:innen", b:"extern", p:3, q:"Wer bezahlt Gesundheitsschäden – die Kundschaft an der Kasse?"}
+        ]
+      },
+      {
+        type:"mc",
+        id:"1b",
+        prompt:"Teil B: Wähle die richtige Antwort.",
+        question:"Wie viel vom 29-Euro-T-Shirt bekamen laut der älteren Schätzung die Näherinnen und Näher?",
+        options:[
+          {t:"Weniger als 1 Prozent", ok:true},
+          {t:"Etwa 10 Prozent"},
+          {t:"Etwa ein Viertel"},
+          {t:"Knapp 60 Prozent"}
+        ],
+        p:2,
+        q:"Was steht dort über den Anteil der Näherinnen und Näher?",
+        start:"W…",
+        sol:"Weniger als 1 Prozent"
+      },
+      {
+        type:"number",
+        id:"1c",
+        prompt:"Teil C: Rechne.",
+        question:"Rechne mit den Angaben im Text: Rund wie viel Euro des 29-Euro-T-Shirts blieben laut der Schätzung beim Handel?",
+        unit:"Euro",
+        num:{min:16, max:18, words:["siebzehn", "sechzehn", "achtzehn"], units:["€", "euro", "eur"]},
+        p:2,
+        q:"Wie viel Prozent blieben beim Handel? Rechne diesen Anteil von 29 Euro aus.",
+        h2:"Die Zahl beginnt mit 1 und hat zwei Ziffern.",
+        sol:"rund 17 Euro (knapp 60 Prozent von 29 Euro)"
+      }
+    ],
+    success:"Kaya weiß jetzt, was im Preis steckt – und was niemand an der Kasse bezahlt.",
+    note:"Ein T-Shirt, das in Bangladesch genäht und in Europa verkauft wird, ist ein Beispiel für Globalisierung: Länder handeln immer mehr miteinander und hängen voneinander ab. Laut einer älteren Schätzung der Fair Wear Foundation blieben von einem 29-Euro-T-Shirt knapp 60 Prozent beim Handel, also rund 17 Euro. Darin stecken Ladenmiete, Personal, Gewinn und die Mehrwertsteuer für den Staat. Die Näherinnen und Näher bekamen weniger als 1 Prozent, rund 18 Cent. Externe Kosten sind Schäden an Umwelt und Menschen, die niemand an der Kasse zahlt, zum Beispiel verschmutzte Flüsse, knappes Wasser, Gesundheitsschäden oder Zwangsarbeit. Sie entstehen meist weit weg, in den Herstellungsländern. Weil sie nicht im Preis stecken, zeigt der Ladenpreis nicht die wahren Kosten. Wie hoch sie sind, hängt vom Rechenweg und vom Herstellungsort ab. Ob billige Mode vor allem Teilhabe ermöglicht oder auf Kosten von Menschen und Umwelt anderswo geht, ist umstritten.",
+    data:"Genaue Daten: Schätzung der Fair Wear Foundation, spätestens 2016 (Fabrik in Indien), 2019 verbreitet von der niederländischen Clean Clothes Campaign: Handel 59 % (17,00 €), Lohn 0,6 % (0,18 €); rund 85 % des Grund- und Oberflächenwassers für in der EU gekaufte Textilien werden außerhalb Europas verbraucht (Europäische Umweltagentur, 2025); Modellrechnung von True Price im Auftrag der Grünen im Europaparlament: rund 18 € externe Kosten je Baumwoll-T-Shirt aus Indien und Bangladesch, rund 5,60 € bei Herstellung in Griechenland und Italien (Stand 2019); die Verbraucherpreise in der EU stiegen seit 2001 um über 70 %, Kleidung kaum (Public Eye, 2026)."
+  },
+  {
+    n:2,
+    letter:"L",
+    cont:"sa",
+    contName:"Südamerika",
+    where:"Südamerika · Brasilien (Cerrado)",
+    short:"Brasilien",
+    title:"Feld oder Ölquelle?",
+    label:"Station 2 · Feld oder Ölquelle?",
+    globeTitle:"Cerrado in Brasilien",
+    kaya:"Kaya dreht den Globus nach Südamerika: „Jedes Shirt beginnt mit einem Rohstoff. Kommt meiner vom Feld oder aus der Ölraffinerie?“",
+    globeCaption:"Der Globus dreht sich weiter: von Europa nach Südamerika.",
+    view:{lat:-10, lon:-50},
+    pins:[
+      {name:"Cerrado", lat:-15.8, lon:-47.9, side:"right"}
+    ],
+    map:{dx:10, dy:-12},
+    stamp:{shape:"rect", top:"SÜDAMERIKA", bottom:"BRASILIEN", rot:5},
+    topics:["Feld oder Ölraffinerie", "Baumwolle", "Brasilien und der Cerrado", "Der Handelsstreit", "Das Klima"],
+    paras:[
+      "Ein T-Shirt beginnt auf einem Feld – oder in einer Ölraffinerie. Mehr als die Hälfte aller Textilfasern ist Polyester, also Kunststoff aus Erdöl, meist neu statt recycelt. Baumwolle macht knapp ein Fünftel aus. Beim Waschen von Kunstfasern gelangt Mikroplastik ins Meer.",
+      "Baumwolle braucht viel Fläche und Wasser. Gemessen an ihrer Fläche bekommt sie besonders viele Insektizide, also Mittel gegen Schadinsekten. Das zeigen Zahlen des Internationalen Baumwollbeirats, eines Gremiums der Staaten, die Baumwolle anbauen oder verarbeiten.",
+      "Der größte Baumwollexporteur der Welt ist inzwischen Brasilien. Viel davon wächst im Cerrado, einer artenreichen Savanne. Eine Umweltorganisation warf Großfarmen dort Landraub und illegale Rodung vor – obwohl ihre Baumwolle ein Nachhaltigkeitssiegel trug. Die Farmen weisen das zurück, eine Prüfung im Auftrag des Siegels fand keine Verstöße. Die Organisation hält an ihren Vorwürfen fest. Die Rodung im Cerrado ist zuletzt deutlich gesunken. Beendet ist sie nicht.",
+      "Auch die Weltpolitik spielt mit: Im Handelsstreit mit den USA belegte China US-Waren, auch Baumwolle, mit Zusatzzöllen – Abgaben, die eingeführte Ware teurer machen. Laut dem brasilianischen Baumwollverband kaufte China wegen des Handelsstreits mehr Baumwolle in Brasilien; zuletzt war es Brasiliens größter Kunde.",
+      "Und das Klima? Laut UN-Umweltprogramm verursacht die Textilbranche, vor allem die Mode, je nach Rechenweg 2 bis 8 Prozent der weltweiten Treibhausgase. Die oft gehörte Zahl „10 Prozent“ liegt am oberen Rand der Schätzungen und ist umstritten."
+    ],
+    roomIntro:"Kaya zupft am Etikett ihres Shirts: „Baumwolle oder Polyester – und was hat das mit Brasilien zu tun?“ Ordne Ursachen und Folgen zu und prüfe einen Satz, den Kaya posten will.",
+    parts:[
+      {
+        type:"assign",
+        id:"2a",
+        prompt:"Teil A: Was folgt woraus? Wähle zu jeder Ursache die passende Folge.",
+        placeholder:"Folge wählen …",
+        rows:[
+          {id:"poly", text:"Das meiste Polyester wird neu aus Erdöl hergestellt.", ans:"Die Mode hängt von fossilen Rohstoffen ab.", p:1, q:"Woraus wird Polyester meist hergestellt – und was folgt daraus für die Mode?", start:"Die Mode …"},
+          {id:"insekt", text:"Baumwolle wird stark von Schadinsekten befallen.", ans:"Gemessen an ihrer Fläche bekommt Baumwolle besonders viele Insektizide.", p:2, q:"Womit werden Schadinsekten auf Baumwollfeldern bekämpft – und wie viel davon bekommt Baumwolle?", start:"Gemessen …"},
+          {id:"rodung", text:"Für Ackerflächen wird Savanne gerodet.", ans:"Der artenreiche Cerrado schrumpft.", p:3, q:"Was passiert mit der artenreichen Savanne, wenn gerodet wird?", start:"Der artenreiche …"},
+          {id:"zoll", text:"Im Handelsstreit belegte China Waren aus den USA, auch Baumwolle, mit Zusatzzöllen.", ans:"China kaufte mehr Baumwolle in Brasilien.", p:4, q:"Wo kaufte China wegen des Handelsstreits mehr Baumwolle?", start:"China …"}
+        ],
+        options:[
+          "Die Mode hängt von fossilen Rohstoffen ab.",
+          "Gemessen an ihrer Fläche bekommt Baumwolle besonders viele Insektizide.",
+          "Der artenreiche Cerrado schrumpft.",
+          "China kaufte mehr Baumwolle in Brasilien."
+        ]
+      },
+      {
+        type:"mc",
+        id:"2b",
+        prompt:"Teil B: Prüfe Kayas Satz.",
+        question:"Kaya will einen Satz über Rohstoffe posten. Welcher Satz passt NICHT zum Text?",
+        options:[
+          {t:"„Baumwolle ist die häufigste Textilfaser der Welt.“", ok:true},
+          {t:"„Mehr als die Hälfte aller Textilfasern ist Polyester.“"},
+          {t:"„Brasilien ist der größte Baumwollexporteur der Welt.“"},
+          {t:"„Die Rodung im Cerrado ist zuletzt gesunken.“"}
+        ],
+        p:1,
+        q:"Welche Faser macht mehr als die Hälfte aus – und welche nur knapp ein Fünftel?",
+        start:"„Baumwolle …",
+        sol:"„Baumwolle ist die häufigste Textilfaser der Welt.“ – die häufigste Faser ist Polyester."
+      }
+    ],
+    success:"Kaya weiß jetzt, was Baumwolle und Polyester für die Umwelt bedeuten – und wie ein Handelsstreit den Baumwollhandel verschiebt.",
+    note:"Mehr als die Hälfte aller Textilfasern ist Polyester, also Kunststoff aus Erdöl, meist neu statt recycelt. Beim Waschen von Kunstfasern gelangt Mikroplastik ins Meer. Baumwolle macht knapp ein Fünftel aus. Sie braucht viel Fläche und Wasser und bekommt gemessen an ihrer Fläche besonders viele Insektizide. Im brasilianischen Cerrado warf die Umweltorganisation Earthsight Großfarmen Landraub und illegale Rodung vor, obwohl ihre Baumwolle ein Nachhaltigkeitssiegel trug. Die Farmen bestreiten das, und eine Prüfung im Auftrag des Siegels fand keine Verstöße. Die Rodung im Cerrado ist zuletzt deutlich gesunken, aber nicht beendet. Im Handelsstreit belegte China Waren aus den USA, auch Baumwolle, mit Zusatzzöllen. Laut dem brasilianischen Baumwollverband kaufte China wegen des Handelsstreits mehr Baumwolle in Brasilien und war zuletzt dessen größter Kunde. Die Textilbranche verursacht je nach Rechenweg 2 bis 8 Prozent der weltweiten Treibhausgase. Die Zahl „10 Prozent“ liegt am oberen Rand und ist umstritten.",
+    data:"Genaue Daten: 2025 waren 59 % aller Fasern Polyester (88 % davon neu), 18 % Baumwolle (Textile Exchange); Baumwolle wächst auf 2,3 % der Ackerfläche und bekommt 10,51 % der Insektizide (Internationaler Baumwollbeirat, 2018–2022; 2014: 16,1 %, 1990er-Jahre: 22,5 %); Vorwürfe von Earthsight 2024; Rodung im Cerrado 2025/26 −23,8 %, niedrigster Wert seit 2001 (INPE); Chinas Zusatzzoll auf US-Baumwolle 15 % vom 10.03. bis 10.11.2025, dazu ein allgemeiner Zusatzzoll von 10 % auf US-Waren, der am 10.11.2025 blieb; laut Abrapa trug US-Baumwolle im August 2026 weiterhin einen Zusatzzoll; China war 2025/26 mit 23 % Brasiliens größter Abnehmer; UN-Umweltprogramm 2023."
+  },
+  {
+    n:3,
+    letter:"O",
+    cont:"as",
+    contName:"Asien",
+    where:"Asien · Bangladesch (Dhaka)",
+    short:"Bangladesch",
+    title:"Nähen für die Welt",
+    label:"Station 3 · Nähen für die Welt",
+    globeTitle:"Dhaka in Bangladesch",
+    kaya:"Kaya dreht den Globus nach Bangladesch: „Wer hat mein Shirt eigentlich genäht?“",
+    globeCaption:"Der Globus dreht sich weiter: von Brasilien nach Bangladesch.",
+    view:{lat:20, lon:84},
+    pins:[
+      {name:"Dhaka", lat:23.81, lon:90.41, side:"right"}
+    ],
+    map:{dx:10, dy:-12},
+    stamp:{shape:"oval", top:"ASIEN", bottom:"BANGLADESCH", rot:-4},
+    topics:["Export und Zollvorteile", "Arbeit in den Fabriken", "Internationale Arbeitsteilung"],
+    paras:[
+      "Wer hat Kayas Shirt genäht? Der Globus dreht sich nach Bangladesch. Das Land gehört zu den größten Kleidungsexporteuren der Welt, nur China exportiert deutlich mehr. Rund 80 Prozent aller Waren, die Bangladesch ins Ausland verkauft, sind Kleidung. Knapp die Hälfte davon kauft die EU – zollfrei, denn Bangladesch zählt zu den am wenigsten entwickelten Ländern der Welt. Weil sich das Land wirtschaftlich entwickelt hat, soll es aus dieser Gruppe aufsteigen; nach einer Übergangszeit fallen dann Zollvorteile weg. Die Regierung hat beantragt, den Aufstieg zu verschieben.",
+      "Millionen Menschen arbeiten in den Fabriken, viele davon Frauen. Für viele ist das ein eigenes Einkommen. Der gesetzliche Mindestlohn liegt aber bei rund 90 Euro im Monat (Stand: Oktober 2026), weit unter dem, was zum Leben reicht. Bei Protesten fordern Arbeiter:innen deutlich mehr. Die Regierung hat es leichter gemacht, Gewerkschaften zu gründen. Die Arbeitgeberverbände lehnten das ab: Es sei ohne ihre Zustimmung beschlossen worden und gefährde die Branche. Nach dem Einsturz des Fabrikgebäudes Rana Plaza schlossen Modefirmen und Gewerkschaften den Accord (englisch für „Abkommen“), einen verbindlichen Vertrag für sichere Fabriken.",
+      "Bangladesch näht – aber vieles kommt von woanders: Rohbaumwolle aus vielen Ländern, zuletzt am meisten aus Brasilien, eingeführtes Garn vor allem aus Indien und China. Jedes Land übernimmt einen Teil der Herstellung. Das nennt man internationale Arbeitsteilung. Sie bringt Arbeit und Einkommen, macht aber auch abhängig."
+    ],
+    roomIntro:"Kaya liest das Etikett in ihrem Shirt: „Made in Bangladesh“. Fülle die Lücken in ihren Notizen selbst aus und ordne zu, wer was sagt.",
+    parts:[
+      {
+        type:"cloze",
+        id:"3a",
+        prompt:"Teil A: Fülle die Lücken selbst aus.",
+        segments:[
+          "Bangladesch übernimmt bei der Herstellung von Kleidung vor allem das ",
+          {blank:"b1"},
+          ". Wenn jedes Land nur einen Teil der Herstellung übernimmt, heißt das internationale ",
+          {blank:"b2"},
+          ". Rund ",
+          {blank:"b3"},
+          " Prozent aller Waren, die Bangladesch ins Ausland verkauft, sind Kleidung. Der gesetzliche ",
+          {blank:"b4"},
+          " liegt bei rund 90 Euro im Monat. Nach dem Einsturz von Rana Plaza schlossen Modefirmen und Gewerkschaften ein verbindliches Abkommen für sichere Fabriken, den ",
+          {blank:"b5"},
+          "."
+        ],
+        blanks:[
+          {id:"b1", kind:"word", accept:["Nähen", "Naehen", "Nahen", "Zusammennähen", "Zusammennaehen", "Zusammennahen"], sentence:"Bangladesch übernimmt bei der Herstellung von Kleidung vor allem das ___.", p:3, q:"Was macht Bangladesch mit Rohbaumwolle und Garn aus anderen Ländern?", h2:"Das Wort beginnt mit „N“.", sol:"Nähen"},
+          {id:"b2", kind:"word", accept:["Arbeitsteilung", "internationale Arbeitsteilung"], sentence:"Wenn jedes Land nur einen Teil der Herstellung übernimmt, heißt das internationale ___.", p:3, q:"Wie nennt man es, wenn jedes Land einen Teil der Herstellung übernimmt?", h2:"Das Wort beginnt mit „A“.", sol:"Arbeitsteilung"},
+          {
+            id:"b3",
+            kind:"number",
+            num:{min:79, max:82, words:["achtzig"], units:["%", "prozent"]},
+            sentence:"Rund ___ Prozent aller Waren, die Bangladesch ins Ausland verkauft, sind Kleidung.",
+            p:1,
+            q:"Wie viel Prozent aller Waren, die Bangladesch ins Ausland verkauft, sind Kleidung?",
+            h2:"Die Zahl beginnt mit 8 und hat zwei Ziffern.",
+            sol:"80"
+          },
+          {id:"b4", kind:"word", accept:["Mindestlohn", "gesetzlicher Mindestlohn", "Mindestlöhne", "Mindestloehne", "Mindestlohne"], sentence:"Der gesetzliche ___ liegt bei rund 90 Euro im Monat.", p:2, q:"Um welchen Lohn geht es, den das Gesetz vorschreibt?", h2:"Das Wort beginnt mit „M“.", sol:"Mindestlohn"},
+          {id:"b5", kind:"word", accept:["Accord", "Bangladesh Accord", "Bangladesch Accord", "International Accord"], alsoOk:["Akkord"], sentence:"Nach dem Einsturz von Rana Plaza schlossen Modefirmen und Gewerkschaften ein verbindliches Abkommen für sichere Fabriken, den ___.", p:2, q:"Wie heißt der verbindliche Vertrag für sichere Fabriken? Es ist das englische Wort für „Abkommen“.", h2:"Das englische Wort beginnt mit „A“.", sol:"Accord", alsoOkNote:"Richtig gemeint – geschrieben wird es Accord (englisch für ‚Abkommen‘). Akkordarbeit ist etwas anderes: Bezahlung nach Stückzahl."}
+        ]
+      },
+      {
+        type:"assign",
+        id:"3b",
+        prompt:"Teil B: Wer sagt was? Wähle zu jeder Aussage die passende Gruppe.",
+        placeholder:"Gruppe wählen …",
+        rows:[
+          {id:"arb", text:"„Von unserem Lohn können wir kaum leben – er muss deutlich steigen.“", ans:"Arbeiter:innen bei Protesten", p:2, q:"Wer fordert bei Protesten deutlich mehr Lohn?", start:"Arbeite…"},
+          {id:"agv", text:"„Die Regierung hat das Arbeitsrecht ohne unsere Zustimmung geändert. Das gefährdet unsere Branche.“", ans:"Arbeitgeberverbände BGMEA und BKMEA", p:2, q:"Wer lehnte es ab, dass die Gründung von Gewerkschaften leichter wird?", start:"Arbeitg…"},
+          {id:"acc", text:"„Wer mitmacht, verpflichtet sich, Fabriken prüfen und sicherer machen zu lassen.“", ans:"Modefirmen und Gewerkschaften im Accord", p:2, q:"Wer schloss nach dem Einsturz von Rana Plaza einen verbindlichen Vertrag für sichere Fabriken?", start:"Modefirmen …"},
+          {id:"reg", text:"„Unser Land braucht mehr Zeit, bevor es aus der Gruppe der am wenigsten entwickelten Länder aufsteigt.“", ans:"Regierung von Bangladesch", p:1, q:"Wer hat beantragt, den Aufstieg zu verschieben?", start:"Regierung …"}
+        ],
+        options:[
+          "Arbeiter:innen bei Protesten",
+          "Arbeitgeberverbände BGMEA und BKMEA",
+          "Modefirmen und Gewerkschaften im Accord",
+          "Regierung von Bangladesch"
+        ]
+      }
+    ],
+    success:"Kaya weiß jetzt, wer ihr Shirt genäht hat – und welche Gruppen in Bangladesch was wollen.",
+    note:"Bangladesch ist nach China der größte Kleidungsexporteur unter den einzelnen Ländern. Rund 80 Prozent seiner Warenexporte sind Kleidung, knapp die Hälfte davon kauft die EU. Sie lässt die Kleidung zollfrei herein, weil Bangladesch zu den am wenigsten entwickelten Ländern zählt. Steigt das Land aus dieser Gruppe auf, fallen die Zollvorteile nach einer Übergangszeit weg. Deshalb hat die Regierung beantragt, den Aufstieg zu verschieben. Für viele Arbeiter:innen, viele davon Frauen, ist die Arbeit in der Fabrik ein eigenes Einkommen. Der Mindestlohn reicht aber nicht zum Leben, deshalb fordern sie bei Protesten deutlich mehr. Die Regierung hat es leichter gemacht, Gewerkschaften zu gründen, das stärkt die Rechte der Arbeiter:innen. Die Arbeitgeberverbände lehnten das ab: Es sei ohne ihre Zustimmung beschlossen worden und gefährde die Branche. Die Arbeiter:innen brauchen die Arbeitsplätze, die Arbeitgeber fürchten um die Branche, die Regierung um die Zollvorteile für die Exporte. Nach dem Einsturz des Fabrikgebäudes Rana Plaza schlossen Modefirmen und Gewerkschaften den Accord, einen verbindlichen Vertrag für sichere Fabriken. Accord ist englisch für „Abkommen“ und hat nichts mit Akkordarbeit (Bezahlung nach Stückzahl) zu tun. Bangladesch näht, Rohbaumwolle kommt aus vielen Ländern, eingeführtes Garn vor allem aus Indien und China. Diese internationale Arbeitsteilung bringt Arbeit und Einkommen, macht aber auch abhängig.",
+    data:"Genaue Daten: 2025 Kleidungsexporte 38,8 Mrd. US-$ (6,8 % der Welt, knapp vor Vietnam; WTO); Kleidung ≈ 81 % der Warenexporte; EU-Anteil 2025/26 49 %; Aufstieg vorgesehen für 24.11.2026, Antrag auf drei Jahre Aufschub am 18.02.2026, Entscheidung der UN-Generalversammlung offen (Stand 27.10.2026); EU-Zollfreiheit noch drei Jahre nach dem Aufstieg; Mindestlohn 12.500 Taka seit 01.12.2023 (rund 90 €, Kurs vom 27.10.2026), Forderung im Oktober 2026: 30.000 Taka; Gewerkschaftsverordnung vom 17.11.2025; Rana Plaza am 24.04.2013, mindestens 1.132 Tote, Accord seit Mai 2013; Rohbaumwolle 2025/26 zu 30 % aus Brasilien; Bangladesch spinnt über 1,7 Mio. t Garn selbst, eingeführtes Baumwollgarn kam 2024/25 zu 84 % aus Indien, eingeführtes Kunstfasergarn zu 85 % aus China."
+  },
+  {
+    n:4,
+    letter:"B",
+    cont:"as",
+    contName:"Asien",
+    where:"Asien · China (Guangzhou und Xinjiang)",
+    short:"China",
+    title:"Ware unter Verdacht",
+    label:"Station 4 · Ware unter Verdacht",
+    globeTitle:"Guangzhou und Xinjiang",
+    kaya:"Kaya schaut auf ihr Päckchen: „Flitzr verschickt aus Lagern in Südchina. Aber woher stammt die Baumwolle?“",
+    globeCaption:"Der Globus dreht sich nur ein Stück: von Bangladesch nach China.",
+    view:{lat:28, lon:102},
+    pins:[
+      {name:"Guangzhou", lat:23.13, lon:113.26, side:"right"},
+      {name:"Xinjiang", lat:43.83, lon:87.62, side:"left"}
+    ],
+    map:{dx:10, dy:-12},
+    stamp:{shape:"oct", top:"ASIEN", bottom:"CHINA", rot:8},
+    topics:[
+      "Flitzrs Lager in Südchina",
+      "Vorwurf und Gegenposition",
+      "Sanktionen und Boykott",
+      "Die Zwickmühle",
+      "Zölle als Druckmittel"
+    ],
+    paras:[
+      "Der Globus dreht sich nur ein Stück: nach China. Flitzr verschickt Päckchen aus Lagern in Südchina; viele Teile werden dort genäht. Doch woher stammt die Baumwolle?",
+      "Über 90 Prozent der Baumwolle Chinas wachsen in der Region Xinjiang. Menschenrechtsorganisationen werfen der Regierung vor: Uigur:innen und andere muslimische Minderheiten müssten dort Zwangsarbeit leisten. Das UN-Menschenrechtsbüro sieht schwere Menschenrechtsverletzungen, etwa massenhafte willkürliche Haft, und Hinweise auf Zwang bei staatlichen Arbeitsprogrammen. Chinas Regierung weist das zurück: Die Programme bekämpften Armut, böten Berufsausbildung und seien freiwillig; geerntet werde meist mit Maschinen. Kritik und Sanktionen seien Einmischung in Chinas innere Angelegenheiten. Kritiker:innen entgegnen: Es geht auch um Arbeit in Fabriken. Zwangsarbeit ist international verboten, auch in China.",
+      "Wegen Xinjiang verhängten westliche Staaten Sanktionen gegen chinesische Funktionäre. China antwortete innerhalb weniger Tage mit Gegensanktionen, etwa Einreiseverboten für Europaabgeordnete. Kurz darauf griff der Jugendverband der Kommunistischen Partei H&M an, weil die Firma erklärt hatte, keine Waren aus Xinjiang zu beziehen. Viele Menschen in China riefen zum Boykott auf.",
+      "Modefirmen stecken in der Zwickmühle: Wer Xinjiang meidet, riskiert Ärger in China, wer Baumwolle von dort nutzt, Ärger im Westen. Die USA lassen solche Waren nur herein, wenn die Firma beweist, dass keine Zwangsarbeit darin steckt. Die EU verbietet ab Ende 2027 Produkte aus Zwangsarbeit, egal aus welchem Land.",
+      "Auch Zölle sind ein Druckmittel: Auf höhere US-Zölle für Waren aus China antwortet China mit Gegenzöllen."
+    ],
+    roomIntro:"Kaya schaut auf ihr Päckchen von Flitzr – abgeschickt in Südchina. Ordne zu, was worauf folgt und wer was sagt. Geprüft wird nur, wer was sagt – nicht, wer recht hat.",
+    parts:[
+      {
+        type:"assign",
+        id:"4a",
+        prompt:"Teil A: Was folgt worauf? Wähle zu jeder Maßnahme die Reaktion.",
+        placeholder:"Reaktion wählen …",
+        rows:[
+          {id:"sank", text:"Die EU und andere westliche Staaten verhängen wegen Xinjiang Sanktionen gegen chinesische Funktionäre.", ans:"China verhängt Einreiseverbote, unter anderem gegen Abgeordnete des Europäischen Parlaments und gegen Wissenschaftler.", p:3, q:"Wie antwortete China auf die Sanktionen?", start:"China verhängt …"},
+          {id:"hm", text:"In China wird eine ältere Erklärung von H&M verbreitet: Die Firma beziehe keine Waren aus Xinjiang.", ans:"Der Jugendverband der Kommunistischen Partei greift die Firma an, viele Menschen in China rufen dazu auf, die Marke nicht mehr zu kaufen.", p:3, q:"Wer griff H&M an – und wozu riefen viele Menschen in China auf?", start:"Der Jugendverband …"},
+          {id:"zoll", text:"Die USA erhöhen ihre Zölle auf Waren aus China.", ans:"China belegt Waren aus den USA mit eigenen Abgaben.", p:5, q:"Womit antwortet China auf höhere US-Zölle?", start:"China belegt …"},
+          {id:"usa", text:"Eine Sendung mit Baumwolle aus Xinjiang soll in die USA eingeführt werden.", ans:"Sie darf nur hinein, wenn die Firma beweist, dass keine Zwangsarbeit darin steckt.", p:4, q:"Unter welcher Bedingung lassen die USA solche Waren herein?", start:"Sie darf …"}
+        ],
+        options:[
+          "China verhängt Einreiseverbote, unter anderem gegen Abgeordnete des Europäischen Parlaments und gegen Wissenschaftler.",
+          "Der Jugendverband der Kommunistischen Partei greift die Firma an, viele Menschen in China rufen dazu auf, die Marke nicht mehr zu kaufen.",
+          "China belegt Waren aus den USA mit eigenen Abgaben.",
+          "Sie darf nur hinein, wenn die Firma beweist, dass keine Zwangsarbeit darin steckt."
+        ]
+      },
+      {
+        type:"baskets",
+        id:"4b",
+        prompt:"Teil B: Wer sagt was? Ordne jede Aussage zu. Geprüft wird nur, wer was sagt.",
+        baskets:[
+          {id:"kritik", label:"Kritik an der Politik in Xinjiang", start:"K…"},
+          {id:"gegen", label:"Gegenposition der chinesischen Regierung", start:"G…"}
+        ],
+        cards:[
+          {id:"k1", text:"„Uigur:innen und andere muslimische Minderheiten müssen Zwangsarbeit leisten.“", b:"kritik", p:2, q:"Wer erhebt den Vorwurf der Zwangsarbeit?"},
+          {id:"k2", text:"„In der Region wurden schwere Menschenrechtsverletzungen begangen.“", b:"kritik", p:2, q:"Wer sieht schwere Menschenrechtsverletzungen?"},
+          {id:"k3", text:"„Bei staatlichen Arbeitsprogrammen gibt es Hinweise auf Zwang.“", b:"kritik", p:2, q:"Wer sieht Hinweise auf Zwang bei den Arbeitsprogrammen?"},
+          {id:"k4", text:"„Es geht nicht nur um die Ernte, sondern auch um Arbeit in Fabriken.“", b:"kritik", p:2, q:"Wer entgegnet das der Regierung?"},
+          {id:"g1", text:"„Die Arbeitsprogramme bekämpfen die Armut.“", b:"gegen", p:2, q:"Wer sagt, die Programme bekämpften Armut?"},
+          {id:"g2", text:"„Die Programme bieten Berufsausbildung, und die Arbeit ist freiwillig.“", b:"gegen", p:2, q:"Wer nennt die Arbeit freiwillig?"},
+          {id:"g3", text:"„Die Baumwolle wird ohnehin meist mit Maschinen geerntet.“", b:"gegen", p:2, q:"Wer sagt, geerntet werde meist mit Maschinen?"},
+          {id:"g4", text:"„Kritik und Sanktionen von außen sind eine Einmischung in Chinas innere Angelegenheiten.“", b:"gegen", p:2, q:"Wer nennt Kritik und Sanktionen eine Einmischung?"}
+        ]
+      }
+    ],
+    success:"Kaya versteht jetzt, warum Modefirmen zwischen die Fronten von Staaten geraten.",
+    note:"Über 90 Prozent der Baumwolle Chinas wachsen in Xinjiang. Menschenrechtsorganisationen werfen der chinesischen Regierung vor, Uigur:innen und andere muslimische Minderheiten müssten dort Zwangsarbeit leisten. Das UN-Menschenrechtsbüro sieht schwere Menschenrechtsverletzungen, etwa massenhafte willkürliche Haft, und Hinweise auf Zwang bei staatlichen Arbeitsprogrammen. Dass es sich um Verbrechen gegen die Menschlichkeit handeln könnte, schrieb es über die Haft, nicht über die Arbeit. Chinas Regierung weist die Vorwürfe zurück: Die Programme bekämpften Armut, böten Berufsausbildung und seien freiwillig, geerntet werde meist mit Maschinen. Kritik und Sanktionen nennt sie Einmischung in innere Angelegenheiten. Kritiker:innen entgegnen, es gehe auch um Arbeit in Fabriken. Zwangsarbeit ist international verboten, auch in China. Wegen Xinjiang verhängten die EU, die USA, Großbritannien und Kanada Sanktionen gegen chinesische Funktionäre. China antwortete innerhalb weniger Tage mit Gegensanktionen, etwa Einreiseverboten für Europaabgeordnete. Kurz darauf griff der Jugendverband der Kommunistischen Partei H&M an, weil die Firma erklärt hatte, keine Waren aus Xinjiang zu beziehen. Viele Menschen in China riefen zum Boykott auf, und der Umsatz von H&M in China sank um fast ein Viertel. Wer Xinjiang meidet, riskiert also Ärger in China. Wer Baumwolle von dort nutzt, riskiert Ärger in den USA und der EU. Die USA vermuten bei Waren aus Xinjiang Zwangsarbeit und lassen sie nur herein, wenn die Firma das Gegenteil beweist. Die EU verbietet ab Ende 2027 Produkte aus Zwangsarbeit, egal aus welchem Land. Ein Zoll ist eine Abgabe, die eingeführte Ware teurer macht. Staaten setzen Zölle auch als Druckmittel ein: Auf höhere US-Zölle für Waren aus China antwortete China mit Gegenzöllen. Auch Päckchen aus China sind in den USA und der EU nicht mehr zollfrei.",
+    data:"Genaue Daten: 2025 stammten 92,8 % der Baumwolle Chinas aus Xinjiang; UN-Bericht vom 31.08.2022; Sanktionen am 22.03.2021; Gegensanktionen gegen die EU am selben Tag, gegen Großbritannien am 26.03., gegen die USA und Kanada am 27.03.2021 (für die Europaabgeordneten am 30.04.2025 aufgehoben); Boykottaufruf ab 24.03.2021; Umsatz von H&M in China im 2. Quartal 2021 −23 % in Landeswährung; China ratifizierte 2022 die ILO-Übereinkommen gegen Zwangsarbeit; US-Gesetz (UFLPA) seit 21.06.2022; EU-Verordnung 2024/3015 ab 14.12.2027; US-Zölle auf Waren aus China im April 2025 zeitweise 145 %; Waffenruhe im Zollstreit bis 10.01.2027 (Stand: Oktober 2026); Zollfreiheit für kleine Pakete in den USA für China seit 02.05.2025 und für alle Länder seit 29.08.2025 aufgehoben, in der EU seit 01.07.2026 3 € je Warenposition."
+  },
+  {
+    n:5,
+    letter:"U",
+    cont:"af",
+    contName:"Afrika",
+    where:"Afrika · Ruanda und Ghana",
+    short:"Ruanda und Ghana",
+    title:"Zweites Leben oder Müll?",
+    label:"Station 5 · Zweites Leben oder Müll?",
+    globeTitle:"Ruanda und Ghana",
+    kaya:"Kaya hält einen alten Pulli hoch: „Und wenn ich etwas nicht mehr trage – wo landet es dann?“",
+    globeCaption:"Der Globus dreht sich weiter: von China nach Afrika.",
+    view:{lat:4, lon:16},
+    pins:[
+      {name:"Ruanda", lat:-1.95, lon:30.06, side:"right"},
+      {name:"Ghana", lat:5.6, lon:-0.19, side:"left"}
+    ],
+    map:{dx:10, dy:-12},
+    stamp:{shape:"rect", top:"AFRIKA", bottom:"RUANDA · GHANA", rot:-6},
+    topics:["Dein alter Pulli", "Altkleider auf Reisen", "Der Altkleiderstreit", "Die EU setzt bei den Firmen an"],
+    paras:[
+      "Was passiert mit deinem alten Pulli? Von den Altkleidern, die in Deutschland gesammelt werden, kann nur noch weniger als die Hälfte wieder getragen werden – die Qualität sinkt. Aus alter Kleidung wird kaum neue: Weniger als 1 Prozent aller neuen Textilfasern stammt aus alten Textilien.",
+      "Die EU exportiert gebrauchte Textilien in alle Welt, vor allem nach Asien und Afrika. Vom Markt Kantamanto in Ghana leben viele Menschen – vom Handeln, Reparieren und Umnähen. Eine Organisation vor Ort schätzt aber: Im Schnitt sind etwa 40 Prozent eines Kleiderballens unverkäuflich und werden Müll.",
+      "Ruanda und seine Nachbarn in der Ostafrikanischen Gemeinschaft beschlossen, die Einfuhr von Altkleidern schrittweise zu verbieten. Sie wollten eine eigene Kleidungsindustrie aufbauen. Ruanda erhöhte dazu die Zölle auf Altkleider stark. Ein Verband der US-Altkleiderhändler beschwerte sich: Rund 40.000 Arbeitsplätze in den USA seien bedroht. Die USA prüften daraufhin, ob sie den Ländern die zollfreie Ausfuhr von Kleidung in die USA streichen. Kenia, Tansania und Uganda änderten ihre Politik. Ruanda hielt an seinen Zöllen fest und verlor diesen Vorteil für seine Kleidung.",
+      "Die EU setzt jetzt bei den Firmen an: In den nächsten Jahren muss jedes EU-Land ein System einführen, in dem Modefirmen das Sammeln, Sortieren und Recyceln ihrer Kleidung bezahlen. Das nennt man erweiterte Herstellerverantwortung. Die Staaten sollen Fast Fashion dabei berücksichtigen – Wegwerfmode kann also mehr kosten."
+    ],
+    roomIntro:"Kaya will einen alten Pulli weggeben: „Bekommt der wirklich ein zweites Leben?“ Fülle die Lücken selbst aus und ordne zu, wer was vertritt.",
+    parts:[
+      {
+        type:"cloze",
+        id:"5a",
+        prompt:"Teil A: Fülle die Lücken selbst aus.",
+        segments:[
+          "Von den in Deutschland gesammelten Altkleidern kann nur noch weniger als die ",
+          {blank:"b1"},
+          " wieder getragen werden. Weniger als ",
+          {blank:"b2"},
+          " Prozent aller neuen Textilfasern stammt aus alten Textilien. Die EU exportiert gebrauchte Textilien vor allem nach Asien und ",
+          {blank:"b3"},
+          ". Ruanda erhöhte die ",
+          {blank:"b4"},
+          " auf Altkleider, um eine eigene Kleidungsindustrie aufzubauen. Wenn Modefirmen das Sammeln, Sortieren und Recyceln ihrer Kleidung bezahlen müssen, nennt man das erweiterte ",
+          {blank:"b5"},
+          "."
+        ],
+        blanks:[
+          {id:"b1", kind:"word", accept:["Hälfte", "Haelfte", "Halfte"], sentence:"Von den in Deutschland gesammelten Altkleidern kann nur noch weniger als die ___ wieder getragen werden.", p:1, q:"Wie viel der gesammelten Altkleider kann noch getragen werden?", h2:"Das Wort beginnt mit „H“.", sol:"Hälfte"},
+          {
+            id:"b2",
+            kind:"number",
+            num:{min:1, max:1, words:["ein", "eins", "einem"], units:["%", "prozent"]},
+            sentence:"Weniger als ___ Prozent aller neuen Textilfasern stammt aus alten Textilien.",
+            p:1,
+            q:"Wie viel Prozent aller neuen Textilfasern stammen aus alten Textilien?",
+            h2:"Die Zahl ist kleiner als 2.",
+            sol:"1"
+          },
+          {id:"b3", kind:"word", accept:["Afrika"], sentence:"Die EU exportiert gebrauchte Textilien vor allem nach Asien und ___.", p:2, q:"Wohin exportiert die EU gebrauchte Textilien vor allem – außer nach Asien?", h2:"Das Wort beginnt mit „Af“.", sol:"Afrika"},
+          {id:"b4", kind:"word", accept:["Zölle","Zoelle","Zolle","Zoll","Einfuhrzölle","Einfuhrzoelle","Einfuhrzolle","Importzölle","Importzoelle","Importzolle","Zollsätze","Zollsaetze","Zollsatze"], sentence:"Ruanda erhöhte die ___ auf Altkleider, um eine eigene Kleidungsindustrie aufzubauen.", p:3, q:"Was erhöhte Ruanda auf Altkleider stark?", h2:"Das Wort beginnt mit „Z“.", sol:"Zölle"},
+          {id:"b5", kind:"word", accept:["Herstellerverantwortung", "erweiterte Herstellerverantwortung"], sentence:"Wenn Modefirmen das Sammeln, Sortieren und Recyceln ihrer Kleidung bezahlen müssen, nennt man das erweiterte ___.", p:4, q:"Wie heißt das System, das jedes EU-Land in den nächsten Jahren einführen muss?", h2:"Das Wort beginnt mit „H“ und ist zusammengesetzt.", sol:"Herstellerverantwortung"}
+        ]
+      },
+      {
+        type:"assign",
+        id:"5b",
+        prompt:"Teil B: Wer vertritt was? Wähle zu jeder Position den Akteur.",
+        placeholder:"Akteur wählen …",
+        rows:[
+          {id:"rw", text:"„Wir lassen weniger Altkleider ins Land, um eine eigene Kleidungsindustrie aufzubauen.“", ans:"Ruanda", p:3, q:"Welches Land wollte eine eigene Kleidungsindustrie aufbauen?", start:"R…"},
+          {id:"us", text:"„Wer den Handel mit Altkleidern behindert, verliert die zollfreie Ausfuhr seiner Kleidung zu uns.“", ans:"US-Regierung", p:3, q:"Wer prüfte, die zollfreie Ausfuhr von Kleidung zu streichen?", start:"U…"},
+          {id:"or", text:"„Im Schnitt sind rund 40 Prozent eines Ballens unverkäuflich und werden Müll.“", ans:"Organisation vor Ort in Ghana (The Or Foundation)", p:2, q:"Wer schätzt das für den Markt Kantamanto?", start:"O…"},
+          {id:"eu", text:"„Modefirmen sollen künftig für das Sammeln und Recyceln ihrer Kleidung zahlen.“", ans:"Europäische Union", p:4, q:"Wer setzt jetzt bei den Firmen an?", start:"E…"}
+        ],
+        options:["Ruanda", "US-Regierung", "Organisation vor Ort in Ghana (The Or Foundation)", "Europäische Union"]
+      }
+    ],
+    success:"Kaya weiß jetzt, wohin alte Kleidung reist – und worüber Ruanda und die USA gestritten haben.",
+    note:"Von den Altkleidern, die in Deutschland gesammelt werden, kann weniger als die Hälfte wieder getragen werden, weil die Qualität sinkt. Weniger als 1 Prozent aller neuen Textilfasern stammt aus alten Textilien. Die EU exportiert gebrauchte Textilien vor allem nach Asien und Afrika. Vom Markt Kantamanto in Ghana leben viele Menschen, im Schnitt sind aber etwa 40 Prozent eines Kleiderballens unverkäuflich und werden Müll. Ruanda und seine Nachbarn in der Ostafrikanischen Gemeinschaft wollten die Einfuhr von Altkleidern schrittweise verbieten, um eine eigene Kleidungsindustrie aufzubauen. Ruanda erhöhte dazu die Zölle auf Altkleider stark. Die USA wollten ihren Altkleiderhandel und dessen Arbeitsplätze schützen. Sie drohten den Ländern, ihnen die zollfreie Ausfuhr von Kleidung in die USA zu streichen. Kenia, Tansania und Uganda gaben nach. Ruanda hielt an seinen Zöllen fest und verlor diesen Vorteil für seine Kleidung. Mit der erweiterten Herstellerverantwortung sollen Modefirmen künftig das Sammeln, Sortieren und Recyceln ihrer Kleidung bezahlen, Wegwerfmode kann dabei mehr kosten.",
+    data:"Genaue Daten: 2023 waren 44 % der gesammelten Alttextilien wieder tragbar (2018: 62 %; bvse); die EU exportierte 2025 über 1,4 Mio. t gebrauchte Textilien, 48 % nach Asien, 43 % nach Afrika; die Zahlen der Or Foundation zu Kantamanto stammen von vor dem Großbrand Anfang Januar 2025; Ruanda erhöhte 2016 den Zoll von 0,20 auf 2,50 US-$ je kg; Beschwerde des US-Verbands SMART am 21.03.2017 (rund 40.000 Arbeitsplätze); Entzug für Ruanda am 30.07.2018; Richtlinie (EU) 2025/1892, Systeme bis spätestens April 2028."
+  },
+  {
+    n:6,
+    letter:"S",
+    cont:"eu",
+    contName:"Europa",
+    where:"Europa · Brüssel und Paris",
+    short:"Brüssel und Paris",
+    title:"Was darf Kaya posten?",
+    label:"Station 6 · Was darf Kaya posten?",
+    globeTitle:"Brüssel und Paris",
+    kaya:"Kaya liest die Nachricht von Flitzr: „Sie schicken mir schon Texte für meine Posts. Darf ich das überhaupt so posten?“",
+    globeCaption:"Der Globus dreht sich zurück nach Europa.",
+    view:{lat:34, lon:6},
+    pins:[
+      {name:"Brüssel", lat:50.85, lon:4.35, side:"right"},
+      {name:"Paris", lat:48.86, lon:2.35, side:"left"}
+    ],
+    map:{dx:-24, dy:14},
+    stamp:{shape:"circle", top:"EUROPA", bottom:"BRÜSSEL · PARIS", rot:4},
+    topics:[
+      "Flitzrs Texte",
+      "Was die EU verbietet",
+      "Werbung kennzeichnen",
+      "Strafen gegen Shein",
+      "Das Gesetz in Frankreich"
+    ],
+    paras:[
+      "Zurück in Europa. Flitzr schickt Kaya Texte für ihre Posts: „Unsere Kollektion ist umweltfreundlich!“ und „Klimaneutral – für jedes Shirt pflanzen wir einen Baum!“ Darf sie das posten?",
+      {text:"Greenwashing heißt: Ein Unternehmen lässt sich oder seine Produkte umweltfreundlicher aussehen, als sie sind. Seit Herbst 2026 verbietet die EU typische Tricks:", list:["Allgemeine Wörter wie „umweltfreundlich“ oder „grün“ ohne genaue Erklärung in derselben Werbung sind nur mit Nachweis einer anerkannten Spitzenleistung erlaubt, etwa dem EU-Umweltzeichen.","Siegel brauchen ein unabhängiges Prüfsystem oder eine staatliche Grundlage.","„Klimaneutral“ darf ein Produkt nicht heißen, nur weil anderswo Treibhausgase ausgeglichen werden, etwa durch Bäume.","Wer nur einen Teil meint, etwa die Verpackung, darf nicht das ganze Produkt grün nennen.","Gesetzliche Pflichten dürfen nicht als besonderer Vorteil beworben werden."]},
+      "Für Kaya gilt außerdem: Bekommt sie Geld oder Geschenke von Flitzr, muss sie ihre Posts deutlich als Werbung kennzeichnen.",
+      "Behörden bestraften Shein unter anderem wegen irreführender Umweltangaben: in Italien mit 1 Million Euro, in Frankreich mit 40 Millionen Euro.",
+      "Ein neues Gesetz in Frankreich soll Werbung für Ultra-Fast-Fashion verbieten – sehr viele neue, sehr billige Modelle, fast nur online verkauft. Das Verbot soll auch für Influencer:innen in Frankreich gelten. Ob es mit EU-Recht vereinbar ist, ist offen (Stand: Oktober 2026). Hier stoßen zwei Ziele aufeinander: die Freiheit, für Produkte zu werben, und der Schutz von Verbraucher:innen und Umwelt."
+    ],
+    roomIntro:"Flitzr schickt Kaya Texte für ihre Posts. Prüfe mit ihr, was nach den neuen Regeln verboten ist und was erlaubt – und setze danach den Schlussstein.",
+    parts:[
+      {
+        type:"baskets",
+        id:"6a",
+        prompt:"Teil A: Was ist nach den neuen Regeln verboten, was erlaubt? Ordne jede Karte zu.",
+        baskets:[
+          {id:"verboten", label:"Verboten", start:"V…"},
+          {id:"erlaubt", label:"Erlaubt", start:"E…"}
+        ],
+        cards:[
+          {id:"v1", text:"„Unsere ganze Kollektion ist umweltfreundlich!“ (ohne Erklärung und ohne Nachweis)", b:"verboten", p:2, q:"Was gilt für allgemeine Wörter wie „umweltfreundlich“ ohne genaue Erklärung?"},
+          {id:"v2", text:"Das selbst ausgedachte Siegel „Flitzr Green“ ohne unabhängige Prüfung", b:"verboten", p:2, q:"Was brauchen Siegel?"},
+          {id:"v3", text:"„Klimaneutral – für jedes Shirt pflanzen wir einen Baum!“", b:"verboten", p:2, q:"Darf ein Produkt „klimaneutral“ heißen, nur weil anderswo Treibhausgase ausgeglichen werden?"},
+          {id:"v4", text:"„Recycelte Verpackung – unser ganzes Shirt ist grün!“", b:"verboten", p:2, q:"Was gilt, wenn nur ein Teil gemeint ist, etwa die Verpackung?"},
+          {id:"v5", text:"„Frei von Schadstoffen, die in der EU ohnehin verboten sind – unser besonderes Plus!“", b:"verboten", p:2, q:"Dürfen gesetzliche Pflichten als besonderer Vorteil beworben werden?"},
+          {id:"v6", text:"Kaya postet ein bezahltes Flitzr-Shirt ohne Hinweis auf Werbung.", b:"verboten", p:3, q:"Was muss Kaya tun, wenn sie Geld oder Geschenke von Flitzr bekommt?"},
+          {id:"e1", text:"GOTS-zertifiziertes Shirt (unabhängig geprüftes Siegel), die Marke wirbt damit.", b:"erlaubt", p:2, q:"Was gilt für Siegel mit unabhängigem Prüfsystem?"},
+          {id:"e2", text:"Shirt mit EU-Umweltzeichen, die Marke wirbt damit.", b:"erlaubt", p:2, q:"Welcher Nachweis einer Spitzenleistung wird im Text genannt?"},
+          {id:"e3", text:"Kaya postet das GOTS-Shirt mit dem deutlichen Hinweis „Werbung“.", b:"erlaubt", p:3, q:"Was muss Kaya tun, wenn sie Geld oder Geschenke von Flitzr bekommt?"}
+        ]
+      },
+      {
+        type:"mc",
+        id:"6b",
+        prompt:"Teil B: Wähle die richtige Antwort.",
+        question:"Was soll ein neues französisches Gesetz verbieten?",
+        options:[
+          {t:"Werbung für Ultra-Fast-Fashion – auch durch Influencer:innen", ok:true},
+          {t:"Den Verkauf von Kleidung aus China"},
+          {t:"Jede Werbung von Influencer:innen für Kleidung"},
+          {t:"T-Shirts, die weniger als 20 Euro kosten"}
+        ],
+        p:5,
+        q:"Wofür soll Werbung verboten werden – und gilt das für jede Werbung?",
+        start:"W…",
+        sol:"Werbung für Ultra-Fast-Fashion – auch durch Influencer:innen"
+      },
+      {type:"keystone", id:"6c", prompt:"Teil C: Der Schlussstein.", question:"Deine sechs Reisestempel ergeben ein Wort – es ist das, worauf du von Kontinent zu Kontinent gereist bist.", accept:["GLOBUS", "der Globus", "den Globus", "ein Globus", "einen Globus"], h1:"Schau in deinen Reisepass oben: Welche Buchstaben hast du schon gesammelt?", h2:"Das Wort beginnt mit „G“ und hat sechs Buchstaben.", sol:"GLOBUS"}
+    ],
+    success:"Kaya weiß jetzt, was sie posten darf – und was nicht. Dein Reisepass ist voll.",
+    note:"Greenwashing heißt: Ein Unternehmen lässt sich oder seine Produkte umweltfreundlicher aussehen, als sie sind. Seit Herbst 2026 verbietet die EU typische Tricks. Allgemeine Wörter wie „umweltfreundlich“ sind ohne genaue Erklärung in derselben Werbung nur mit Nachweis einer Spitzenleistung erlaubt. Siegel brauchen ein unabhängiges Prüfsystem oder eine staatliche Grundlage. „Klimaneutral“ darf ein Produkt nicht heißen, nur weil anderswo Treibhausgase ausgeglichen werden. Wer nur einen Teil meint, darf nicht das ganze Produkt grün nennen, und gesetzliche Pflichten sind kein besonderer Vorteil. Flitzrs Sätze „Unsere Kollektion ist umweltfreundlich!“ und „Klimaneutral – für jedes Shirt pflanzen wir einen Baum!“ darf Kaya deshalb so nicht posten. Erlaubt bleiben unabhängig geprüfte Siegel wie GOTS oder das EU-Umweltzeichen. Bekommt Kaya Geld oder Geschenke von Flitzr, muss sie ihre Posts deutlich als Werbung kennzeichnen. Shein wurde in Italien und Frankreich unter anderem wegen irreführender Umweltangaben bestraft. Ein neues Gesetz in Frankreich soll Werbung für Ultra-Fast-Fashion verbieten, auch durch Influencer:innen. Ob das mit EU-Recht vereinbar ist und ob es auch Influencer:innen in anderen EU-Ländern wie Kaya träfe, ist offen. Hier stoßen die Freiheit, für Produkte zu werben, und der Schutz von Verbraucher:innen und Umwelt aufeinander.",
+    data:"Genaue Daten: Richtlinie (EU) 2024/825, gilt seit 27.09.2026, in Deutschland im Gesetz gegen den unlauteren Wettbewerb (UWG, Anhang Nr. 2a, 4a–4c, 10a); Werbekennzeichnung nach § 5a Abs. 4 UWG; Strafen gegen Shein 2025: Italien 1 Mio. €, Frankreich 40 Mio. € (auch wegen falscher Rabatte); französisches Gesetz Nr. 2026-602 vom 08.07.2026, Werbeverbot ab 01.01.2027, Bußgeld bis 100.000 €, das allgemeine Werbeverbot nimmt Anbieter aus anderen EU-Staaten aus (Stand: Oktober 2026)."
+  }
+];
+
+const ROOM_LABELS = STATIONS.map(s => s.label);
+const SOLUTION_NOTES = STATIONS.map(s => ({ room: s.label, text: s.note, data: s.data }));
+// Kontinentfarben: Feldfarbe (Flächen), Tinte (Text/Stempel auf Weiß), Farbe der Überschriften in der PDF
+const CONT = {
+  eu: { field: '#a7ff9c', ink: '#11632b', pdf: [17, 99, 43] },
+  sa: { field: '#ff6831', ink: '#a8380c', pdf: [168, 56, 12] },
+  as: { field: '#8ccfff', ink: '#0c5c94', pdf: [12, 92, 148] },
+  af: { field: '#ffd43b', ink: '#6d4f00', pdf: [109, 79, 0] },
+};
+
+/* ============================================================
+   GLOBUS-DATEN
+   ============================================================ */
+/* GLOBUS:BEGIN – Landpunkte (Fibonacci-Kugel, N=12000); Natural Earth 1:110m, gemeinfrei, über world-atlas 2.0.2 */
+const GLOBE_N = 12000;
+const GLOBE_LAND = 'AAAAAIAQABJCRkJAAggpASkgpIQElIABMDcABkDAgRkZAAdi7sjMHJlpMfNkbu3Mpr30Nrf6Sttee7t/f+Xt//+Vv7/29v7/2tv5fzt/f+Wt/P2dt/P2Vtbu21n5eytj9++tvJ21lfJ3VmbOzUm5Oys7Z+a0zJ2Rl3N3UnbOyOmZOSE/Z+bU7Jy42zNzcn7Ozcm5OSG35+b0/Jyam3Nzcm7Ozem5OT035+bk3Jyam3Nzak7Oze25OTU3p+b0nJya23Nzek5Ozem5OTUn5+bUnJyakXFzak5OzKm5OTUn42bUnJyaUXMzek7PzKg5OTGjYmTknJ6aUXMyYk7NyYk5OTGnYuTEnJqRE3Nyak7NyMkZNSGnYsTEnJoRk3NyQk7FiIkZNSUnYsTEnJqRUzNyQkbOiKkZMSGjZ+SUjJwRU3NiQk7PiCkZPSGiZsSEjJ4QUzJ6QkbNiCkZNSGmZtSUjJoQUzJqSk7NiSk5NSGm5NSUnJoSU3JKSk5NKSk5JSWm5JSUnJJSU3IKSkzJKSk5JaWm5JSUjJpSUnIKSkzJKSk5BaWk5JSUiIpSUnIKSk1BKSkxBaWk4JSUioJSUnBKSklBKSkYJaWkoJSUCpJSUmBqSkkBKSk0JKWkiJSUmgpSUmBISEkBqSkUBKSkwJSUGgJSU2BISEkBKSkUBKSmwpCQmgJSUngISE0BISkUBKSmgBCQmgJCUkgISE0BISgVBISksBCQEgJCUUgISE0BISgFBISikBCQEgJCUUgICEVhISglBISisBCQggJCUUgICAEhISAFBISikBAQAgpCUEgoCAlhISAlFISikhAQEgpCQEkoCAEloSAkFYSCklAQEgpCQEsoCAFloSAlFISAklAQAgpCQEkoCAEFoSAkFQSAklAUAgpCQEkoCAAFoagEFQSAklRUAAoCQQEqCAAFoagAFASAglQQAAoCUQEqCAAFoagAFASiAlQQAIpCUQEoCEQFoKAAFASiAlQQAApAUQEoCEQFoKAAFICiAlRUiApAQQEoCERFoKgAFICiAlRQiArAUREoIERFoKgIFJCCIlRQCApAUREoIAQFoKgYFJCCIlRADApIQREoIAYFoIAYFJCCIlRADApIQREqIAQFoIAYFZCCIlBACApAQQEoIEUFoIgQFJCCAlBADApAUSEoIAUFoIAQFICCAlBACApAASEoAAUFoIAQFICCAlBACgpAASEoCgVFoIAQFICCAlAECgpAASEoAgVFoIgUFIAiAlAUCgpAESEoAAVFoCgUFIAiA1AUCopAUSkoAkVEoCgUFIEiAlAEiohAUQgoAkUEoCgUEYGiAlAEiohAUQggAkVEoAgUEYGiAFQEiohAESgiAkVFqAgUEYGiAFQEiohQESgiAkVBqAgUEYEiUFQEioBQESgCAkVBqAgUAaEiUEQEioBQESgCAkXAiAgUAaEiUAQEioAQESgCAkXgiAgUAaEiUAQEioARESgCAkWgCAgUASEiUAQEioARECgCQkWgCAgUASEiUAQEigARECgAQkSgCAgUACMgUAAECAARECgAQgCgAAgQAAIhQAAEAAABECAABECAAAgAAAIhQAAEAAABECAABACAAAgAAAIhQAAIAACBEAAABAAAAAAAAAIBAAAIAAABAAAABAAAABAAAAIgAAAIBAAAEAAABAAAABAIAAAgAAAIAAAAABAABAAAABAAAAAAIAAIAAAAIAAAAAAAABAAAABAAAAIAAAAIAAAAAAAADAAAABAAAAAAAAAIAAAAIAAAAAAAAJAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA';
+/* GLOBUS:END */
+/* ============================================================
+   ZUSTAND
+   ============================================================ */
+let state = {
+  screen:'start', firstName:'', lastName:'', birthDate:'', klasse:'', code:'',
+  solved:[false,false,false,false,false,false], letters:['_','_','_','_','_','_'],
+  mistakes:[null,null,null,null,null,null], attempts:[0,0,0,0,0,0],
+  completedAt:null,
+  resumeLog:[],   // jedes Laden einer Zwischenstand-Datei: { place, savedAt, loadedAt }
+  pdfDownloaded:false,
+};
+window.state = state;
+let rs = null;   // Zustand des offenen Rätselraums: {idx, submitted, order, choice}
+
+// Fehler im ersten Versuch (schon in Textform); jeder weitere Versuch zählt nur in attempts
+function recordAttempt(roomIdx, errors){
+  state.attempts[roomIdx]++;
+  if(state.attempts[roomIdx] === 1 && errors && errors.length > 0){
+    state.mistakes[roomIdx] = { errors };
+  }
+}
+
+function computeCode(birthDigits){
+  const n = parseInt(birthDigits, 10);
+  return String(n * 1104 + MAGIC);
+}
+
+function solvedCount(){ return state.solved.filter(Boolean).length; }
+
+/* ============================================================
+   HILFSFUNKTIONEN: Text, Mischen, Prüfen freier Antworten
+   ============================================================ */
+function escapeHtml(s){
+  return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+// Feste Raum-Texte: escapen, englische Wendungen auszeichnen, „NICHT“ hervorheben
+function richText(s){
+  return escapeHtml(s).replace('Made in Bangladesh', '<span lang="en">Made in Bangladesh</span>').replace(/\bNICHT\b/g, '<strong>NICHT</strong>');
+}
+// Eingaben: Unicode normalisieren, Steuerzeichen entfernen, Leerraum zusammenfassen
+function cleanInput(s){
+  return String(s == null ? '' : s).normalize('NFC').replace(/[\u0000-\u001F\u007F-\u009F]/g, '').replace(/\s+/g, ' ').trim();
+}
+const normKlasse = v => String(v || '').replace(/[\s.]+/g, '');
+// In Anführungszeichen setzen – außer der Text bringt eigene mit
+function quoted(s){ return /^„/.test(s) && /“/.test(s) ? s : '„' + s + '“'; }
+function quotedStart(s){ return /^„/.test(s) ? s + '“' : '„' + s + '“'; }
+
+function randInt(n){                       // 0 … n-1, gleichverteilt, ohne Modulo-Verzerrung
+  const lim = Math.floor(0x100000000 / n) * n, b = new Uint32Array(1);
+  do { crypto.getRandomValues(b); } while (b[0] >= lim);
+  return b[0] % n;
+}
+function shuffle(arr){ const a = arr.slice(); for (let i = a.length - 1; i > 0; i--){ const j = randInt(i + 1); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+function foldUmlauts(s){ return s.replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss'); }
+function normalizeAnswer(s){
+  return String(s == null ? '' : s).normalize('NFC').toLocaleLowerCase('de-DE')
+    .replace(/[„“”"‚‘’'«»‹›]/g, '')        // Anführungszeichen fallen weg
+    .replace(/\s+/g, ' ').trim()
+    .replace(/[.,;:!?…]+$/u, '').trim();    // Satzzeichen am Ende fallen weg
+}
+// Wortlücken und Schlussstein: zusätzlich Leerzeichen und Bindestriche innerhalb weg, Umlaute gefaltet
+function wordKey(s){ return foldUmlauts(normalizeAnswer(s)).replace(/[\s\-‐‑‒–—]+/g, ''); }
+function wordMatches(raw, accepts){ const k = wordKey(raw); return k !== '' && accepts.some(a => wordKey(a) === k); }
+
+const NUM_PREFIX = /^(?:[~≈]\s*|(?:rund|ca\.?|circa|zirka|etwa|ungefähr|ungefaehr|knapp|fast)\s+)/;
+function numberMatches(raw, spec){                       // spec = {min, max, words, units}
+  let s = normalizeAnswer(raw).replace(NUM_PREFIX, '').trim(); if (!s) return false;
+  for (const u of spec.units){                           // Einheit am Ende abtrennen, auch ohne Leerzeichen („17€“, „80%“)
+    if (s.length > u.length && s.endsWith(u)){ s = s.slice(0, -u.length).trim(); break; }
+  }
+  if (spec.words.some(w => wordKey(w) === wordKey(s))) return true;   // Zahlwort, auch mit Einheit („achtzig Prozent“)
+  const m = /^(\d+(?:[.,]\d+)?)$/.exec(s); if (!m) return false;
+  const v = parseFloat(m[1].replace(',', '.'));
+  return v >= spec.min && v <= spec.max;
+}
+
+function maskBirth(el){
+  let v=el.value.replace(/[^0-9]/g,'').slice(0,8);
+  let out=v;
+  if(v.length>4) out=v.slice(0,2)+'.'+v.slice(2,4)+'.'+v.slice(4);
+  else if(v.length>2) out=v.slice(0,2)+'.'+v.slice(2);
+  el.value=out;
+}
+function translit(s){
+  return (s||'').replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue')
+    .replace(/Ä/g,'Ae').replace(/Ö/g,'Oe').replace(/Ü/g,'Ue').replace(/ß/g,'ss')
+    .replace(/[^a-zA-Z0-9-]/g,'');
+}
+const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ============================================================
+   ICONS (eigene Inline-SVGs, 24 × 24, Strich 2 px)
+   ============================================================ */
+const icon = d => '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' + d + '</svg>';
+const I = {
+  arrow:    icon('<path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>'),
+  check:    icon('<path d="M20 6 9 17l-5-5"/>'),
+  cross:    icon('<path d="M18 6 6 18"/><path d="m6 6 12 12"/>'),
+  download: icon('<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>'),
+  lock:     icon('<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>'),
+  warn:     icon('<path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/>'),
+  notes:    icon('<rect x="4" y="3" width="16" height="19" rx="2"/><path d="M8 2v3"/><path d="M12 2v3"/><path d="M16 2v3"/><path d="M8 10h8"/><path d="M8 14h8"/><path d="M8 18h5"/>'),
+  bulb:     icon('<path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.1V18h6v-1.2c0-.8.4-1.6 1-2.1A7 7 0 0 0 12 2z"/>'),
+};
+
+/* ============================================================
+   MINI PDF WRITER (self-contained, no dependencies)
+   PDF 1.7 · Helvetica + Helvetica-Bold (WinAnsi) · eingebetteter Datensatz
+   ============================================================ */
+const WIN_ANSI_MAP = {
+  'ä':0xE4,'ö':0xF6,'ü':0xFC,'Ä':0xC4,'Ö':0xD6,'Ü':0xDC,'ß':0xDF,
+  '€':0x80,'‚':0x82,'„':0x84,'…':0x85,'†':0x86,'‡':0x87,
+  '‰':0x89,'‹':0x8B,"‘":0x91,"’":0x92,"“":0x93,"”":0x94,
+  '•':0x95,'–':0x96,'—':0x97,'™':0x99,'›':0x9B,
+  '¡':0xA1,'«':0xAB,'»':0xBB,'·':0xB7,'×':0xD7,'°':0xB0,
+  '²':0xB2,'³':0xB3,'½':0xBD,'¼':0xBC,'¾':0xBE,'¿':0xBF,
+  'Œ':0x8C,'œ':0x9C,'Š':0x8A,'š':0x9A,'Ž':0x8E,'ž':0x9E,'Ÿ':0x9F,
+};
+const FALLBACK_MAP = {
+  '→':'->','←':'<-','↑':'^','↓':'v','✓':'v','✗':'x','✕':'x','★':'*','☆':'*',
+  ' ':' ',' ':' ','​':'',
+  '−':'-','≈':'~','‑':'-','‐':'-',' ':' ',
+};
+const PDF_TRANSLIT = { 'Ł':'L','ł':'l','Đ':'D','đ':'d','ı':'i','Œ':'OE','œ':'oe' };
+function encodeWinAnsi(str){
+  const bytes=[];
+  for(const ch of String(str)){
+    const code=ch.charCodeAt(0);
+    if(code<128) bytes.push(code);
+    else if(WIN_ANSI_MAP[ch]!==undefined) bytes.push(WIN_ANSI_MAP[ch]);
+    else if(FALLBACK_MAP[ch]!==undefined){ for(const sub of FALLBACK_MAP[ch]) bytes.push(sub.charCodeAt(0)&0xFF); }
+    else if(code<=255) bytes.push(code);
+    else {
+      const base=ch.normalize('NFD').charAt(0);   // z. B. ă → a, Ś → S
+      if(base!==ch && base.charCodeAt(0)<=255) bytes.push(...encodeWinAnsi(base));
+      else if(PDF_TRANSLIT[ch]!==undefined){ for(const sub of PDF_TRANSLIT[ch]) bytes.push(sub.charCodeAt(0)); }
+      else bytes.push(0x3F);
+    }
+  }
+  return bytes;
+}
+const HELV_W=(()=>{
+  const w=new Array(256).fill(500);
+  const widths={' ':278,'!':278,'"':355,'#':556,'$':556,'%':889,'&':667,"'":191,'(':333,')':333,'*':389,'+':584,',':278,'-':333,'.':278,'/':278,'0':556,'1':556,'2':556,'3':556,'4':556,'5':556,'6':556,'7':556,'8':556,'9':556,':':278,';':278,'<':584,'=':584,'>':584,'?':556,'@':1015,'A':667,'B':667,'C':722,'D':722,'E':667,'F':611,'G':778,'H':722,'I':278,'J':500,'K':667,'L':556,'M':833,'N':722,'O':778,'P':667,'Q':778,'R':722,'S':667,'T':611,'U':722,'V':667,'W':944,'X':667,'Y':667,'Z':611,'[':278,'\\':278,']':278,'^':469,'_':556,'`':333,'a':556,'b':556,'c':500,'d':556,'e':556,'f':278,'g':556,'h':556,'i':222,'j':222,'k':500,'l':222,'m':833,'n':556,'o':556,'p':556,'q':556,'r':333,'s':500,'t':278,'u':556,'v':500,'w':722,'x':500,'y':500,'z':500,'{':334,'|':260,'}':334,'~':584,'ä':556,'ö':556,'ü':556,'Ä':667,'Ö':778,'Ü':722,'ß':611,'€':556,'–':556,'—':1000,'«':556,'»':556,'·':278,'°':400,'•':350,
+    '„':333,'“':333,'”':333,'‚':222,'‘':222,'’':222,'…':1000,'×':584,'²':333,'³':333,'½':834,'¼':834,'¾':834,
+    'Œ':1000,'œ':944,'Š':667,'š':500,'Ž':611,'ž':500,'Ÿ':667,'é':556,'è':556,'ê':556,'á':556,'à':556,'â':556,'ó':556,'ò':556,'ô':556,'í':278,'ì':278,'î':278,'ú':556,'ù':556,'û':556,'ç':500,'ñ':556,'É':667,'È':667,'Á':667,'Ç':722,'Ñ':722};
+  for(const k in widths){ const code=WIN_ANSI_MAP[k]!==undefined?WIN_ANSI_MAP[k]:k.charCodeAt(0); if(code<256) w[code]=widths[k]; }
+  return w;
+})();
+function pdfStringWidth(str,fontSize,isBold){
+  const bytes=encodeWinAnsi(str); let total=0;
+  for(const b of bytes) total += (HELV_W[b]||500)*(isBold?1.04:1);
+  return total*fontSize/1000;
+}
+const pdfNum = n => String(Math.round(n*100)/100);
+class PdfDoc{
+  constructor(){ this.pages=[]; this.pageW=595; this.pageH=842; this.margin=56; this.cursorY=0; this.currentContent=[]; }
+  startPage(){ this.cursorY=this.pageH-this.margin; this.currentContent=[]; }
+  endPage(){ this.pages.push({content:this.currentContent.join('\n')}); }
+  _escapedString(str){
+    const bytes=encodeWinAnsi(str); let s='(';
+    for(const b of bytes){ if(b===0x28||b===0x29||b===0x5C) s+='\\'; s+=String.fromCharCode(b); }
+    return s+')';
+  }
+  _textCmd(str,x,y,fontSize,isBold,color){
+    const fontKey=isBold?'F2':'F1'; const c=color||[0,0,0];
+    return `${pdfNum(c[0]/255)} ${pdfNum(c[1]/255)} ${pdfNum(c[2]/255)} rg\nBT\n/${fontKey} ${fontSize} Tf\n${pdfNum(x)} ${pdfNum(y)} Td\n${this._escapedString(str)} Tj\nET`;
+  }
+  text(str,x,y,fontSize,isBold,color){ this.currentContent.push(this._textCmd(str,x,y,fontSize,isBold,color)); }
+  rect(x,y,w,h,fill,stroke){
+    let cmd='';
+    if(fill) cmd+=`${pdfNum(fill[0]/255)} ${pdfNum(fill[1]/255)} ${pdfNum(fill[2]/255)} rg\n`;
+    if(stroke) cmd+=`${pdfNum(stroke[0]/255)} ${pdfNum(stroke[1]/255)} ${pdfNum(stroke[2]/255)} RG\n`;
+    cmd+=`${pdfNum(x)} ${pdfNum(y)} ${pdfNum(w)} ${pdfNum(h)} re\n`;
+    if(fill&&stroke) cmd+='B'; else if(fill) cmd+='f'; else if(stroke) cmd+='S';
+    this.currentContent.push(cmd);
+  }
+  line(x1,y1,x2,y2,color,width){
+    const c=color||[0,0,0];
+    this.currentContent.push(`${pdfNum(c[0]/255)} ${pdfNum(c[1]/255)} ${pdfNum(c[2]/255)} RG\n${width||0.5} w\n${pdfNum(x1)} ${pdfNum(y1)} m ${pdfNum(x2)} ${pdfNum(y2)} l S`);
+  }
+  wrapLines(str,width,fontSize,isBold){
+    const out=[]; let line='';
+    for(const word of String(str).split(/\s+/)){
+      if(!word) continue;
+      const test=line?line+' '+word:word;
+      if(pdfStringWidth(test,fontSize,isBold)<=width) line=test;
+      else { if(line) out.push(line); line=word; }
+    }
+    if(line) out.push(line);
+    return out;
+  }
+  paragraph(str,x,y,width,fontSize,isBold,color,leading){
+    if(!leading) leading=fontSize*1.4;
+    let curY=y;
+    for(const ln of this.wrapLines(str,width,fontSize,isBold)){ this.text(ln,x,curY,fontSize,isBold,color); curY-=leading; }
+    return curY;
+  }
+  // wie paragraph, bricht aber auch mitten im Absatz auf eine neue Seite um (ensureFn liefert die neue y-Position)
+  paragraphFlow(str,x,y,width,fontSize,isBold,color,leading,ensureFn){
+    if(!leading) leading=fontSize*1.4;
+    let curY=y;
+    for(const ln of this.wrapLines(str,width,fontSize,isBold)){ curY=ensureFn(curY,leading); this.text(ln,x,curY,fontSize,isBold,color); curY-=leading; }
+    return curY;
+  }
+  // opts: { embed: Uint8Array (Datensatz), link: {rect:[x1,y1,x2,y2], page:0, uri}, title }
+  build(opts){
+    opts=opts||{};
+    const W=this.pageW, M=this.margin, FOOT=[74,79,87], N=this.pages.length;
+    const objects=[null,null,
+      '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>',
+      '<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>'];
+    const add=s=>{ objects.push(s); return objects.length; };
+    const linkId=opts.link ? 4+2*N+1 : 0;
+    const linkPage=opts.link ? (opts.link.page||0) : -1;
+    const pageIds=[];
+    this.pages.forEach((page,i)=>{
+      const label='Seite '+(i+1)+' von '+N;
+      const foot=this._textCmd('Copyright Jan-Rickmer Feindt',M,32,8.5,false,FOOT)+'\n'
+        +this._textCmd(label,W-M-pdfStringWidth(label,8.5,false),32,8.5,false,FOOT);
+      const content=page.content+'\n'+foot;
+      const contentId=add(`<< /Length ${content.length} >>\nstream\n${content}\nendstream`);
+      pageIds.push(add(`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${this.pageW} ${this.pageH}] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents ${contentId} 0 R${i===linkPage?` /Annots [${linkId} 0 R]`:''} >>`));
+    });
+    if(opts.link){
+      const r=opts.link.rect.map(pdfNum).join(' ');
+      add(`<< /Type /Annot /Subtype /Link /Rect [${r}] /Border [0 0 0] /A << /S /URI /URI ${this._escapedString(opts.link.uri)} >> >>`);
+    }
+    let specId=0;
+    if(opts.embed){
+      const bytes=opts.embed; let bin='';
+      for(let i=0;i<bytes.length;i+=0x8000) bin+=String.fromCharCode.apply(null,bytes.subarray(i,i+0x8000));
+      specId=objects.length+1; const fileId=specId+1;
+      add(`<< /Type /Filespec /F (feibeitsblatt-escape.json) /UF (feibeitsblatt-escape.json) /Desc (Escape-Room FastFashion) /AFRelationship /Data /EF << /F ${fileId} 0 R /UF ${fileId} 0 R >> >>`);
+      add(`<< /Type /EmbeddedFile /Subtype /application#2Fjson /FbEscape 1 /Params << /Size ${bytes.length} >> /Length ${bytes.length} >>\nstream\n${bin}\nendstream`);
+    }
+    const now=new Date(), two=n=>String(n).padStart(2,'0');
+    const stamp='D:'+now.getFullYear()+two(now.getMonth()+1)+two(now.getDate())+two(now.getHours())+two(now.getMinutes())+two(now.getSeconds());
+    let titleHex='FEFF'; for(const ch of String(opts.title||'')){ const c=ch.charCodeAt(0); titleHex+=c.toString(16).toUpperCase().padStart(4,'0'); }
+    const infoId=add(`<< /Title <${titleHex}> /Producer (Escape-Room FastFashion) /CreationDate (${stamp}) >>`);
+    objects[1]=`<< /Type /Pages /Kids [${pageIds.map(i=>i+' 0 R').join(' ')}] /Count ${pageIds.length} >>`;
+    objects[0]=specId
+      ? `<< /Type /Catalog /Pages 2 0 R /Names << /EmbeddedFiles << /Names [(feibeitsblatt-escape.json) ${specId} 0 R] >> >> /AF [${specId} 0 R] >>`
+      : '<< /Type /Catalog /Pages 2 0 R >>';
+    let pdf='%PDF-1.7\n%\xE2\xE3\xCF\xD3\n'; const offsets=[0];
+    for(let i=0;i<objects.length;i++){ offsets.push(pdf.length); pdf+=`${i+1} 0 obj\n${objects[i]}\nendobj\n`; }
+    const xrefOffset=pdf.length;
+    pdf+=`xref\n0 ${objects.length+1}\n0000000000 65535 f \n`;
+    for(let i=1;i<=objects.length;i++) pdf+=String(offsets[i]).padStart(10,'0')+' 00000 n \n';
+    pdf+=`trailer\n<< /Size ${objects.length+1} /Root 1 0 R /Info ${infoId} 0 R >>\nstartxref\n${xrefOffset}\n%%EOF\n`;
+    return pdf;
+  }
+}
+
+/* ============================================================
+   Überblick-PDF — „Überblick deiner Antworten & Erläuterungen“ (Lösungserläuterungen ab neuer Seite)
+   ============================================================ */
+function fmtDateTime(d){
+  if(!d) d=new Date();
+  d=new Date(d);
+  const date=d.toLocaleDateString('de-DE');
+  const time=d.toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'});
+  return date+', '+time+' Uhr';
+}
+function firstTryStats(){
+  const totalErrors=state.mistakes.reduce((a,m)=>a+(m&&m.errors?m.errors.length:0),0);
+  const perfect=state.attempts.filter((a,i)=>a>=1 && (!state.mistakes[i]||!state.mistakes[i].errors||state.mistakes[i].errors.length===0)).length;
+  return { totalErrors, perfect };
+}
+
+function generateOverviewPdf(){
+  const doc=new PdfDoc();
+  const W=doc.pageW,H=doc.pageH,M=doc.margin; const CW=W-2*M;
+  const HEAD=[18,20,23], HEAD_SUB=[200,205,212], ORANGE_BG=[255,233,214], ORANGE=[194,65,12], ORANGE_TXT=[140,45,8],
+        ID_BG=[241,242,240], INK=[18,20,23], GREEN=[17,99,43], GREEN_BG=[230,246,234], RED=[180,35,24], MUTE=[74,79,87];
+  const stCol=i=>CONT[STATIONS[i].cont].pdf;
+  const T1='Überblick deiner Antworten & Erläuterungen', T2='Lösungserläuterungen';
+
+  function header(title){
+    doc.startPage();
+    doc.rect(0,H-72,W,72,HEAD);
+    doc.text(title,M,H-38,18,true,[255,255,255]);
+    doc.text(SUBTITLE,M,H-58,9,false,HEAD_SUB);
+    return H-72-22;
+  }
+  function ensure(y,need){ if(y-need<70){ doc.endPage(); return header(T1); } return y; }
+
+  let y=header(T1);
+
+  // Oranger Hinweiskasten: Bedeutung der Datei + Fortsetzen im Feiditor-Feibeitsblatt (Adresse als Link)
+  const NOTE1='Diese Überblick-PDF gehört zu deinem Escape-Room „FastFashion“. Bewahre sie gut auf – sie enthält deinen Bestätigungscode, deine Ergebnisse und die Lösungserläuterungen.';
+  const NOTE2='Hinweis: Mit dieser Überblick-PDF kannst du das Finale jederzeit im Feiditor-Feibeitsblatt fortsetzen. Öffne die Adresse unten und wähle dort „Zwischenstand-PDF hochladen“.';
+  const ADDR=FEIBEITSBLATT_URL;
+  const n1=doc.wrapLines(NOTE1,CW-24,10.5,true).length, n2=doc.wrapLines(NOTE2,CW-24,9,false).length;
+  const boxH=16+n1*13.5+4+n2*12+4+12;
+  doc.rect(M,y-boxH,CW,boxH,ORANGE_BG);
+  doc.rect(M,y-boxH,3,boxH,ORANGE);
+  let yb=doc.paragraph(NOTE1,M+12,y-16,CW-24,10.5,true,ORANGE_TXT,13.5);
+  yb=doc.paragraph(NOTE2,M+12,yb-4,CW-24,9,false,MUTE,12);
+  const ay=yb-4, aw=pdfStringWidth(ADDR,10,true);
+  doc.text(ADDR,M+12,ay,10,true,ORANGE_TXT);
+  doc.line(M+12,ay-2,M+12+aw,ay-2,ORANGE_TXT,0.6);
+  const link={ rect:[M+12,ay-3,M+12+aw,ay+10], page:0, uri:ADDR };
+  y-=boxH+14;
+
+  // Identifikationsblock
+  const blockH=108;
+  doc.rect(M,y-blockH,CW,blockH,ID_BG);
+  doc.rect(M,y-blockH,3,blockH,INK);
+  const nameStr=state.firstName+' '+state.lastName;
+  doc.text('NAME',M+14,y-16,8,true,ORANGE);
+  doc.text(nameStr,M+14,y-31,pdfStringWidth(nameStr,13,true)>270?10:13,true,INK);
+  doc.text('GEBURTSDATUM',M+14,y-49,8,true,ORANGE);
+  doc.text(state.birthDate,M+14,y-63,11,false,INK);
+  doc.text('KLASSE',M+14,y-81,8,true,ORANGE);
+  doc.text(state.klasse,M+14,y-95,11,false,INK);
+  doc.text('BESTÄTIGUNGSCODE',M+300,y-16,8,true,ORANGE);
+  doc.text(state.code,M+300,y-31,13,true,INK);
+  doc.text('ABGESCHLOSSEN AM',M+300,y-49,8,true,ORANGE);
+  doc.text(fmtDateTime(state.completedAt),M+300,y-63,11,false,INK);
+  y-=blockH+18;
+
+  y=doc.paragraph('Dieses Dokument fasst zusammen, welche Antworten du in jeder Station beim ersten Versuch gegeben hast. Du hast jede Station am Ende erfolgreich gelöst – diese Übersicht zeigt nur, wo es anfangs noch hakte. Auf den folgenden Seiten findest du ausführliche Lösungserläuterungen.',
+    M,y,CW,10.5,false,INK,14);
+  y-=8;
+
+  const { totalErrors, perfect }=firstTryStats();
+  const sumLine=`Stationen im ersten Versuch fehlerfrei: ${perfect} von 6   ·   Fehler im ersten Versuch insgesamt: ${totalErrors}`;
+  let sumSize=10.5; while(sumSize>8 && pdfStringWidth(sumLine,sumSize,true)>CW-24) sumSize-=0.5;
+  doc.rect(M,y-34,CW,34,GREEN_BG);
+  doc.rect(M,y-34,3,34,GREEN);
+  doc.text('ÜBERSICHT',M+14,y-13,8,true,GREEN);
+  doc.text(sumLine,M+14,y-26,sumSize,true,INK);
+  y-=48;
+
+  for(let i=0;i<6;i++){
+    y=ensure(y,64);
+    doc.text(ROOM_LABELS[i],M,y,12.5,true,stCol(i));
+    doc.line(M,y-4,M+CW,y-4,stCol(i),0.8);
+    y-=18;
+    const attempts=state.attempts[i]; const m=state.mistakes[i];
+    const attemptsLabel=attempts===1?'1 Versuch':attempts+' Versuche';
+    if(!m||!m.errors||m.errors.length===0){
+      y=doc.paragraph('Fehlerfrei beim ersten Versuch gelöst. ('+attemptsLabel+')',M,y,CW,10.5,true,GREEN,14); y-=8; continue;
+    }
+    y=doc.paragraph('Benötigt: '+attemptsLabel+'. Beim ersten Versuch war Folgendes nicht korrekt:',M,y,CW,10.5,false,MUTE,14); y-=4;
+    for(const err of m.errors){
+      y=ensure(y,52);
+      doc.text('•',M,y,11,true,RED);
+      y=doc.paragraphFlow(err.item,M+14,y,CW-14,10.5,true,INK,13,ensure);
+      if(err.wrong) y=doc.paragraphFlow('Deine Antwort: '+err.wrong,M+14,y,CW-14,10,false,RED,13,ensure);
+      if(err.right) y=doc.paragraphFlow('Richtig: '+err.right,M+14,y,CW-14,10,true,GREEN,13,ensure);
+      y-=5;
+    }
+    y-=10;
+  }
+
+  y=ensure(y,40);
+  doc.line(M,y,M+CW,y,[200,205,212],0.4); y-=14;
+  doc.text('Bestätigungscode: '+state.code,M,y,10,true,INK);
+  doc.endPage();
+
+  /* ---- Lösungserläuterungen ---- */
+  function ensure2(y,need){ if(y-need<70){ doc.endPage(); return header(T2); } return y; }
+  let y2=header(T2);
+  y2=doc.paragraph('Hier werden die richtigen Lösungen der sechs Stationen noch einmal genauer erklärt. Nutze diese Seiten, um das Thema zu wiederholen – und für Kayas Dossier im Finale.',M,y2,CW,10.5,false,INK,14);
+  y2-=10;
+  SOLUTION_NOTES.forEach((note,i)=>{
+    y2=ensure2(y2,90);
+    doc.text(note.room,M,y2,12.5,true,stCol(i));
+    doc.line(M,y2-4,M+CW,y2-4,stCol(i),0.8);
+    y2-=18;
+    y2=doc.paragraphFlow(note.text,M,y2,CW,10.5,false,INK,14.5,ensure2);
+    y2-=4;
+    y2=doc.paragraphFlow(note.data,M,y2,CW,9,false,MUTE,12.5,ensure2);
+    y2-=14;
+  });
+  // Vermerk: Wurde eine Zwischenstand-Datei geladen – und wo ging es weiter?
+  y2=ensure2(y2,60);
+  doc.text('Verwendung von Zwischenstand-Dateien',M,y2,12.5,true,INK);
+  doc.line(M,y2-4,M+CW,y2-4,INK,0.8);
+  y2-=18;
+  for(const line of saveLogPdfLines()){ y2=doc.paragraphFlow(line,M,y2,CW,10.5,false,INK,14.5,ensure2); y2-=2; }
+  doc.endPage();
+
+  const embed=new TextEncoder().encode(JSON.stringify(buildEscapeRecord()));
+  return doc.build({ embed, link, title:'Überblick Escape-Room FastFashion' });
+}
+
+/* ============================================================
+   DATENSATZ FÜR DAS FEIDITOR-FEIBEITSBLATT (Schnittstelle v1)
+   ============================================================ */
+function fbEscapeHash(str){ // cyrb53-Variante wie saveHash, 64 Bit als 16 Hex-Zeichen
+  let h1=0xdeadbeef^str.length, h2=0x41c6ce57^str.length;
+  for(let i=0;i<str.length;i++){ const ch=str.charCodeAt(i); h1=Math.imul(h1^ch,2654435761); h2=Math.imul(h2^ch,1597334677); }
+  h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);
+  h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);
+  return (h2>>>0).toString(16).padStart(8,'0')+(h1>>>0).toString(16).padStart(8,'0');
+}
+function cleanLine(s, max){ return String(s == null ? '' : s).normalize('NFC').replace(/[\u0000-\u001F\u007F]+/g, ' ').replace(/\s+/g, ' ').trim().slice(0, max); }
+function cleanText(s, max){ return String(s == null ? '' : s).normalize('NFC').replace(/\r\n?/g, '\n').replace(/[\u0000-\u0009\u000B-\u001F\u007F]+/g, ' ').slice(0, max); }
+function buildEscapeRecord(){
+  const iso = d => { const x = new Date(d); return isNaN(x) ? '' : x.toISOString(); };
+  const data = {
+    code: FB_CODE,
+    room: { id: ESCAPE_ROOM.id, name: ESCAPE_ROOM.name, url: ESCAPE_ROOM.url },
+    person: { vorname: cleanLine(state.firstName, 60), nachname: cleanLine(state.lastName, 60),
+              geburtsdatum: state.birthDate, klasse: state.klasse },
+    confirm: String(state.code),
+    word: CODE_WORD,
+    completedAt: iso(state.completedAt || new Date()),
+    stations: STATIONS.map((s, i) => ({ label: s.label, attempts: state.attempts[i],
+      errors: ((state.mistakes[i] && state.mistakes[i].errors) || []).slice(0, 30).map(e => {
+        const o = { item: cleanLine(e.item, 2000) };
+        if (e.wrong) o.wrong = cleanLine(e.wrong, 2000);
+        if (e.right) o.right = cleanLine(e.right, 2000);
+        if (e.note)  o.note  = cleanLine(e.note, 2000);
+        return o; }) })),
+    notes: SOLUTION_NOTES.map(n => ({ label: n.room, text: cleanText(n.text + '\n\n' + n.data, 4000) })),
+    resumes: (state.resumeLog || []).slice(-20).map(r => ({ place: cleanLine(r.place, 2000), savedAt: iso(r.savedAt), loadedAt: iso(r.loadedAt) })),
+  };
+  const d = JSON.stringify(data);
+  return { kind: 'feibeitsblatt-escape', v: 1, d, s: fbEscapeHash('FbEscape|v1|' + d) };
+}
+function b64url(str){
+  const bytes = new TextEncoder().encode(str); let bin = '';
+  for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+  return btoa(bin).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+}
+
+/* ============================================================
+   DOWNLOAD DER ÜBERBLICK-PDF
+   ============================================================ */
+function overviewFileName(){
+  const d=new Date(), two=n=>String(n).padStart(2,'0');
+  return `Ueberblick-Escape-Room-FastFashion-${two(d.getDate())}-${two(d.getMonth()+1)}-${d.getFullYear()}.pdf`;
+}
+window.downloadOverviewPDF=()=>{
+  try{
+    const bin=generateOverviewPdf();
+    const bytes=new Uint8Array(bin.length);
+    for(let i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i)&0xFF;
+    // application/octet-stream statt application/pdf: Der Browser SPEICHERT die Datei, statt sie anzuzeigen.
+    const blob=new Blob([bytes],{type:'application/octet-stream'});
+    const url=URL.createObjectURL(blob);
+    // Unsichtbarer Link, synchron im Klick-Handler ausgelöst – kein window.open, kein neuer Tab.
+    const link=document.createElement('a');
+    link.href=url; link.download=overviewFileName(); link.style.display='none';
+    document.body.appendChild(link);
+    link.click();
+    // Object-URL lange gültig lassen: iOS liest den Blob erst, wenn der Download-Dialog bestätigt ist.
+    setTimeout(()=>{ try{ document.body.removeChild(link); }catch(_){} URL.revokeObjectURL(url); },60000);
+    state.pdfDownloaded=true;
+    return true;
+  }catch(e){ console.error(e); return false; }
+};
+
+/* ============================================================
+   TUNNEL ZUM FEIDITOR-FEIBEITSBLATT (gleicher Tab)
+   ============================================================ */
+function enterTunnel(force){
+  if (!FB_CODE) { const lk=document.getElementById('gateLocked'); if(lk) lk.focus(); return; }
+  if (!state.pdfDownloaded && !force) { document.getElementById('tunnelDialog').showModal(); return; }
+  location.assign(FB_URL + '#escape=' + b64url(JSON.stringify(buildEscapeRecord())));
+}
+
+/* ============================================================
+   GLOBUS, ROUTENKARTE, STEMPEL (inline-SVG, ohne Bibliothek)
+   ============================================================ */
+const D2R=Math.PI/180, GA=Math.PI*(3-Math.sqrt(5));
+// Landpunkte einmal dekodieren: [Breite, Länge] im Bogenmaß
+const LAND=(()=>{ const b=atob(GLOBE_LAND); const out=[];
+  for(let i=0;i<GLOBE_N;i++){ if((b.charCodeAt(i>>3)>>(i&7))&1){ const z=1-(2*i+1)/GLOBE_N; let lon=(i*GA)%(2*Math.PI); if(lon>Math.PI) lon-=2*Math.PI; out.push([Math.asin(z),lon]); } }
+  return out; })();
+const SVGNS='http://www.w3.org/2000/svg';
+const GLOBE_COL={ sea:'#121417', l1:'#c9ced6', l2:'#8d949e', l3:'#5b616b' };
+const ll=p=>[p.lat*D2R,p.lon*D2R];
+function gproj(lat,lon,c,k){
+  const dl=lon-c[1], sl=Math.sin(lat), cl=Math.cos(lat), cd=Math.cos(dl);
+  const cosc=Math.sin(c[0])*sl+Math.cos(c[0])*cl*cd; k=k||1;
+  return { x:200+180*k*cl*Math.sin(dl), y:200-180*k*(Math.cos(c[0])*sl-Math.sin(c[0])*cl*cd), v:cosc };
+}
+function gdist(a,b){ return Math.acos(Math.min(1,Math.sin(a[0])*Math.sin(b[0])+Math.cos(a[0])*Math.cos(b[0])*Math.cos(a[1]-b[1]))); }
+// Hervorgehobene Landpunkte je Station (Winkelabstand < 14° zu einem Pin), einmal berechnet
+const HL_CACHE={};
+function highlightSet(idx){
+  if(HL_CACHE[idx]) return HL_CACHE[idx];
+  const pins=STATIONS[idx].pins.map(ll), set=new Uint8Array(LAND.length);
+  LAND.forEach((p,i)=>{ if(pins.some(q=>gdist(p,q)<14*D2R)) set[i]=1; });
+  return (HL_CACHE[idx]=set);
+}
+function globeParts(svg){
+  if(svg._g && svg._g.sea.parentNode===svg) return svg._g;
+  svg.textContent='';
+  const mk=(t,a,parent)=>{ const e=document.createElementNS(SVGNS,t); for(const k in a) e.setAttribute(k,a[k]); (parent||svg).appendChild(e); return e; };
+  const line={ fill:'none','stroke-linecap':'round' };
+  const g={
+    sea: mk('circle',{cx:200,cy:200,r:180,fill:GLOBE_COL.sea}),
+    b3: mk('path',Object.assign({stroke:GLOBE_COL.l3,'stroke-width':3.3},line)),
+    b2: mk('path',Object.assign({stroke:GLOBE_COL.l2,'stroke-width':3.96},line)),
+    b1: mk('path',Object.assign({stroke:GLOBE_COL.l1,'stroke-width':4.4},line)),
+    hl: mk('path',Object.assign({'stroke-width':4.4},line)),
+    arc: mk('path',Object.assign({stroke:'#ffffff','stroke-width':3.2,'stroke-dasharray':'2 7'},line)),
+    pins: mk('g',{}),
+  };
+  g.mk=mk;
+  return (svg._g=g);
+}
+// opt: { idx (Station für Hervorhebung/Pins), arc:{a,b,t}, pins:true|false, pinAnim }
+function drawGlobe(svg,center,opt){
+  opt=opt||{};
+  const g=globeParts(svg);
+  const hl=opt.idx!=null ? highlightSet(opt.idx) : null;
+  const bands=[[],[],[]], hls=[];
+  for(let i=0;i<LAND.length;i++){
+    const p=LAND[i], q=gproj(p[0],p[1],center);
+    if(q.v<=0) continue;
+    const s='M'+q.x.toFixed(1)+' '+q.y.toFixed(1)+'h0';
+    if(hl && hl[i]) hls.push(s);
+    else bands[q.v>0.55?0:q.v>0.25?1:2].push(s);
+  }
+  g.b1.setAttribute('d',bands[0].join('')); g.b2.setAttribute('d',bands[1].join('')); g.b3.setAttribute('d',bands[2].join(''));
+  g.hl.setAttribute('d',hls.join(''));
+  if(opt.idx!=null) g.hl.setAttribute('stroke',CONT[STATIONS[opt.idx].cont].field);
+  // Flugbogen (Großkreis, leicht angehoben), wächst bis zum Anteil t
+  let d='';
+  if(opt.arc){
+    const a=opt.arc.a, b=opt.arc.b, tt=opt.arc.t==null?1:opt.arc.t, dist=gdist(a,b);
+    if(dist>1e-6 && tt>0){
+      let pen=false;
+      for(let i=0;i<=48;i++){
+        let t=i/48; if(t>tt) t=tt;
+        const A=Math.sin((1-t)*dist)/Math.sin(dist), B=Math.sin(t*dist)/Math.sin(dist);
+        const x=A*Math.cos(a[0])*Math.cos(a[1])+B*Math.cos(b[0])*Math.cos(b[1]);
+        const y=A*Math.cos(a[0])*Math.sin(a[1])+B*Math.cos(b[0])*Math.sin(b[1]);
+        const z=A*Math.sin(a[0])+B*Math.sin(b[0]);
+        const lat=Math.atan2(z,Math.hypot(x,y)), lon=Math.atan2(y,x);
+        const ground=gproj(lat,lon,center), q=gproj(lat,lon,center,1+0.16*Math.sin(Math.PI*t));
+        if(ground.v<=0){ pen=false; }
+        else { d+=(pen?'L':'M')+q.x.toFixed(1)+' '+q.y.toFixed(1); pen=true; }
+        if(t>=tt) break;
+      }
+    }
+  }
+  g.arc.setAttribute('d',d);
+  // Pins mit Beschriftung
+  g.pins.textContent='';
+  if(opt.pins && opt.idx!=null){
+    const st=STATIONS[opt.idx];
+    st.pins.forEach(pp=>{
+      const q=gproj(pp.lat*D2R,pp.lon*D2R,center); if(q.v<=0) return;
+      const grp=g.mk('g',{class:opt.pinAnim?'pin pin-in':'pin'},g.pins);
+      g.mk('circle',{cx:q.x.toFixed(1),cy:q.y.toFixed(1),r:9,fill:CONT[st.cont].field,stroke:GLOBE_COL.sea,'stroke-width':3},grp);
+      const right=pp.side!=='left';
+      const t=g.mk('text',{x:(q.x+(right?14:-14)).toFixed(1),y:(q.y+5).toFixed(1),'text-anchor':right?'start':'end',fill:'#ffffff',stroke:GLOBE_COL.sea,'stroke-width':4,'paint-order':'stroke','stroke-linejoin':'round','font-family':"'Work Sans', sans-serif",'font-weight':'700','font-size':'15'},grp);
+      t.textContent=pp.name;
+    });
+  }
+}
+const easeInOutQuart=t=>t<.5?8*t*t*t*t:1-Math.pow(-2*t+2,4)/2;
+// Dreht den Globus von a nach b (je [Breite, Länge] im Bogenmaß); frame(center, e, t) zeichnet jedes Bild
+function spinGlobe(svg,a,b,ms,frame,done){
+  const dl=((b[1]-a[1]+3*Math.PI)%(2*Math.PI))-Math.PI;
+  const at=e=>[a[0]+(b[0]-a[0])*e, a[1]+dl*e];
+  if(reducedMotion()||ms<=0){ frame(b,1,1); if(done) done(); return; }
+  const t0=performance.now();
+  frame(a,0,0);
+  function step(now){
+    if(!svg.isConnected) return;
+    const t=Math.min(1,(now-t0)/ms), e=easeInOutQuart(t);
+    frame(at(e),e,t);
+    if(t<1) requestAnimationFrame(step); else if(done) done();
+  }
+  requestAnimationFrame(step);
+}
+const viewOf=st=>[st.view.lat*D2R, st.view.lon*D2R];
+
+// Stempel (SVG 120 × 120), uid deterministisch
+function stampSvg(idx,uid){
+  const st=STATIONS[idx], shape=st.stamp.shape, ink=CONT[st.cont].ink, top=escapeHtml(st.stamp.top), bottom=escapeHtml(st.stamp.bottom), letter=st.letter;
+  const f=`font-family="Anton, 'Arial Narrow', sans-serif" fill="${ink}"`;
+  let frame='',txt='';
+  if(shape==='circle'||shape==='oval'){
+    const rx=shape==='circle'?54:57, ry=shape==='circle'?54:44;
+    frame=`<ellipse cx="60" cy="60" rx="${rx}" ry="${ry}" fill="none" stroke="${ink}" stroke-width="4"/><ellipse cx="60" cy="60" rx="${rx-15}" ry="${ry-15}" fill="none" stroke="${ink}" stroke-width="2"/>`;
+    const a=rx-13,b=ry-13,c=rx-5,d=ry-5;
+    txt=`<defs><path id="t${uid}" d="M ${60-a} 60 A ${a} ${b} 0 0 1 ${60+a} 60"/><path id="u${uid}" d="M ${60-c} 60 A ${c} ${d} 0 0 0 ${60+c} 60"/></defs>`+
+      `<text font-size="10" letter-spacing="1.2" ${f}><textPath href="#t${uid}" startOffset="50%" text-anchor="middle">${top}</textPath></text>`+
+      `<text font-size="9" letter-spacing="1" ${f}><textPath href="#u${uid}" startOffset="50%" text-anchor="middle">${bottom}</textPath></text>`;
+  } else {
+    frame= shape==='oct' ? `<polygon points="36,6 84,6 114,36 114,84 84,114 36,114 6,84 6,36" fill="none" stroke="${ink}" stroke-width="4"/><polygon points="40,15 80,15 105,40 105,80 80,105 40,105 15,80 15,40" fill="none" stroke="${ink}" stroke-width="2"/>`
+      : `<rect x="6" y="14" width="108" height="92" rx="10" fill="none" stroke="${ink}" stroke-width="4"/><rect x="13" y="21" width="94" height="78" rx="6" fill="none" stroke="${ink}" stroke-width="2"/>`;
+    txt=`<text x="60" y="${shape==='oct'?32:36}" text-anchor="middle" font-size="10" letter-spacing="1.2" ${f}>${top}</text><text x="60" y="${shape==='oct'?96:93}" text-anchor="middle" font-size="9" letter-spacing="1" ${f}>${bottom}</text>`;
+  }
+  return `<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">${frame}${txt}<text x="60" y="77" text-anchor="middle" font-size="44" ${f}>${letter}</text></svg>`;
+}
+function passSlots(uidPrefix){
+  return STATIONS.map((st,i)=>state.solved[i]
+    ? `<div class="ps"><span class="ps-st" style="transform:rotate(${st.stamp.rot}deg)">${stampSvg(i,uidPrefix+i)}</span></div>`
+    : '<div class="ps"></div>').join('');
+}
+
+// Flache Routenkarte (Equal-Earth-Projektion derselben Landpunkte)
+function eqEarth(lat,lon){
+  const A1=1.340264, A2=-0.081106, A3=0.000893, A4=0.003796, M=Math.sqrt(3)/2;
+  const th=Math.asin(M*Math.sin(lat)), t2=th*th, t6=t2*t2*t2;
+  const X=lon*Math.cos(th)/(M*(A1+3*A2*t2+t6*(7*A3+9*A4*t2)));
+  const Y=th*(A1+A2*t2+t6*(A3+A4*t2));
+  const s=480/2.7066;
+  return [500+X*s, 250-Y*s];
+}
+let FLAT_LAND_D='';
+function flatLandPath(){
+  if(FLAT_LAND_D) return FLAT_LAND_D;
+  const parts=[];
+  for(const p of LAND){ if(p[0]<-56*D2R) continue; const q=eqEarth(p[0],p[1]); parts.push('M'+q[0].toFixed(1)+' '+q[1].toFixed(1)+'h0'); }
+  return (FLAT_LAND_D=parts.join(''));
+}
+function routeMapSvg(done){
+  const pts=STATIONS.map(st=>eqEarth(st.pins[0].lat*D2R, st.pins[0].lon*D2R));
+  let arcs='';
+  for(let i=1;i<pts.length;i++){
+    const [x1,y1]=pts[i-1], [x2,y2]=pts[i], dist=Math.hypot(x2-x1,y2-y1);
+    const cx=(x1+x2)/2, cy=(y1+y2)/2-0.25*dist;
+    arcs+=`<path d="M${x1.toFixed(1)} ${y1.toFixed(1)} Q${cx.toFixed(1)} ${cy.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}" fill="none" stroke="#121417" stroke-width="${done?2.5:2}"${done?'':' stroke-dasharray="6 6"'} stroke-linecap="round"/>`;
+  }
+  const pins=STATIONS.map((st,i)=>{ const [x,y]=pts[i];
+    return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="7" fill="${CONT[st.cont].field}" stroke="#121417" stroke-width="2"/>`
+      +`<text x="${(x+st.map.dx).toFixed(1)}" y="${(y+st.map.dy).toFixed(1)}" font-family="'Work Sans', sans-serif" font-weight="700" font-size="15" fill="#121417">${i+1}</text>`; }).join('');
+  return `<svg class="routemap" viewBox="0 0 1000 470" role="img" aria-label="Deine Route: Station 1 Deutschland, 2 Brasilien, 3 Bangladesch, 4 China, 5 Ruanda und Ghana, 6 Brüssel und Paris">`
+    +`<path d="${flatLandPath()}" fill="none" stroke="#e4e6e3" stroke-width="4" stroke-linecap="round"/>${arcs}${pins}</svg>`;
+}
+
+// Arena-Tunnel (flache Flächen, Fluchtpunkt-Rechteck 300/140/200/200)
+function tunnelSvg(open){
+  const xs=[318,345,372,399,426,453], ws=[27,27,27,27,27,29];
+  const stripes=STATIONS.map((st,i)=>`<rect x="${xs[i]}" y="160" width="${ws[i]}" height="110" fill="${open?CONT[st.cont].field:GLOBE_COL.l3}"/>`).join('');
+  const lock=open?'':'<g><path d="M378 214v-16a22 22 0 0 1 44 0v16" fill="none" stroke="#121417" stroke-width="10" stroke-linecap="round"/><rect x="364" y="212" width="72" height="56" fill="#ffffff" stroke="#121417" stroke-width="6"/><rect x="396" y="230" width="8" height="18" fill="#121417"/></g>';
+  return `<svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <rect width="800" height="460" fill="#0b0c0e"/>
+    <rect x="300" y="140" width="200" height="200" fill="#ffffff"/>
+    <rect x="300" y="300" width="200" height="40" fill="#f1f2f0"/>
+    <g>${stripes}</g>${lock}
+    <polygon points="0,0 300,140 300,340 0,460" fill="#1b1e22"/>
+    <polygon points="800,0 500,140 500,340 800,460" fill="#1b1e22"/>
+    <polygon points="0,0 800,0 500,140 300,140" fill="#121417"/>
+    <polygon points="0,460 800,460 500,340 300,340" fill="#26292e"/>
+    <g fill="#33373d"><polygon points="70,33 300,140 300,150 70,52"/><polygon points="730,33 500,140 500,150 730,52"/><polygon points="70,427 300,330 300,340 70,446"/><polygon points="730,427 500,330 500,340 730,446"/></g>
+    <g class="glow"><polygon points="300,340 500,340 650,430 150,430" fill="#ffffff" opacity=".16"/><rect x="291" y="131" width="218" height="218" fill="none" stroke="#ffffff" stroke-width="6"/></g>
+  </svg>`;
+}
+
+/* ============================================================
+   BILDSCHIRME: Rahmen
+   ============================================================ */
+const root=document.getElementById('screenContainer');
+const topbar=document.getElementById('topbar');
+function screenTitle(s){
+  let m;
+  if(s==='start') return 'FastFashion · Escape-Room';
+  if(s==='resume') return 'Zwischenstand laden · FastFashion';
+  if(s==='intro') return 'So läuft es ab · FastFashion';
+  if(s==='globe') return 'Globus · Station '+Math.min(solvedCount()+1,6)+' · FastFashion';
+  if((m=/^lib(\d)$/.exec(s))) return 'Station '+m[1]+' · Bibliotheksraum · FastFashion';
+  if((m=/^room(\d)$/.exec(s))) return 'Station '+m[1]+' · Rätselraum · FastFashion';
+  if(s==='final') return 'Finale · FastFashion';
+  return 'FastFashion · Escape-Room';
+}
+function currentStation(){
+  const m=/^(lib|room)(\d)$/.exec(state.screen);
+  if(m) return +m[2];
+  if(state.screen==='final') return 0;
+  return Math.min(solvedCount()+1,6);
+}
+function renderPassStrip(){
+  const el=document.getElementById('passStrip');
+  if(state.screen==='start'||state.screen==='resume'){ el.hidden=true; el.textContent=''; return; }
+  el.hidden=false;
+  const cur=currentStation(), got=[]; let h='';
+  STATIONS.forEach((st,i)=>{
+    if(state.solved[i]){ got.push(st.letter); h+=`<span class="slot done" style="--slot-field:var(--${st.cont}-field)">${st.letter}</span>`; }
+    else if(cur===i+1) h+=`<span class="slot now">${i+1}</span>`;
+    else h+=`<span class="slot">${i+1}</span>`;
+  });
+  el.innerHTML=h;
+  el.setAttribute('aria-label', got.length===6
+    ? 'Reisepass: Alle 6 Stempel: '+CODE_WORD+'.'
+    : 'Reisepass: '+got.length+' von 6 Stempeln'+(got.length?' ('+got.join(', ')+')':'')+'.'+(cur?' Jetzt: Station '+cur+'.':''));
+}
+function bandColor(){
+  const s=state.screen; let m;
+  if(s==='final') return 'var(--ink)';
+  if((m=/^(lib|room)(\d)$/.exec(s))) return `var(--${STATIONS[+m[2]-1].cont}-field)`;
+  if(s==='globe') return `var(--${STATIONS[Math.min(solvedCount(),5)].cont}-field)`;
+  return 'var(--surface-2)';
+}
+function updateChrome(){ renderPassStrip(); topbar.style.setProperty('--band',bandColor()); }
+function show(screen,html){
+  state.screen=screen;
+  root.innerHTML=html;
+  window.scrollTo({top:0,behavior:'instant'});
+  document.title=screenTitle(screen);
+  updateChrome();
+  const h1=root.querySelector('h1');
+  if(h1){ h1.setAttribute('tabindex','-1'); h1.focus({preventScroll:true}); }
+  if(!reducedMotion()){
+    const host=root.querySelector('[data-enter]');
+    if(host) [...host.children].slice(0,4).forEach((el,i)=>{ el.classList.add('rise'); el.style.setProperty('--d',(i*50)+'ms'); });
+  }
+}
+const on=(id,ev,fn)=>{ const el=document.getElementById(id); if(el) el.addEventListener(ev,fn); return el; };
+function videoHtml(id,title){
+  return `<div class="video"><iframe data-yt-src="https://www.youtube-nocookie.com/embed/${id}?rel=0" title="${title}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    <p class="video-fallback"><span>Video lädt nicht oder zeigt einen Fehler?</span><a class="btn ghost" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener noreferrer">Direkt auf YouTube öffnen${I.arrow}<span class="sr-only"> (öffnet in neuem Tab)</span></a></p>`;
+}
+// Kontinent-Kachel; status: 'done' | 'now' | 'todo'
+function tileHtml(i,status){
+  const st=STATIONS[i];
+  const sr=status==='done'?'gestempelt: '+st.letter:status==='now'?'jetzt':'noch offen';
+  return `<li class="tile ${status}" style="--tf:var(--${st.cont}-field);--ti:var(--${st.cont}-ink)">`
+    +`<span class="tn" aria-hidden="true">${i+1}</span>`
+    +`<span class="tx"><span class="tp">${escapeHtml(st.where)}</span><span class="tt">${escapeHtml(st.title)}</span></span>`
+    +(status==='done'?`<span class="ts" aria-hidden="true">${st.letter}</span>`:'<span></span>')
+    +`<span class="sr-only">${sr}</span></li>`;
+}
+function stationHead(idx,kind){
+  const st=STATIONS[idx];
+  return `<header class="st-head"><h1 class="title-head">${escapeHtml(st.title)}</h1>`
+    +`<div class="st-meta"><span class="tag">Station ${st.n} · ${escapeHtml(st.where)}</span><p class="room-kind">${kind}</p></div></header>`;
+}
+
+/* ============================================================
+   SCREEN: START (Name, Geburtsdatum, Klasse)
+   ============================================================ */
+let startSpun=false;
+function renderStart(){
+  show('start',`
+  <div class="screen"><div class="wide"><div class="start" data-enter>
+    <div class="start-head">
+      <h1 class="title-mega">FastFashion</h1>
+      <p class="lede">Ein Escape-Room für Politik und Wirtschaft, Jahrgangsstufe 10: Was steckt hinter einem T-Shirt für ein paar Euro – von Anfang bis Ende?</p>
+    </div>
+    <div class="start-globe"><svg class="globe" id="startGlobe" viewBox="0 0 400 400" aria-hidden="true" focusable="false"></svg></div>
+    <div class="start-form">
+      <form id="startForm" novalidate>
+        <h2 class="h-card">Deine Anmeldung</h2>
+        <p>Trage deinen vollen Namen, dein Geburtsdatum und deine Klasse ein. Diese Angaben stehen später auf deiner Überblick-PDF und gehen am Ende mit ins Feiditor-Feibeitsblatt. Am Ende bekommst du außerdem deinen persönlichen Bestätigungscode.</p>
+        <div class="frow">
+          <div class="field"><label for="firstNameInput">Vorname</label><input id="firstNameInput" class="input" type="text" autocomplete="given-name" maxlength="40"></div>
+          <div class="field"><label for="lastNameInput">Nachname</label><input id="lastNameInput" class="input" type="text" autocomplete="family-name" maxlength="40"></div>
+        </div>
+        <div class="frow">
+          <div class="field"><label for="birthInput">Geburtsdatum (TT.MM.JJJJ)</label><input id="birthInput" class="input" type="text" inputmode="numeric" maxlength="10" placeholder="TT.MM.JJJJ" autocomplete="bday"></div>
+          <div class="field"><label for="klasseInput">Klasse</label><input id="klasseInput" class="input" type="text" maxlength="12" placeholder="z. B. 10b" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+        </div>
+        <div id="startError" class="form-error" role="alert"></div>
+        <div class="btn-row"><button type="submit" class="btn">Los geht’s${I.arrow}</button></div>
+      </form>
+      ${saveLoadFieldHtml()}
+    </div>
+  </div></div></div>`);
+  const order=['firstNameInput','lastNameInput','birthInput','klasseInput'];
+  order.forEach((id,i)=>on(id,'keydown',e=>{ if(e.key==='Enter' && i<order.length-1){ e.preventDefault(); document.getElementById(order[i+1]).focus(); } }));
+  on('birthInput','input',e=>maskBirth(e.target));
+  on('startForm','submit',e=>{ e.preventDefault(); submitStart(); });
+  const svg=document.getElementById('startGlobe'), target=viewOf(STATIONS[0]);
+  spinGlobe(svg,[0,-100*D2R],target,startSpun?0:1600,c=>drawGlobe(svg,c,{}));
+  startSpun=true;
+}
+function submitStart(){
+  const ids=['firstNameInput','lastNameInput','birthInput','klasseInput'], el=ids.map(id=>document.getElementById(id));
+  const err=document.getElementById('startError');
+  el.forEach(x=>{ x.removeAttribute('aria-invalid'); x.removeAttribute('aria-describedby'); });
+  err.textContent='';
+  const fail=(x,msg)=>{ err.textContent=msg; x.setAttribute('aria-invalid','true'); x.setAttribute('aria-describedby','startError'); x.focus(); };
+  const fn=cleanInput(el[0].value), ln=cleanInput(el[1].value), bd=cleanInput(el[2].value).replace(/\s/g,''), kv=cleanInput(el[3].value);
+  const nameOk=s=>s.length>=2 && /\p{L}/u.test(s);
+  const NAME_MSG='Bitte trage deinen vollen Vor- und Nachnamen ein (jeweils mindestens 2 Zeichen).';
+  if(!nameOk(fn)) return fail(el[0],NAME_MSG);
+  if(!nameOk(ln)) return fail(el[1],NAME_MSG);
+  const m=/^(\d{2})\.(\d{2})\.(\d{4})$/.exec(bd);
+  if(!m) return fail(el[2],'Bitte gib dein Geburtsdatum im Format TT.MM.JJJJ ein (z. B. 14.09.2010).');
+  const dd=+m[1], mm=+m[2], yy=+m[3], dt=new Date(yy,mm-1,dd), now=new Date();
+  if(dt.getFullYear()!==yy||dt.getMonth()!==mm-1||dt.getDate()!==dd||yy<1950||yy>now.getFullYear()||dt>now)
+    return fail(el[2],'Das Geburtsdatum scheint nicht zu stimmen. Bitte prüfe Tag, Monat und Jahr.');
+  const k=normKlasse(kv);
+  if(!k) return fail(el[3],'Bitte gib deine Klasse ein (z. B. 10b).');
+  if(!/^[\p{L}\p{N}/-]{1,10}$/u.test(k)) return fail(el[3],'Bitte gib deine Klasse nur mit Buchstaben und Ziffern ein (z. B. 10b).');
+  state.firstName=fn; state.lastName=ln; state.birthDate=bd; state.klasse=k;
+  state.code=computeCode(m[1]+m[2]+m[3]);
+  renderIntro();
+}
+
+/* ============================================================
+   SCREEN: ABLAUF
+   ============================================================ */
+function renderIntro(){
+  show('intro',`
+  <div class="screen"><div class="wrap" data-enter>
+    <div class="intro-video">${videoHtml('ShLxo4Mrb0I','Einführung in den Escape-Room')}</div>
+    <div class="intro-head">
+      <h1 class="title-mega hello" id="helloH"></h1>
+      <p class="lede">Kaya ist Influencerin. Die Modeplattform Flitzr bietet ihr einen Werbevertrag an. Kaya sagt: „Ich unterschreibe nichts, was ich nicht verstehe. Bevor ich mich entscheide, will ich wissen, was hinter dem Shirt steckt – von Anfang bis Ende.“</p>
+      <p>Du bist Kayas Fakten-Team. Der Globus auf Kayas Schreibtisch dreht sich an jeder Station weiter – von Europa nach Südamerika, Asien und Afrika und zurück nach Europa.</p>
+      <p class="small">Kaya und Flitzr sind erfunden. Länder, Firmen und Zahlen in den Stationen sind echt (Stand: Oktober 2026).</p>
+    </div>
+    <section class="block" aria-labelledby="routeH">
+      <h2 class="h-sec" id="routeH">Deine Route</h2>
+      ${routeMapSvg(false)}
+      <ol class="route" aria-label="Deine Route">${STATIONS.map((s,i)=>tileHtml(i,'todo')).join('')}</ol>
+    </section>
+    <section class="block" aria-labelledby="stepsH">
+      <h2 class="h-sec" id="stepsH">So läuft es ab</h2>
+      <ol class="steps">
+        <li><strong>Sechs Stationen, sechs Stempel:</strong> In jeder Station liest du zuerst im Bibliotheksraum einen Text. Danach löst du im Rätselraum ein Rätsel und bekommst einen Stempel mit einem Buchstaben für deinen Reisepass.</li>
+        <li><strong>Kein Weg zurück:</strong> Sobald du den Rätselraum betrittst, kommst du nicht mehr in den Bibliotheksraum zurück.</li>
+        <li><strong>Hilfe in drei Stufen:</strong> Stimmt etwas noch nicht, bekommst du zuerst einen Hinweis, wo es im Text stand, dann den Anfangsbuchstaben und zuletzt die Lösung. Deine Versuche stehen später in deiner Überblick-PDF.</li>
+        <li><strong>Das Finale:</strong> Mit allen sechs Buchstaben öffnest du den Arena-Tunnel. Dort wartet der Endgegner: das Feiditor-Feibeitsblatt. Du schreibst Kayas Dossier – in deinen eigenen Worten.</li>
+      </ol>
+    </section>
+    <section class="block notes-card" aria-labelledby="notesH">
+      ${I.notes}
+      <div><h2 class="h-card" id="notesH">Mach dir Notizen</h2>
+      <p>Schreib dir in jeder Station das Wichtigste auf – auf Papier oder in deinem Heft. In die Bibliothek kommst du nicht zurück, und im Finale brauchst du deine Notizen.</p></div>
+    </section>
+    <p class="block-s">Pause machen? Ab Station 2 kannst du ganz unten auf der Seite einen Zwischenstand als Datei speichern und später auf der Startseite wieder laden.</p>
+    <p class="small block-s" id="loggedIn"></p>
+    <div class="btn-row"><button type="button" class="btn" id="toGlobe">Zum Globus${I.arrow}</button></div>
+  </div></div>`);
+  document.getElementById('helloH').textContent='Hallo, '+state.firstName+'!';
+  document.getElementById('loggedIn').textContent='Angemeldet als '+state.firstName+' '+state.lastName+' · geb. '+state.birthDate+' · Klasse '+state.klasse;
+  on('toGlobe','click',()=>renderGlobe({from:'intro'}));
+}
+
+/* ============================================================
+   SCREEN: GLOBUS (vor jeder Station)
+   ============================================================ */
+function renderGlobe(opts){
+  const from=(opts&&opts.from)||'resume';
+  const n=Math.min(solvedCount()+1,6), idx=n-1, st=STATIONS[idx];
+  const tiles=STATIONS.map((s,i)=>tileHtml(i,state.solved[i]?'done':i===idx?'now':'todo')).join('');
+  show('globe',`
+  <div class="screen" style="--field:var(--${st.cont}-field)"><div class="wide"><div class="globe-screen" data-enter>
+    <div class="globe-box">
+      <svg class="globe" id="globeSvg" viewBox="0 0 400 400" role="img" aria-label="${escapeHtml(st.globeCaption)}"></svg>
+      <p class="caption">${escapeHtml(st.globeCaption)}</p>
+    </div>
+    <div class="globe-info">
+      <h1 class="title-head">${escapeHtml(st.globeTitle)}</h1>
+      <span class="tag">Station ${n} · ${escapeHtml(st.where)}</span>
+      <p class="kaya">${escapeHtml(st.kaya)}</p>
+      <ol class="route" aria-label="Deine Route">${tiles}</ol>
+      <div class="btn-row"><button type="button" class="btn" id="enterStation">Station ${n} betreten${I.arrow}</button></div>
+    </div>
+  </div></div></div>`);
+  on('enterStation','click',()=>renderLibrary(idx));
+  const svg=document.getElementById('globeSvg'), to=viewOf(st);
+  const arc=idx>0 ? { a:ll(STATIONS[idx-1].pins[0]), b:ll(st.pins[0]) } : null;
+  if(from==='stamp' && idx>0){
+    spinGlobe(svg,viewOf(STATIONS[idx-1]),to,1100,(c,e)=>drawGlobe(svg,c,{idx,arc:{a:arc.a,b:arc.b,t:e},pins:false}),
+      ()=>drawGlobe(svg,to,{idx,arc,pins:true,pinAnim:!reducedMotion()}));
+  } else if(from==='intro'){
+    spinGlobe(svg,[20*D2R,-60*D2R],to,1100,c=>drawGlobe(svg,c,{idx,arc,pins:false}),
+      ()=>drawGlobe(svg,to,{idx,arc,pins:true,pinAnim:!reducedMotion()}));
+  } else {
+    drawGlobe(svg,to,{idx,arc,pins:true});
+  }
+}
+
+/* ============================================================
+   SCREEN: BIBLIOTHEKSRAUM
+   ============================================================ */
+function renderLibrary(idx){
+  const st=STATIONS[idx];
+  const paras=st.paras.map((p,i)=>{
+    const text=typeof p==='string'?p:p.text, list=typeof p==='string'?null:p.list;
+    return `<h2 class="ph">${escapeHtml(st.topics[i])}</h2>`
+      +`<p><span class="pn"><span class="sr-only">Absatz </span>${i+1}</span>${escapeHtml(text)}</p>`
+      +(list?'<ul>'+list.map(li=>`<li>${escapeHtml(li)}</li>`).join('')+'</ul>':'');
+  }).join('');
+  show('lib'+(idx+1),`
+  <div class="screen lib" style="--field:var(--${st.cont}-field)"><div class="wrap" data-enter>
+    ${stationHead(idx,'Bibliotheksraum')}
+    <div class="notice">${I.notes}<p>Hier steht das Wissen für das nächste Rätsel. <strong>Sobald du den Rätselraum betrittst, kommst du nicht mehr hierher zurück. Mach dir Notizen – im Finale brauchst du sie.</strong></p></div>
+    <div class="lib-text">${paras}</div>
+    <div class="notice warn">${I.warn}<p>Hast du dir alles notiert? <strong>Ab dem Rätselraum gibt es keinen Weg zurück.</strong></p></div>
+    <div class="btn-row"><button type="button" class="btn" id="toRoom">Zum Rätselraum: ${escapeHtml(st.label)}${I.arrow}</button></div>
+  </div></div>`);
+  on('toRoom','click',()=>goRoom(idx+1));
+}
+window.goRoom=n=>{ renderRoom(n-1); };
+
+/* ============================================================
+   SCREEN: RÄTSELRAUM (generisch für alle Stationen)
+   Bausteine: baskets · mc · assign · cloze · number · keystone
+   ============================================================ */
+const PART_LETTERS=['A','B','C'];
+const promptText=p=>p.prompt.replace(/^Teil [A-C]:\s*/,'');
+function partHtml(p,pi){
+  const X=PART_LETTERS[pi], pid='p'+p.id;
+  let body='';
+  if(p.type==='baskets'){
+    rs.order[p.id]=shuffle(p.cards);
+    body='<div class="cards">'+rs.order[p.id].map(c=>`
+      <div class="bcard" id="${pid}-${c.id}" data-part="${p.id}" data-card="${c.id}">
+        <span class="bt" id="${pid}-${c.id}-t">${escapeHtml(c.text)}</span>
+        <div class="seg" role="group" aria-labelledby="${pid}-${c.id}-t">${p.baskets.map(b=>`<button type="button" aria-pressed="false" data-b="${b.id}">${escapeHtml(b.label)}</button>`).join('')}</div>
+        <span class="mark"></span>
+      </div>`).join('')+'</div>';
+  } else if(p.type==='mc'){
+    rs.order[p.id]=shuffle(p.options.map((o,k)=>k));
+    body=`<fieldset class="mc" id="${pid}"><legend>${richText(p.question)}</legend><div class="opts">`
+      +rs.order[p.id].map(k=>`<label class="opt" data-k="${k}"><input type="radio" name="${pid}" value="${k}"><span class="ot">${escapeHtml(p.options[k].t)}</span><span class="mark"></span></label>`).join('')
+      +'</div></fieldset>';
+  } else if(p.type==='assign'){
+    rs.order[p.id]=shuffle(p.rows);
+    const opts=shuffle(p.options.map((o,k)=>k));   // eine Reihenfolge für alle Auswahllisten des Teils
+    body='<div class="rows">'+rs.order[p.id].map(r=>`
+      <div class="row" id="${pid}-${r.id}" data-part="${p.id}" data-row="${r.id}">
+        <label for="${pid}-${r.id}-s">${escapeHtml(r.text)}</label>
+        <select class="sel" id="${pid}-${r.id}-s"><option value="">${escapeHtml(p.placeholder)}</option>${opts.map(k=>`<option value="${k}">${escapeHtml(p.options[k])}</option>`).join('')}</select>
+        <p class="echo" aria-hidden="true"></p>
+        <span class="mark"></span>
+      </div>`).join('')+'</div>';
+  } else if(p.type==='cloze'){
+    let k=0; const n=p.blanks.length;
+    body=`<p class="cloze">`+p.segments.map(s=>{
+      if(typeof s==='string') return escapeHtml(s);
+      const b=p.blanks.find(x=>x.id===s.blank); k++;
+      return `<input class="gap${b.kind==='number'?' num':''}" id="${pid}-${b.id}" type="text"${b.kind==='number'?' inputmode="decimal"':''} aria-label="Lücke ${k} von ${n}" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="40"><span class="gmark" id="${pid}-${b.id}-m"></span>`;
+    }).join('')+`</p><p class="info" id="${pid}-info" role="status"></p>`;
+  } else if(p.type==='number'){
+    body=`<div class="numq"><label for="${pid}-in">${escapeHtml(p.question)}</label><div class="numrow">`
+      +`<input class="gap numin" id="${pid}-in" type="text" inputmode="decimal" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="40">`
+      +`<span class="unit">${escapeHtml(p.unit)}</span><span class="gmark" id="${pid}-in-m"></span></div></div>`;
+  } else if(p.type==='keystone'){
+    body=`<div class="keystone"><label for="${pid}-in">${escapeHtml(p.question)}</label><div class="krow">`
+      +`<input class="kin" id="${pid}-in" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="40">`
+      +`<span class="kmark" id="${pid}-in-m"></span></div></div>`;
+  }
+  return `<section class="part" aria-labelledby="${pid}-h"><h2 id="${pid}-h">Teil ${X}</h2><p class="prompt">${escapeHtml(promptText(p))}</p>${body}</section>`;
+}
+function renderRoom(idx){
+  const st=STATIONS[idx];
+  rs={ idx, submitted:false, order:{}, choice:{} };
+  show('room'+(idx+1),`
+  <div class="screen room-screen" style="--field:var(--${st.cont}-field)"><div class="wrap" data-enter>
+    ${stationHead(idx,'Rätselraum')}
+    <p class="lede">${richText(st.roomIntro)}</p>
+    ${st.parts.map(partHtml).join('')}
+    <div id="statusBox" class="status" role="status"></div>
+    <div id="helpBox" class="help" hidden></div>
+    <div class="btn-row"><button type="button" class="btn" id="checkBtn">Prüfen</button></div>
+  </div></div>`);
+  bindRoom(idx);
+}
+function clearMark(el){ if(!el) return; el.classList.remove('is-ok','is-bad'); const m=el.querySelector(':scope > .mark'); if(m) m.innerHTML=''; }
+function setMark(el,ok){
+  el.classList.toggle('is-ok',ok); el.classList.toggle('is-bad',!ok);
+  const m=el.querySelector(':scope > .mark'); if(m) m.innerHTML=ok?I.check+'<span>Richtig</span>':I.cross+'<span>Stimmt noch nicht</span>';
+}
+function setFieldMark(input,ok){
+  input.classList.toggle('is-ok',ok); input.classList.toggle('is-bad',!ok);
+  if(ok) input.removeAttribute('aria-invalid'); else input.setAttribute('aria-invalid','true');
+  const m=document.getElementById(input.id+'-m'); if(!m) return;
+  if(m.classList.contains('kmark')){ m.className='kmark '+(ok?'ok':'bad'); m.innerHTML=(ok?I.check+'<span>Richtig</span>':I.cross+'<span>Stimmt noch nicht</span>'); }
+  else { m.className='gmark '+(ok?'ok':'bad'); m.innerHTML=(ok?I.check:I.cross)+`<span class="sr-only">${ok?'richtig':'stimmt noch nicht'}</span>`; }
+}
+function clearFieldMark(input){
+  input.classList.remove('is-ok','is-bad'); input.removeAttribute('aria-invalid');
+  const m=document.getElementById(input.id+'-m'); if(m){ m.className=m.classList.contains('kmark')?'kmark':'gmark'; m.innerHTML=''; }
+}
+function bindRoom(idx){
+  const st=STATIONS[idx], box=root.querySelector('.room-screen');
+  box.addEventListener('click',e=>{
+    const btn=e.target.closest('.seg button'); if(!btn||rs.submitted||btn.disabled) return;
+    const card=btn.closest('.bcard'), pidd=card.dataset.part;
+    (rs.choice[pidd]=rs.choice[pidd]||{})[card.dataset.card]=btn.dataset.b;
+    card.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-pressed',b===btn?'true':'false'));
+    clearMark(card);
+  });
+  box.addEventListener('change',e=>{
+    const t=e.target;
+    if(t.matches('.opt input')){ t.closest('fieldset').querySelectorAll('.opt').forEach(clearMark); }
+    else if(t.matches('select.sel')){
+      const row=t.closest('.row'), part=st.parts.find(p=>p.id===row.dataset.part);
+      row.querySelector('.echo').textContent=t.value===''?'':part.options[+t.value];
+      clearMark(row);
+    }
+  });
+  box.addEventListener('input',e=>{ if(e.target.matches('.gap,.kin')) clearFieldMark(e.target); });
+  box.addEventListener('keydown',e=>{ if(e.key==='Enter' && e.target.matches('.gap,.kin')){ e.preventDefault(); checkRoom(idx); } });
+  on('checkBtn','click',()=>checkRoom(idx));
+}
+function statusHtml(ok,msg){ return (ok?I.check:I.warn)+'<span>'+escapeHtml(msg)+'</span>'; }
+function setStatus(ok,msg){
+  const s=document.getElementById('statusBox');
+  s.className='status '+(ok?'is-ok':'is-warn')+(reducedMotion()?'':' pop');
+  s.innerHTML=statusHtml(ok,msg);
+}
+function joinLetters(ls){ return ls.length===1?ls[0]:ls.slice(0,-1).join(', ')+' und '+ls[ls.length-1]; }
+function checkRoom(idx){
+  if(!rs||rs.idx!==idx||rs.submitted) return;
+  const st=STATIONS[idx], scr=root.querySelector('.room-screen');
+  // 1. Vollständigkeit (Auswahl-Bausteine): kein Versuch, keine Markierung
+  const missing=[];
+  st.parts.forEach((p,pi)=>{
+    const pid='p'+p.id; let ok=true;
+    if(p.type==='baskets') ok=p.cards.every(c=>rs.choice[p.id]&&rs.choice[p.id][c.id]);
+    else if(p.type==='mc') ok=!!scr.querySelector(`input[name="${pid}"]:checked`);
+    else if(p.type==='assign') ok=p.rows.every(r=>document.getElementById(`${pid}-${r.id}-s`).value!=='');
+    if(!ok) missing.push(PART_LETTERS[pi]);
+  });
+  if(missing.length){ setStatus(false,`Noch unvollständig: In Teil ${joinLetters(missing)} fehlt noch eine Antwort.`); return; }
+  // 2. Bewerten
+  const errors=[], helps=[]; let n=0, akkord=null;
+  const topicLine=(p,q)=>`Absatz ${p} – ${st.topics[p-1]}: ${q}`;
+  st.parts.forEach((p,pi)=>{
+    const X=PART_LETTERS[pi], pid='p'+p.id;
+    if(p.type==='baskets'){
+      p.cards.forEach(c=>{
+        n++; const chosen=rs.choice[p.id][c.id], ok=chosen===c.b, el=document.getElementById(`${pid}-${c.id}`);
+        setMark(el,ok);
+        if(!ok){
+          const right=p.baskets.find(b=>b.id===c.b), wrong=p.baskets.find(b=>b.id===chosen);
+          errors.push({kind:'korb', item:c.text, wrong:wrong?wrong.label:'', right:right.label});
+          helps.push({name:'Karte '+quoted(c.text), s1:topicLine(c.p,c.q), s2:`Der richtige Korb beginnt mit ${quotedStart(right.start)}.`, s3:'Lösung: '+right.label});
+        }
+      });
+    } else if(p.type==='mc'){
+      n++; const inp=scr.querySelector(`input[name="${pid}"]:checked`), k=+inp.value, ok=!!p.options[k].ok;
+      scr.querySelectorAll(`#${pid} .opt`).forEach(clearMark);
+      setMark(inp.closest('.opt'),ok);
+      if(!ok){
+        const right=p.options.find(o=>o.ok);
+        errors.push({kind:'mc', item:p.question, wrong:p.options[k].t, right:right.t});
+        helps.push({name:'Teil '+X, s1:topicLine(p.p,p.q), s2:`Die richtige Antwort beginnt mit ${quotedStart(p.start)}.`, s3:'Lösung: '+p.sol});
+      }
+    } else if(p.type==='assign'){
+      p.rows.forEach(r=>{
+        n++; const sel=document.getElementById(`${pid}-${r.id}-s`), val=p.options[+sel.value], ok=val===r.ans;
+        setMark(document.getElementById(`${pid}-${r.id}`),ok);
+        if(!ok){
+          const words=r.text.split(/\s+/), short=words.length<=6?quoted(r.text):quotedStart(words.slice(0,6).join(' ')+' …');
+          errors.push({kind:'zuordnung', item:r.text, wrong:val, right:r.ans});
+          helps.push({name:'Zeile '+short, s1:topicLine(r.p,r.q), s2:`Die richtige Antwort beginnt mit ${quotedStart(r.start)}.`, s3:'Lösung: '+r.ans});
+        }
+      });
+    } else if(p.type==='cloze'){
+      let k=0; const info=document.getElementById(pid+'-info'); info.textContent='';
+      p.segments.forEach(s=>{
+        if(typeof s==='string') return;
+        const b=p.blanks.find(x=>x.id===s.blank); k++; n++;
+        const inp=document.getElementById(`${pid}-${b.id}`), raw=inp.value;
+        let ok=b.kind==='number'?numberMatches(raw,b.num):wordMatches(raw,b.accept);
+        if(!ok && b.alsoOk && wordMatches(raw,b.alsoOk)){ ok=true; akkord=b.alsoOkNote; info.textContent=b.alsoOkNote; }
+        setFieldMark(inp,ok);
+        if(!ok){
+          errors.push({kind:'luecke', item:`Lücke ${k}: ${b.sentence}`, wrong:raw.trim().slice(0,200)||'(leer)', right:b.sol});
+          helps.push({name:'Lücke '+k, s1:topicLine(b.p,b.q), s2:b.h2, s3:'Lösung: '+b.sol});
+        }
+      });
+    } else if(p.type==='number'){
+      n++; const inp=document.getElementById(pid+'-in'), ok=numberMatches(inp.value,p.num);
+      setFieldMark(inp,ok);
+      if(!ok){
+        errors.push({kind:'zahl', item:p.question, wrong:inp.value.trim().slice(0,200)||'(leer)', right:p.sol});
+        helps.push({name:'Teil '+X, s1:topicLine(p.p,p.q), s2:p.h2, s3:'Lösung: '+p.sol});
+      }
+    } else if(p.type==='keystone'){
+      n++; const inp=document.getElementById(pid+'-in'), ok=wordMatches(inp.value,p.accept);
+      setFieldMark(inp,ok);
+      if(!ok){
+        errors.push({kind:'schlussstein', item:'Schlussstein: '+p.question, wrong:inp.value.trim().slice(0,200)||'(leer)', right:CODE_WORD});
+        helps.push({name:'Schlussstein', s1:p.h1, s2:p.h2, s3:'Lösung: '+p.sol});
+      }
+    }
+  });
+  recordAttempt(idx,errors);
+  const help=document.getElementById('helpBox');
+  if(errors.length===0){
+    rs.submitted=true;
+    scr.querySelectorAll('.part button, .part input, .part select').forEach(el=>{ if(el.matches('input[type="text"]')) el.readOnly=true; else el.disabled=true; });
+    document.getElementById('checkBtn').disabled=true;
+    help.hidden=true; help.innerHTML='';
+    setStatus(true,'Richtig! '+st.success+(akkord?' '+akkord:''));
+    setTimeout(()=>{ if(rs&&rs.idx===idx&&state.screen==='room'+(idx+1)) triggerReveal(idx); },700);
+    return;
+  }
+  setStatus(false,`Noch nicht ganz: ${errors.length} von ${n} Antworten stimmen noch nicht. Sie sind rot markiert – unten steht Hilfe.`);
+  const stage=Math.min(state.attempts[idx],3);
+  const heads=['Hilfe – Stufe 1 von 3: Wo stand es?','Hilfe – Stufe 2 von 3: Der Anfang','Hilfe – Stufe 3 von 3: Die Lösung'];
+  help.innerHTML=`<div class="help-head">${I.bulb}<h3>${heads[stage-1]}</h3></div><ul>`
+    +helps.map(h=>`<li><strong>${escapeHtml(h.name)}:</strong> ${escapeHtml(stage===1?h.s1:stage===2?h.s2:h.s3)}</li>`).join('')+'</ul>'
+    +(stage===3?'<p>Trage die Lösungen ein und prüfe noch einmal.</p>':'');
+  help.hidden=false;
+  help.classList.remove('pop'); void help.offsetWidth; if(!reducedMotion()) help.classList.add('pop');
+}
+
+/* ============================================================
+   STEMPEL-DIALOG
+   ============================================================ */
+let stampPending=null;
+function triggerReveal(roomIdx){
+  state.solved[roomIdx]=true; state.letters[roomIdx]=CODE_WORD[roomIdx];
+  updateChrome();
+  const st=STATIONS[roomIdx], dlg=document.getElementById('stampDialog'), last=roomIdx===5;
+  const got=STATIONS.filter((s,i)=>state.solved[i]).map(s=>s.letter);
+  dlg.innerHTML=`
+    <div class="stamp-big" style="--rot:${st.stamp.rot}deg">${stampSvg(roomIdx,'big'+roomIdx)}</div>
+    <h2 id="stampTitle" class="h-card">Stempel ${roomIdx+1} von 6: ${st.letter}</h2>
+    <p class="stamp-place">${escapeHtml(st.contName+' · '+st.short)}</p>
+    <div class="passport-page" role="img" aria-label="Dein Reisepass: ${got.join(', ')}">${passSlots('d'+roomIdx+'-')}</div>
+    <button type="button" class="btn" id="stampGo" autofocus>${last?'Weiter zum Finale':'Weiter zum Globus'}${I.arrow}</button>`;
+  stampPending=roomIdx;
+  document.getElementById('stampGo').addEventListener('click',stampContinue);
+  dlg.showModal();
+}
+function stampContinue(){
+  if(stampPending===null) return;
+  const idx=stampPending; stampPending=null;
+  const dlg=document.getElementById('stampDialog'); if(dlg.open) dlg.close();
+  if(idx===5) renderFinal(); else renderGlobe({from:'stamp'});
+}
+document.getElementById('stampDialog').addEventListener('cancel',e=>{ e.preventDefault(); stampContinue(); });
+
+/* ============================================================
+   SCREEN: FINALE
+   ============================================================ */
+function pdfButtonsDone(){
+  ['pdfBtn','pdfBtn2'].forEach(id=>{ const b=document.getElementById(id); if(b) b.innerHTML='Überblick-PDF erneut herunterladen'+I.download; });
+}
+function pdfAction(msgId){
+  const ok=window.downloadOverviewPDF();
+  ['pdfMsg','pdfMsg2'].forEach(id=>{ const m=document.getElementById(id); if(m){ m.textContent=''; m.className='msg'; m.setAttribute('role','status'); } });
+  const msg=document.getElementById(msgId);
+  if(ok){ pdfButtonsDone(); if(msg) msg.textContent='Gespeichert. Du findest die Datei in deinem Download-Ordner.'; }
+  else if(msg){ msg.setAttribute('role','alert'); msg.className='msg is-err'; msg.textContent='Die Überblick-PDF konnte nicht erstellt werden. Lade die Seite nicht neu – versuche es noch einmal.'; }
+  return ok;
+}
+function renderFinal(){
+  if(!state.completedAt) state.completedAt=new Date();
+  const { totalErrors, perfect }=firstTryStats();
+  const locked=!FB_CODE;
+  const pdfLabel=state.pdfDownloaded?'Überblick-PDF erneut herunterladen':'Überblick-PDF herunterladen';
+  show('final',`
+  <div class="screen final">
+    <div class="wide" data-enter>
+      <div class="final-head">
+        <h1 class="title-head">Dein Reisepass ist voll</h1>
+        <div class="pass-cover">
+          <p class="pass-deck">Reisepass · Fakten-Team</p>
+          <div class="pass-row" role="img" aria-label="Dein Reisepass: ${STATIONS.map(s=>s.letter).join(', ')}">${passSlots('f')}</div>
+        </div>
+        <p class="codeword">${CODE_WORD}</p>
+        <p class="lede" id="finalSummary"></p>
+      </div>
+    </div>
+    <section class="arena" aria-labelledby="arenaH"><div class="arena-in">
+      <h2 id="arenaH">Das Finale: Kayas Dossier</h2>
+      <p class="kaya">Kaya sagt: „Bevor ich unterschreibe oder absage, will ich alles schriftlich – in deinen Worten.“</p>
+      ${videoHtml('Sh0REtJ1o5w','Das Finale in der Arena')}
+      <div class="prep">
+        <h3 class="h-card">Bevor du durch den Tunnel gehst</h3>
+        <ol>
+          <li><strong>Lade zuerst deine Überblick-PDF herunter.</strong> Sie enthält deinen Bestätigungscode, deine Ergebnisse und die Lösungserläuterungen. Im Finale verweist die KI darauf – und mit der PDF kannst du jederzeit weitermachen.
+            <div class="btn-row"><button type="button" class="btn go" id="pdfBtn">${pdfLabel}${I.download}</button></div>
+            <p id="pdfMsg" class="msg" role="status"></p></li>
+          <li><strong>Nimm deine Notizen dazu.</strong> Nutze deine Notizen aus dem Escape-Room – im Feibeitsblatt schreibst du zu jeder Station.</li>
+        </ol>
+      </div>
+      ${locked?`<p id="gateLocked" class="gate-locked" tabindex="-1">${I.lock}<span>Das Finale ist noch nicht freigeschaltet. Lade dir deine Überblick-PDF herunter – damit kannst du später unter feibeitsblatt.janrickmer.de weitermachen.</span></p>`:''}
+      <button type="button" class="gate" id="gate"${locked?' aria-disabled="true" aria-describedby="gateLocked gateHint"':' aria-describedby="gateHint"'}>
+        ${tunnelSvg(!locked)}
+        <span class="enter">${locked?I.lock+'Noch gesperrt<span class="sr-only">: Tunnel zum Feiditor-Feibeitsblatt</span>':'Durch den Tunnel zum Feiditor-Feibeitsblatt'+I.arrow}</span>
+      </button>
+      <p id="gateHint" class="gate-hint">Der Gang öffnet das Feiditor-Feibeitsblatt in diesem Tab. Zurück in den Escape-Room geht es danach nur mit einer Zwischenstand-Datei.</p>
+    </div></section>
+    <div class="wide">
+      <div class="pause">
+        <h2 class="h-card">Erst einmal Pause?</h2>
+        <p>Lade deine Überblick-PDF herunter. Weitermachen kannst du später unter feibeitsblatt.janrickmer.de mit „Zwischenstand-PDF hochladen“ – dort beginnt dann gleich das Finale.</p>
+        <div class="btn-row"><button type="button" class="btn ghost" id="pdfBtn2">${pdfLabel}${I.download}</button></div>
+        <p id="pdfMsg2" class="msg" role="status"></p>
+      </div>
+      <div data-save-slot></div>
+      <section class="recap" aria-labelledby="whyH">
+        <h2 class="h-sec" id="whyH">Warum GLOBUS?</h2>
+        <p>Kayas Globus hat sich von Station zu Station gedreht – von Europa nach Südamerika, Asien und Afrika und zurück nach Europa. Ein einziges T-Shirt verbindet all diese Orte. Genau das meint Globalisierung: Länder handeln immer mehr miteinander und hängen voneinander ab.</p>
+        <h2 class="h-sec">Deine Reise</h2>
+        ${routeMapSvg(true)}
+        <h2 class="h-sec">Das hast du herausgefunden</h2>
+        <ul>
+          <li><strong>Was steckt im Preis?</strong> Der Ladenpreis zeigt nicht die wahren Kosten – externe Kosten zahlt niemand an der Kasse.</li>
+          <li><strong>Feld oder Ölquelle?</strong> Polyester kommt aus Erdöl, Baumwolle braucht viel Fläche, Wasser und Insektizide – und ein Handelsstreit verschiebt den Baumwollhandel.</li>
+          <li><strong>Nähen für die Welt:</strong> Bangladesch näht für die Welt und hängt vom Export ab; Arbeiter:innen, Arbeitgeberverbände und Regierung verfolgen unterschiedliche Interessen.</li>
+          <li><strong>Ware unter Verdacht:</strong> Wegen Xinjiang geraten Modefirmen zwischen die Fronten von Staaten – Vorwurf und Gegenposition, Sanktionen und Gegensanktionen, Boykott und Regeln gegen Zwangsarbeit.</li>
+          <li><strong>Zweites Leben oder Müll?</strong> Altkleider reisen um die Welt; im Streit um Altkleider stehen Ruanda und die USA gegeneinander.</li>
+          <li><strong>Was darf Kaya posten?</strong> Neue EU-Regeln verbieten typische Greenwashing-Tricks, und bezahlte Posts muss Kaya als Werbung kennzeichnen.</li>
+        </ul>
+      </section>
+      <p class="closing">Kaya liest dein Dossier. Entscheiden muss sie selbst – und du kannst dir deine eigene Meinung bilden.</p>
+    </div>
+  </div>`);
+  document.getElementById('finalSummary').textContent = totalErrors===0
+    ? `Alle sechs Stationen im ersten Versuch fehlerfrei – stark, ${state.firstName}!`
+    : `Du hast ${perfect} von 6 Stationen im ersten Versuch fehlerfrei gelöst (${totalErrors} Fehler im ersten Versuch). In deiner Überblick-PDF findest du alles mit Erklärung.`;
+  on('pdfBtn','click',()=>pdfAction('pdfMsg'));
+  on('pdfBtn2','click',()=>pdfAction('pdfMsg2'));
+  on('gate','click',()=>enterTunnel(false));
+}
+// Rückfrage vor dem Tunnel (nur ohne heruntergeladene Überblick-PDF)
+let tunnelNext=null;
+(function(){
+  const dlg=document.getElementById('tunnelDialog');
+  // Download direkt im Klick auslösen (Nutzeraktion), danach schließen
+  document.getElementById('tunnelPdf').addEventListener('click',()=>{ pdfAction('pdfMsg'); tunnelNext='pdf'; dlg.close(); });
+  document.getElementById('tunnelGo').addEventListener('click',()=>{ tunnelNext='go'; dlg.close(); });
+  dlg.addEventListener('close',()=>{
+    const next=tunnelNext; tunnelNext=null;
+    if(next==='pdf'){ const b=document.getElementById('pdfBtn'); if(b) b.focus(); }
+    else if(next==='go') enterTunnel(true);
+    else { const g=document.getElementById('gate'); if(g) g.focus(); }
+  });
+})();
+
+// Höhe der klebenden Topbar für scroll-padding-top (fokussierte Felder nie verdeckt)
+if(window.ResizeObserver){ new ResizeObserver(()=>document.documentElement.style.setProperty('--topbar-h',topbar.offsetHeight+'px')).observe(topbar); }
+
+/* ---------- Zwischenstand: Anpassung an diesen Escape-Room ---------- */
+const SAVE_GAME_TITLE   = 'FastFashion';                        // Spieltitel (Dateiname & Kopf der Datei)
+const SAVE_ROOM_ID      = 'powi-jg10-fastfashion';              // Kennung: Dateien anderer Escape-Rooms werden abgelehnt
+const SAVE_CONTAINER_ID = 'screenContainer';                   // Container, dessen Inhalt jeder Bildschirm ersetzt
+const SAVE_ROOMS        = 6;                                   // Anzahl der Rätselräume
+// Speichern in Bibliotheks- und Rätselräumen ab Nr. 2, am Globus (ab Station 2) und im Finale
+function saveScreenAllowed(s){
+  const m=/^(lib|room)(\d+)$/.exec(s||'');
+  if(m) return +m[2]>=2 && +m[2]<=SAVE_ROOMS;
+  if(s==='globe') return solvedCount()>=1;
+  return s==='final';
+}
+function saveScreenLabel(s){
+  const m=/^(lib|room)(\d+)$/.exec(s||'');
+  if(m) return (m[1]==='lib'?'Bibliotheksraum ':'Rätselraum ')+m[2];
+  if(s==='globe') return 'Globus vor Station '+Math.min(solvedCount()+1,SAVE_ROOMS);
+  return s==='final'?'Finale':'Einführung';
+}
+// Ein bereits gelöster Rätselraum wird nicht erneut gezeigt: weiter wie nach dem Stempel-Dialog.
+function saveResumeTarget(s){
+  const m=/^room(\d+)$/.exec(s||'');
+  if(!m) return s;
+  const i=+m[1]-1;
+  // Gerade richtig gelöst, der Stempel-Dialog (700 ms verzögert) steht noch aus: Ergebnis schon jetzt eintragen.
+  if(!state.solved[i] && rs && rs.idx===i && rs.submitted){ state.solved[i]=true; state.letters[i]=CODE_WORD[i]; }
+  if(state.solved[i]) return +m[1]>=SAVE_ROOMS ? 'final' : 'globe';
+  return s;
+}
+function saveGoTo(s){
+  let m;
+  if(s==='final') renderFinal();
+  else if(s==='globe') renderGlobe({from:'resume'});
+  else if((m=/^lib(\d+)$/.exec(s)) && +m[1]>=1 && +m[1]<=SAVE_ROOMS) renderLibrary(+m[1]-1);
+  else if((m=/^room(\d+)$/.exec(s)) && +m[1]>=1 && +m[1]<=SAVE_ROOMS) goRoom(+m[1]);
+  else renderIntro();
+}
+// Zusatzdaten außerhalb von state (hier nicht nötig: alle Ergebnisse stehen in state)
+function saveCollectExtra(){ return {}; }
+function saveApplyExtra(extra,data){}
+// Upload-Seite im Stil dieses Escape-Rooms
+function saveRenderResumeScreen(){
+  show('resume',`
+  <div class="screen"><div class="wrap" data-enter>
+    <h1 class="title-head">Weiterspielen, wo du aufgehört hast</h1>
+    <div class="resume-box">
+      <p>Lade hier deine Zwischenstand-Datei hoch. Sie heißt „Zwischenstand zum Escape-Room ${SAVE_GAME_TITLE} vom … von …“ und liegt meistens in deinem Download-Ordner. Danach geht es genau an der Stelle weiter, an der du gespeichert hast.</p>
+      ${saveDropHtml()}
+      <p class="small resume-pdf">Du hast schon deine Überblick-PDF? Mit ihr geht es im Feiditor-Feibeitsblatt weiter: feibeitsblatt.janrickmer.de, „Zwischenstand-PDF hochladen“.</p>
+      <div class="btn-row"><button type="button" class="btn ghost" id="backToStart">Zurück zur Anmeldung</button></div>
+    </div>
+  </div></div>`);
+  on('backToStart','click',renderStart);
+}
+
+/* ============================================================
+   ZWISCHENSTAND ALS DATEI SPEICHERN / AUS DATEI LADEN
+   Die Datei (.txt) enthält oben einen lesbaren Hinweistext und
+   darunter einen codierten Datenblock mit Prüfsumme. Veränderte,
+   beschädigte oder fremde Dateien werden beim Laden abgelehnt.
+   Jedes Laden wird in state.resumeLog vermerkt und erscheint am
+   Ende der Überblick-PDF (für die Lehrkraft).
+   ============================================================ */
+const SAVE_FORMAT = 1;
+const SAVE_SALT   = 'Zwischenstand|Escape-Room|v1';
+const SAVE_BEGIN  = '-----BEGIN ZWISCHENSTAND-----';
+const SAVE_END    = '-----END ZWISCHENSTAND-----';
+const SAVE_ICON   = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>';
+const LOAD_ICON   = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>';
+
+function saveHash(str){ // cyrb53-Variante, 64 Bit als 16 Hex-Zeichen
+  let h1=0xdeadbeef^str.length, h2=0x41c6ce57^str.length;
+  for(let i=0;i<str.length;i++){ const ch=str.charCodeAt(i); h1=Math.imul(h1^ch,2654435761); h2=Math.imul(h2^ch,1597334677); }
+  h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);
+  h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);
+  return (h2>>>0).toString(16).padStart(8,'0')+(h1>>>0).toString(16).padStart(8,'0');
+}
+function saveScramble(bytes){ // symmetrisch: dieselbe Funktion codiert und decodiert
+  let s=parseInt(saveHash(SAVE_SALT).slice(0,8),16)>>>0;
+  const out=new Uint8Array(bytes.length);
+  for(let i=0;i<bytes.length;i++){
+    s=(s+0x6D2B79F5)>>>0; let t=s;
+    t=Math.imul(t^(t>>>15),t|1); t^=t+Math.imul(t^(t>>>7),t|61);
+    out[i]=bytes[i]^((t^(t>>>14))&0xFF);
+  }
+  return out;
+}
+function saveEncode(data){
+  const json=JSON.stringify(data);
+  const wrap=JSON.stringify({ f:SAVE_FORMAT, id:SAVE_ROOM_ID, s:saveHash(SAVE_SALT+'|'+SAVE_ROOM_ID+'|'+json), d:json });
+  const bytes=saveScramble(new TextEncoder().encode(wrap));
+  let bin=''; for(let i=0;i<bytes.length;i+=0x8000) bin+=String.fromCharCode.apply(null,bytes.subarray(i,i+0x8000));
+  return btoa(bin).replace(/.{1,76}/g,'$&\r\n').trim();
+}
+function saveDecode(text){ // wirft Error mit schülergerechter Meldung
+  const newer='Diese Zwischenstand-Datei stammt aus einer neueren Version des Escape-Rooms. Bitte lade die Seite neu und versuche es noch einmal.';
+  const m=/-----BEGIN ZWISCHENSTAND(?: V(\d+))?-----/.exec(text);   // künftige Formate tragen ihre Nummer im Marker
+  const b=m?text.indexOf(SAVE_END,m.index):-1;
+  if(!m||b<0) throw new Error('Das ist keine Zwischenstand-Datei. Bitte wähle die Datei „Zwischenstand zum Escape-Room '+SAVE_GAME_TITLE+' vom … von …“ aus.');
+  if(m[1]&&+m[1]>SAVE_FORMAT) throw new Error(newer);
+  const broken='Diese Zwischenstand-Datei wurde verändert oder ist beschädigt und kann nicht geladen werden.';
+  let wrap;
+  try{
+    const bin=atob(text.slice(m.index+m[0].length,b).replace(/[^A-Za-z0-9+/=]/g,''));
+    const bytes=new Uint8Array(bin.length); for(let i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i);
+    wrap=JSON.parse(new TextDecoder('utf-8',{fatal:true}).decode(saveScramble(bytes)));
+  }catch(e){ throw new Error(broken); }
+  if(!wrap||typeof wrap.d!=='string'||typeof wrap.id!=='string'||wrap.s!==saveHash(SAVE_SALT+'|'+wrap.id+'|'+wrap.d)) throw new Error(broken);
+  let data; try{ data=JSON.parse(wrap.d); }catch(e){ throw new Error(broken); }
+  if(wrap.id!==SAVE_ROOM_ID) throw new Error('Diese Zwischenstand-Datei gehört zu einem anderen Escape-Room'+(data&&data.game?' („'+data.game+'“)':'')+'. Bitte öffne den passenden Escape-Room.');
+  if(wrap.f>SAVE_FORMAT) throw new Error(newer);
+  if(!data||typeof data!=='object'||!data.state||typeof data.state!=='object'||typeof data.screen!=='string') throw new Error(broken);
+  return data;
+}
+
+function saveTwo(n){ return String(n).padStart(2,'0'); }
+function saveFmtDate(d){ d=new Date(d); return saveTwo(d.getDate())+'.'+saveTwo(d.getMonth()+1)+'.'+d.getFullYear(); }
+function saveFmtDateTime(d){ d=new Date(d); if(isNaN(d)) return '–'; return saveFmtDate(d)+' um '+saveTwo(d.getHours())+':'+saveTwo(d.getMinutes())+' Uhr'; }
+function saveStudentName(){ return ((state.firstName||'')+' '+(state.lastName||'')).trim(); }
+function saveFileName(d){
+  const clean=s=>String(s||'').replace(/[\\/:*?"<>|\u0000-\u001F]+/g,' ').replace(/\s+/g,' ').trim();
+  return clean('Zwischenstand zum Escape-Room '+SAVE_GAME_TITLE+' vom '+saveFmtDate(d)+' von '+(saveStudentName()||'Unbekannt'))+'.txt';
+}
+
+/* Toast-Meldung (unten, blendet sich selbst aus) */
+let saveToastTimer=null;
+function showSaveToast(msg,isError){
+  let t=document.getElementById('saveToast');
+  if(!t){ t=document.createElement('div'); t.id='saveToast'; t.className='save-toast'; document.body.appendChild(t); }
+  t.setAttribute('role',isError?'alert':'status');
+  t.textContent=msg; t.classList.add('show');
+  clearTimeout(saveToastTimer); saveToastTimer=setTimeout(()=>t.classList.remove('show'),6000);
+}
+
+/* ---------- Speichern ---------- */
+window.saveProgress=()=>{
+  try{
+    const now=new Date();
+    const target=saveResumeTarget(state.screen);
+    const snap=JSON.parse(JSON.stringify(state));
+    snap.screen=target;
+    const data={ v:SAVE_FORMAT, game:SAVE_GAME_TITLE, savedAt:now.toISOString(), screen:target, place:saveScreenLabel(target), state:snap, extra:saveCollectExtra() };
+    const name=saveStudentName()||'Unbekannt';
+    const NL='\r\n';
+    const text='\uFEFF'
+      +'Zwischenstand zum Escape-Room „'+SAVE_GAME_TITLE+'“'+NL
+      +'Name: '+name+NL
+      +'Gespeichert am '+saveFmtDateTime(now)+' ('+data.place+')'+NL+NL
+      +'So geht es weiter: Öffne den Escape-Room und klicke auf der Startseite ganz unten auf'+NL
+      +'„Zwischenstand aus Datei laden und weiterspielen“. Lade dann diese Datei hoch.'+NL
+      +'Bitte verändere diese Datei nicht – sonst kann sie nicht mehr geladen werden.'+NL+NL
+      +SAVE_BEGIN+NL+saveEncode(data)+NL+SAVE_END+NL;
+    const filename=saveFileName(now);
+    // application/octet-stream: Der Browser speichert die Datei, statt sie nur anzuzeigen.
+    const url=URL.createObjectURL(new Blob([text],{type:'application/octet-stream'}));
+    const link=document.createElement('a');
+    link.href=url; link.download=filename; link.style.display='none';
+    document.body.appendChild(link); link.click();
+    // Object-URL lange gültig lassen: iOS liest den Blob erst, wenn der Download-Dialog bestätigt ist.
+    setTimeout(()=>{ try{ document.body.removeChild(link); }catch(_){} URL.revokeObjectURL(url); },60000);
+    showSaveToast('Zwischenstand gespeichert. Du findest die Datei in deinem Download-Ordner.');
+  }catch(e){ console.error(e); showSaveToast('Der Zwischenstand konnte nicht gespeichert werden. Bitte versuche es noch einmal.',true); }
+};
+
+/* ---------- Speicher-Button am Seitenende (bzw. im Platzhalter data-save-slot des Finales) ---------- */
+function refreshSaveBar(){
+  const box=document.getElementById(SAVE_CONTAINER_ID); if(!box) return;
+  const bar=document.getElementById('saveBar');
+  if(!saveScreenAllowed(state.screen)){ if(bar) bar.remove(); return; }
+  const slot=box.querySelector('[data-save-slot]')||box;
+  if(bar&&bar.parentNode===slot&&slot.lastElementChild===bar) return;
+  if(bar) bar.remove();
+  slot.insertAdjacentHTML('beforeend',
+    '<div class="save-bar" id="saveBar"><button type="button" class="btn ghost save-btn" onclick="saveProgress()" '
+    +'title="Lädt eine Datei mit deinem bisherigen Fortschritt herunter. Damit kannst du später an dieser Stelle weiterspielen.">'
+    +SAVE_ICON+'<span>Zwischenstand als Datei speichern</span></button></div>');
+}
+// Jede Bildschirm-Änderung ersetzt den Inhalt des Bildschirm-Containers – dann Button prüfen.
+new MutationObserver(refreshSaveBar).observe(document.getElementById(SAVE_CONTAINER_ID),{childList:true});
+
+/* ---------- Feld auf der Startseite ---------- */
+function saveLoadFieldHtml(){
+  return '<button type="button" class="save-load-field" onclick="renderResume()">'+LOAD_ICON
+    +'<span>Zwischenstand aus Datei laden und weiterspielen</span></button>';
+}
+
+/* ---------- Laden ---------- */
+function saveApplyState(snap){
+  Object.keys(state).forEach(k=>{
+    if(k==='screen'||!(k in snap)) return;
+    const cur=state[k], val=snap[k];
+    if(k==='completedAt'){ state[k]=val?new Date(val):null; return; }
+    if(Array.isArray(cur)){ if(Array.isArray(val)) state[k]=val; return; }
+    if(cur===null||val===null||typeof cur===typeof val) state[k]=val;
+  });
+  state.resumeLog=Array.isArray(state.resumeLog)?state.resumeLog.filter(e=>e&&typeof e==='object'&&typeof e.place==='string'):[];
+}
+function saveLoadText(text){
+  const data=saveDecode(text);
+  saveApplyState(data.state);
+  saveApplyExtra(data.extra||{},data);
+  state.resumeLog.push({ place:String(data.place||saveScreenLabel(data.screen)), savedAt:String(data.savedAt||''), loadedAt:new Date().toISOString() });
+  saveGoTo(data.screen);
+  window.scrollTo({top:0,behavior:'instant'});
+  showSaveToast('Willkommen zurück'+(state.firstName?', '+state.firstName:'')+'! Dein Zwischenstand vom '+saveFmtDateTime(data.savedAt)+' wurde geladen.');
+}
+function saveHandleFile(file){
+  const err=document.getElementById('saveLoadError');
+  const fail=msg=>{ if(err){ err.style.display='block'; err.textContent=msg; } };
+  if(err) err.style.display='none';
+  if(!file) return;
+  // Eine PDF-Datei (z. B. die Überblick-PDF) gehört ins Feiditor-Feibeitsblatt, nicht hierher.
+  file.slice(0,5).text().then(head=>{
+    if(head==='%PDF-') fail('Das ist eine PDF-Datei. Deine Überblick-PDF lädst du im Feiditor-Feibeitsblatt hoch: feibeitsblatt.janrickmer.de → „Zwischenstand-PDF hochladen“.');
+    else saveReadFile(file,fail);
+  },()=>saveReadFile(file,fail));
+}
+function saveReadFile(file,fail){
+  if(file.size>2*1024*1024){ fail('Diese Datei ist zu groß für eine Zwischenstand-Datei.'); return; }
+  const fr=new FileReader();
+  fr.onload=()=>{ try{ saveLoadText(String(fr.result||'')); }catch(e){ console.warn(e); fail(e.message); } };
+  fr.onerror=()=>fail('Die Datei konnte nicht gelesen werden. Bitte versuche es noch einmal.');
+  fr.readAsText(file,'utf-8');
+}
+window.renderResume=()=>{
+  state.screen='resume';
+  saveRenderResumeScreen();   // Anpassung: zeichnet die Upload-Seite (IDs saveDrop, saveFileInput, saveLoadError)
+  const input=document.getElementById('saveFileInput'), drop=document.getElementById('saveDrop');
+  input.addEventListener('change',()=>{ saveHandleFile(input.files&&input.files[0]); input.value=''; });
+  ['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,()=>drop.classList.add('drag')));
+  drop.addEventListener('dragleave',()=>drop.classList.remove('drag'));
+};
+// Dateien, die irgendwo auf der Upload-Seite abgelegt werden, laden (statt sie im Browser zu öffnen).
+document.addEventListener('dragover',e=>{ if(state.screen==='resume') e.preventDefault(); });
+document.addEventListener('drop',e=>{
+  if(state.screen!=='resume') return;
+  e.preventDefault();
+  const drop=document.getElementById('saveDrop'); if(drop) drop.classList.remove('drag');
+  saveHandleFile(e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files[0]);
+});
+function saveDropHtml(){
+  return '<label class="save-drop" id="saveDrop">'+LOAD_ICON
+    +'<span><strong>Zwischenstand-Datei auswählen</strong><br>oder hierher ziehen</span>'
+    +'<input type="file" id="saveFileInput" accept=".txt,text/plain"></label>'
+    +'<div id="saveLoadError" class="input-error" role="alert"></div>';
+}
+
+/* ---------- Vermerk für die Überblick-PDF ---------- */
+function saveLogPdfLines(){
+  const log=Array.isArray(state.resumeLog)?state.resumeLog:[];
+  if(!log.length) return ['Es wurde keine Zwischenstand-Datei geladen.'];
+  const lines=[log.length===1?'Es wurde 1-mal eine Zwischenstand-Datei geladen:':'Es wurde '+log.length+'-mal eine Zwischenstand-Datei geladen:'];
+  log.forEach((e,i)=>lines.push((i+1)+'. Weitergespielt ab '+e.place+' (Datei gespeichert am '+saveFmtDateTime(e.savedAt)+', geladen am '+saveFmtDateTime(e.loadedAt)+').'));
+  return lines;
+}
+
+
+/* ============================================================
+   INIT
+   ============================================================ */
+renderStart();
+</script>
+</body>
+</html>
