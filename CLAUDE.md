@@ -56,8 +56,9 @@ Tab und übergibt den Datensatz im Link. Der Bestätigungscode steht nur in der 
 
 - Rätsel: Karten, Optionen und Zuordnungen bei jedem Aufbau neu mischen (`shuffle` mit `crypto.getRandomValues`, nie
   `Math.random`, nie nach Länge sortieren). Freie Felder über `normalizeAnswer`/`wordKey`/`wordMatches`, Zahlenfelder über
-  `numberMatches` (Toleranz, Einheiten, Dezimalkomma). Hilfen in drei Stufen (Absatz → Anfang → Lösung). Jeder Versuch zählt;
-  die Fehler des ersten Versuchs stehen in Textform in Überblick-PDF und Datensatz.
+  `numberMatches` (Toleranz, Einheiten, Dezimalkomma). Hilfen in drei Stufen (Absatz → Anfang → Lösung), ein Eintrag je
+  falschem Element in der angezeigten (gemischten) Reihenfolge. Jeder Versuch zählt; die Fehler des ersten Versuchs stehen
+  in Textform (`item`, `wrong`, `right`, in derselben Reihenfolge) in Überblick-PDF und Datensatz.
 - Personendaten und Eingaben nur per `textContent` oder `escapeHtml` ins DOM. Kein `alert`, Meldungen stehen im Dokument.
 - Kein Server, keine Cookies, kein localStorage, kein `fetch`. YouTube erst nach Klick (Lader im `<head>`, youtube-nocookie).
   Überblick-PDF und Zwischenstand nur als Download (`application/octet-stream`), nie in einem neuen Tab.

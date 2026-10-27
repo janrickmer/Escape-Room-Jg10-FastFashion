@@ -1950,7 +1950,7 @@ function checkRoom(idx){
   st.parts.forEach((p,pi)=>{
     const X=PART_LETTERS[pi], pid='p'+p.id;
     if(p.type==='baskets'){
-      p.cards.forEach(c=>{
+      rs.order[p.id].forEach(c=>{            // Reihenfolge wie angezeigt (Hilfe und Fehlerliste)
         n++; const chosen=rs.choice[p.id][c.id], ok=chosen===c.b, el=document.getElementById(`${pid}-${c.id}`);
         setMark(el,ok);
         if(!ok){
@@ -1969,7 +1969,7 @@ function checkRoom(idx){
         helps.push({name:'Teil '+X, s1:topicLine(p.p,p.q), s2:`Die richtige Antwort beginnt mit ${quotedStart(p.start)}.`, s3:'Lösung: '+p.sol});
       }
     } else if(p.type==='assign'){
-      p.rows.forEach(r=>{
+      rs.order[p.id].forEach(r=>{
         n++; const sel=document.getElementById(`${pid}-${r.id}-s`), val=p.options[+sel.value], ok=val===r.ans;
         setMark(document.getElementById(`${pid}-${r.id}`),ok);
         if(!ok){
