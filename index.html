@@ -2473,7 +2473,7 @@ function saveRenderResumeScreen(){
     <div class="resume-box">
       <p>Lade hier deine Zwischenstand-Datei hoch. Sie heißt „Zwischenstand zum Escape-Room ${SAVE_GAME_TITLE} vom … von …“ und liegt meistens in deinem Download-Ordner. Danach geht es genau an der Stelle weiter, an der du gespeichert hast.</p>
       ${saveDropHtml()}
-      <p class="small resume-pdf">Du hast schon deine Überblick-PDF? Mit ihr geht es im Feiditor-Feibeitsblatt weiter: feibeitsblatt.janrickmer.de, „Zwischenstand-PDF hochladen“.</p>
+      ${FB_CODE?'<p class="small resume-pdf">Du hast schon deine Überblick-PDF? Mit ihr geht es im Feiditor-Feibeitsblatt weiter: feibeitsblatt.janrickmer.de, „Zwischenstand-PDF hochladen“.</p>':''}
       <div class="btn-row"><button type="button" class="btn ghost" id="backToStart">Zurück zur Anmeldung</button></div>
     </div>
   </div></div>`);
@@ -2693,7 +2693,7 @@ function saveHandleFile(file){
   if(!file) return;
   // Eine PDF-Datei (z. B. die Überblick-PDF) gehört ins Feiditor-Feibeitsblatt, nicht hierher.
   file.slice(0,5).text().then(head=>{
-    if(head==='%PDF-') fail('Das ist eine PDF-Datei. Deine Überblick-PDF lädst du im Feiditor-Feibeitsblatt hoch: feibeitsblatt.janrickmer.de → „Zwischenstand-PDF hochladen“.');
+    if(head==='%PDF-') fail(FB_CODE?'Das ist eine PDF-Datei. Deine Überblick-PDF lädst du im Feiditor-Feibeitsblatt hoch: feibeitsblatt.janrickmer.de → „Zwischenstand-PDF hochladen“.':'Das ist eine PDF-Datei. Hier brauchst du deine Zwischenstand-Datei (.txt) – sie liegt meistens in deinem Download-Ordner.');
     else saveReadFile(file,fail);
   },()=>saveReadFile(file,fail));
 }

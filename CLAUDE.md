@@ -49,7 +49,8 @@ Tab und übergibt den Datensatz im Link. Der Bestätigungscode steht nur in der 
   Lehrkraft das Blatt angelegt hat – und vor dem ersten Einsatz.** Solange er leer ist, ist der Tunnel gesperrt und die
   Überblick-PDF trägt `code: ""`; das Feibeitsblatt nimmt eine solche PDF nie an. Deshalb raten Sperrhinweis, Pause-Karte, der
   Satz über der Speicherleiste und der Hinweis in der PDF im gesperrten Zustand zur Zwischenstand-Datei des Raums (Knopf direkt
-  unter dem Sperrhinweis), nicht zur Überblick-PDF.
+  unter dem Sperrhinweis), nicht zur Überblick-PDF; die Ladeseite „Weiterspielen“ nennt die Überblick-PDF dann nicht, und eine
+  dort hochgeladene PDF bekommt die Meldung, dass hier die Zwischenstand-Datei (.txt) gebraucht wird.
 - Testhaken nur für automatische Tests: Ist vor dem Laden `window.__FF_TEST__ = {feibeitsblattUrl, code}` gesetzt (Playwright
   `addInitScript`), gelten diese Werte. Produktiv nie setzen.
 - Labels „Station n · Titel“ (`ROOM_LABELS`, `SOLUTION_NOTES`) nie ändern – die Aufträge an die KI im Feibeitsblatt verweisen
