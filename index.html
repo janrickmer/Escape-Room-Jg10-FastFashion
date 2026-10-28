@@ -212,11 +212,9 @@ strong{font-weight:700}
 .pn{display:inline-block;margin-right:.5em;font-size:var(--step-small);font-weight:700;color:var(--ink-soft);font-variant-numeric:tabular-nums}
 @media (min-width:760px){.pn{position:absolute;left:-2.2em;top:.25em;width:1.6em;margin:0;text-align:right}}
 .lib .notice{max-width:var(--read)}
-.lib-text .ph{scroll-margin-top:96px}
 .lib-video{max-width:var(--read);margin-top:40px}
 .lib-video .lv-h{font:700 1.1875rem/1.35 var(--f-text);margin:0 0 8px;text-wrap:balance}
 .lib-video .btn-row{margin:14px 0 18px}
-.lib-video .lv-ai{margin-top:10px}
 .lib .notice.warn{margin-top:40px}
 
 /* ============ Rätselraum ============ */
@@ -435,7 +433,8 @@ dialog[open]::backdrop{animation:fadeIn 220ms var(--ease-out)}
 </style>
 <script>
 /* Videos erst nach Klick laden: YouTube-Rahmen tragen ihre Adresse in data-yt-src und zeigen bis zum Klick einen
-   Hinweis (srcdoc). Erst „Video laden“ stellt eine Verbindung zu YouTube her (siehe Impressum & Datenschutz). */
+   Hinweis (srcdoc). Erst „Video laden“ stellt eine Verbindung zu YouTube her (siehe Impressum & Datenschutz). Der Link
+   ersetzt den Rahmen per location.replace – so entsteht kein Eintrag im Verlauf des Browsers. */
 (function(){
   function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
   function prep(f){
@@ -454,7 +453,7 @@ dialog[open]::backdrop{animation:fadeIn 220ms var(--ease-out)}
       +'a:hover{background:#8ef182;border-color:#8ef182}a:focus-visible{outline:3px solid #ffffff;outline-offset:3px}p.n{margin:10px 0 0;font-size:13px;line-height:1.4;color:#e4e6e3}'
       +'@media (max-height:210px){.t{display:none}.b{padding:6px 12px}p.n{margin-top:6px;line-height:1.3}}</style></head><body><div class="b">'
       +(t?'<p class="t">'+esc(t)+'</p>':'')
-      +'<a href="'+esc(go)+'">&#9654; Video von YouTube laden</a>'
+      +'<a href="'+esc(go)+'" onclick="if(event.ctrlKey||event.metaKey||event.shiftKey||event.button)return true;location.replace(this.href);return false">&#9654; Video von YouTube laden</a>'
       +'<p class="n">Erst nach diesem Klick wird das Video von YouTube (Google) geladen. Dabei erhält Google unter anderem deine IP-Adresse und kann Cookies setzen; Daten können in die USA gelangen.</p>'
       +'</div></body></html>');
   }
@@ -839,7 +838,7 @@ const STATIONS = [
     map:{dx:10, dy:-12},
     stamp:{shape:"rect", top:"AFRIKA", bottom:"RUANDA · GHANA", rot:-6},
     topics:["Dein alter Pulli", "Altkleider auf Reisen", "Der Altkleiderstreit", "Die EU setzt bei den Firmen an"],
-    video:{id:"f0_MbvAN1tY", title:"Erklärvideo: Die Reise deines alten Pullis"},   // mit KI (Gemini Notebook) aus den paras erstellt, von der Lehrkraft geprüft
+    video:{id:"f0_MbvAN1tY", title:"Erklärvideo: Die Reise deines alten Pullis"},   // Erklärvideo zum Text, mit KI erstellt (Gemini Notebook)
     paras:[
       "Was passiert mit deinem alten Pulli? Von den Altkleidern, die in Deutschland gesammelt werden, kann nur noch weniger als die Hälfte wieder getragen werden – die Qualität sinkt. Aus alter Kleidung wird kaum neue: Weniger als 1 Prozent aller neuen Textilfasern stammt aus alten Textilien.",
       "Die EU exportiert gebrauchte Textilien in alle Welt, vor allem nach Asien und Afrika. Vom Markt Kantamanto in Ghana leben viele Menschen – vom Handeln, Reparieren und Umnähen. Eine Organisation vor Ort schätzt aber: Im Schnitt sind etwa 40 Prozent eines Kleiderballens unverkäuflich und werden Müll.",
@@ -2023,10 +2022,9 @@ function renderLibrary(idx){
   const vid=st.video?`
     <section class="lib-video" aria-labelledby="libVidH">
       <h2 class="lv-h" id="libVidH">${escapeHtml(st.video.title)}</h2>
-      <p>Das Video erklärt den Text dieses Bibliotheksraums. Du kannst es dir ansehen – oder stattdessen gleich mit dem Text arbeiten. Alles, was du im Rätselraum brauchst, steht im Text; die Hilfe dort nennt seine Absätze.</p>
+      <p>Du kannst wählen: Schau dir das Erklärvideo an – oder arbeite stattdessen mit dem Text darunter. Das Video ist mit KI erstellt (Gemini Notebook von Google) und erklärt, was im Text steht. Mach dir in beiden Fällen Notizen. Die Hilfe im Rätselraum nennt die Absätze des Texts – wirf deshalb auch nach dem Video einen kurzen Blick hinein, bevor du weitergehst.</p>
       <div class="btn-row"><button type="button" class="btn ghost" id="toText">Lieber mit dem Text arbeiten</button></div>
       ${videoHtml(st.video.id,escapeHtml(st.video.title))}
-      <p class="small lv-ai">Das Video ist mit KI erstellt (Gemini Notebook von Google) und von deiner Lehrkraft geprüft.</p>
     </section>`:'';
   show('lib'+(idx+1),`
   <div class="screen lib has-band" style="--field:var(--${st.cont}-field);--fink:var(--${st.cont}-ink)">
