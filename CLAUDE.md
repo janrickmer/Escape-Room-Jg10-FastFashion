@@ -45,8 +45,9 @@ Tab und übergibt den Datensatz im Link. Der Bestätigungscode steht nur in der 
 ## Konstanten
 
 - `FEIBEITSBLATT_URL = 'https://feibeitsblatt.janrickmer.de/'`, `ESCAPE_ROOM = {id:'powi-jg10-fastfashion', name, url}`.
-- **`FEIBEITSBLATT_CODE`** – Code des Escape-Blattes im Feibeitsblatt (6 Zeichen ohne Bindestrich). **Eintragen, sobald die
-  Lehrkraft das Blatt angelegt hat – und vor dem ersten Einsatz.** Solange er leer ist, ist der Tunnel gesperrt und die
+- **`FEIBEITSBLATT_CODE`** – Code des Escape-Blattes im Feibeitsblatt (6 Zeichen ohne Bindestrich), eingetragen: `6SN6EA`
+  (Blatt „Feiditor-Feibeitsblatt“, angezeigt als 6SN-6EA). Legt die Lehrkraft das Blatt neu an (z. B. nach dem Löschen oder weil
+  es mit fremden Abgaben gefüllt wurde – der Code ist öffentlich), hier den neuen Code eintragen. Solange er leer ist, ist der Tunnel gesperrt und die
   Überblick-PDF trägt `code: ""`; das Feibeitsblatt nimmt eine solche PDF nie an. Deshalb raten Sperrhinweis, Pause-Karte, der
   Satz über der Speicherleiste und der Hinweis in der PDF im gesperrten Zustand zur Zwischenstand-Datei des Raums (Knopf direkt
   unter dem Sperrhinweis), nicht zur Überblick-PDF; die Ladeseite „Weiterspielen“ nennt die Überblick-PDF dann nicht, und eine
