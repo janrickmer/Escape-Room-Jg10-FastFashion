@@ -16,6 +16,13 @@ Oberfläche deutsch, Schüler:innen werden geduzt, echte Umlaute und typografisc
 - Die Rätselräume sind generisch (`renderRoom`/`checkRoom`): Bausteine `baskets`, `mc`, `assign`, `cloze`, `number`,
   `keystone` aus `STATIONS[i].parts`. Inhalte nur dort ändern; Bibliothekstexte, Lösungserläuterungen und „Genaue Daten“
   sind von der Lehrkraft freigegeben und wörtlich übernommen.
+- Videos über `videoHtml`: YouTube erst nach Klick (youtube-nocookie), daneben „Direkt auf YouTube öffnen“ im neuen Tab.
+  Ablauf-Seite („Anleitung: Escape-Room meistern“), Arena und Bibliotheksraum 5 (`STATIONS[4].video`, Abschnitt
+  `.lib-video` über dem Text). Das Erklärvideo in Station 5 ist mit KI (Gemini Notebook) aus den `paras` erstellt und von der
+  Lehrkraft geprüft. Es ist freiwillig: Der Hinweis bietet an, stattdessen mit dem Text zu arbeiten, der Knopf „Lieber mit
+  dem Text arbeiten“ setzt den Fokus auf `#libText` (ohne Sprungmarke, kein Verlaufseintrag), darunter steht der KI-Vermerk.
+  Der Text bleibt maßgeblich, die Hilfe nennt seine Absätze. Ändert sich ein Bibliothekstext mit Video, das Video neu
+  erzeugen und prüfen.
 - `fonts/` – Anton und Work Sans als woff2 (SIL Open Font License 1.1, Lizenztexte in `fonts/LIZENZEN.txt`).
 - `impressum.html` – Impressum & Datenschutz. Anpassen, wenn sich Datenflüsse ändern. Zur Tippzeit-Messung steht hier
   nichts (die steht nur im Datenschutzhinweis des Feibeitsblatts).

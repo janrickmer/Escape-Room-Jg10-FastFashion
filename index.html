@@ -212,6 +212,11 @@ strong{font-weight:700}
 .pn{display:inline-block;margin-right:.5em;font-size:var(--step-small);font-weight:700;color:var(--ink-soft);font-variant-numeric:tabular-nums}
 @media (min-width:760px){.pn{position:absolute;left:-2.2em;top:.25em;width:1.6em;margin:0;text-align:right}}
 .lib .notice{max-width:var(--read)}
+.lib-text .ph{scroll-margin-top:96px}
+.lib-video{max-width:var(--read);margin-top:40px}
+.lib-video .lv-h{font:700 1.1875rem/1.35 var(--f-text);margin:0 0 8px;text-wrap:balance}
+.lib-video .btn-row{margin:14px 0 18px}
+.lib-video .lv-ai{margin-top:10px}
 .lib .notice.warn{margin-top:40px}
 
 /* ============ Rätselraum ============ */
@@ -834,6 +839,7 @@ const STATIONS = [
     map:{dx:10, dy:-12},
     stamp:{shape:"rect", top:"AFRIKA", bottom:"RUANDA · GHANA", rot:-6},
     topics:["Dein alter Pulli", "Altkleider auf Reisen", "Der Altkleiderstreit", "Die EU setzt bei den Firmen an"],
+    video:{id:"f0_MbvAN1tY", title:"Erklärvideo: Die Reise deines alten Pullis"},   // mit KI (Gemini Notebook) aus den paras erstellt, von der Lehrkraft geprüft
     paras:[
       "Was passiert mit deinem alten Pulli? Von den Altkleidern, die in Deutschland gesammelt werden, kann nur noch weniger als die Hälfte wieder getragen werden – die Qualität sinkt. Aus alter Kleidung wird kaum neue: Weniger als 1 Prozent aller neuen Textilfasern stammt aus alten Textilien.",
       "Die EU exportiert gebrauchte Textilien in alle Welt, vor allem nach Asien und Afrika. Vom Markt Kantamanto in Ghana leben viele Menschen – vom Handeln, Reparieren und Umnähen. Eine Organisation vor Ort schätzt aber: Im Schnitt sind etwa 40 Prozent eines Kleiderballens unverkäuflich und werden Müll.",
@@ -2009,20 +2015,32 @@ function renderLibrary(idx){
   const st=STATIONS[idx];
   const paras=st.paras.map((p,i)=>{
     const text=typeof p==='string'?p:p.text, list=typeof p==='string'?null:p.list;
-    return `<h2 class="ph">${escapeHtml(st.topics[i])}</h2>`
+    return `<h2 class="ph"${i===0?' id="libText" tabindex="-1"':''}>${escapeHtml(st.topics[i])}</h2>`
       +`<p><span class="pn"><span class="sr-only">Absatz </span>${i+1}</span>${escapeHtml(text)}</p>`
       +(list?'<ul>'+list.map(li=>`<li>${escapeHtml(li)}</li>`).join('')+'</ul>':'');
   }).join('');
+  // Erklärvideo zum Text (freiwillig): Der Text bleibt maßgeblich – die Hilfe im Rätselraum nennt seine Absätze
+  const vid=st.video?`
+    <section class="lib-video" aria-labelledby="libVidH">
+      <h2 class="lv-h" id="libVidH">${escapeHtml(st.video.title)}</h2>
+      <p>Das Video erklärt den Text dieses Bibliotheksraums. Du kannst es dir ansehen – oder stattdessen gleich mit dem Text arbeiten. Alles, was du im Rätselraum brauchst, steht im Text; die Hilfe dort nennt seine Absätze.</p>
+      <div class="btn-row"><button type="button" class="btn ghost" id="toText">Lieber mit dem Text arbeiten</button></div>
+      ${videoHtml(st.video.id,escapeHtml(st.video.title))}
+      <p class="small lv-ai">Das Video ist mit KI erstellt (Gemini Notebook von Google) und von deiner Lehrkraft geprüft.</p>
+    </section>`:'';
   show('lib'+(idx+1),`
   <div class="screen lib has-band" style="--field:var(--${st.cont}-field);--fink:var(--${st.cont}-ink)">
     ${stationBand(idx,'Bibliotheksraum')}
     <div class="wrap band-body" data-enter>
     <div class="notice">${I.notes}<p>Hier steht das Wissen für das nächste Rätsel. <strong>Sobald du den Rätselraum betrittst, kommst du nicht mehr hierher zurück. Mach dir Notizen – im Finale brauchst du sie.</strong></p></div>
+    ${vid}
     <div class="lib-text">${paras}</div>
     <div class="notice warn">${I.warn}<p>Hast du dir alles notiert? <strong>Ab dem Rätselraum gibt es keinen Weg zurück.</strong></p></div>
     <div class="btn-row"><button type="button" class="btn" id="toRoom">Zum Rätselraum: ${escapeHtml(st.label)}${I.arrow}</button></div>
   </div></div>`);
   on('toRoom','click',()=>goRoom(idx+1));
+  // ohne Sprungmarke im Link (kein Eintrag im Verlauf): Fokus auf die erste Überschrift des Texts
+  on('toText','click',()=>{ const t=document.getElementById('libText'); if(!t) return; t.focus({preventScroll:true}); t.scrollIntoView({behavior:reducedMotion()?'auto':'smooth',block:'start'}); });
 }
 window.goRoom=n=>{ renderRoom(n-1); };
 
